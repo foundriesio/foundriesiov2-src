@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Foundries.io</title>
+    <link>https://foundriesio.github.io/foundriesiov2/categories/</link>
+    <description>Recent content in Categories on Foundries.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Feb 2018 13:07:31 +0200</lastBuildDate>
+    
+	<atom:link href="https://foundriesio.github.io/foundriesiov2/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blockchain</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/blockchain/</link>
+      <pubDate>Fri, 23 Feb 2018 13:07:31 +0200</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/blockchain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bluetooth</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/bluetooth/</link>
+      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/bluetooth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conferences</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/conferences/</link>
+      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/conferences/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Corporate</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/corporate/</link>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/corporate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/docker/</link>
+      <pubDate>Wed, 17 Jan 2018 13:07:31 +0200</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Embedded</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/embedded/</link>
+      <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/embedded/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fota</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/fota/</link>
+      <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/fota/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iot</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/iot/</link>
+      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/iot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/linux/</link>
+      <pubDate>Wed, 17 Jan 2018 13:50:46 +0200</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lmp</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/lmp/</link>
+      <pubDate>Wed, 09 May 2018 19:48:23 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/lmp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lwm2m</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/lwm2m/</link>
+      <pubDate>Wed, 11 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/lwm2m/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mcuboot</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/mcuboot/</link>
+      <pubDate>Wed, 17 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/mcuboot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microplatform</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/microplatform/</link>
+      <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/microplatform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Minutes</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/minutes/</link>
+      <pubDate>Wed, 03 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/minutes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Newsletter</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/newsletter/</link>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/newsletter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quickstart</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/quickstart/</link>
+      <pubDate>Wed, 17 Jan 2018 13:50:46 +0200</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/quickstart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Radio</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/radio/</link>
+      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/radio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Threats</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/threats/</link>
+      <pubDate>Wed, 17 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/threats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Updates</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/updates/</link>
+      <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/updates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zephyr</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/zephyr/</link>
+      <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/zephyr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zephyr News</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/zephyr-news/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/zephyr-news/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zmp</title>
+      <link>https://foundriesio.github.io/foundriesiov2/categories/zmp/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/categories/zmp/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,735 @@
+
+<!doctype html>
+<html class="no-js" lang="en-us">
+
+    <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deploying OTA Community Edition</title>
+  <link rel="shortcut icon" href="https://foundriesio.github.io/foundriesiov2/images/icons/favicon.png" />
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/foundation.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/animate.min.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/morphext.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/owl.carousel.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/owl.theme.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/owl.transitions.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/slicknav.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/style.css" />
+</head>
+
+
+<body>
+
+
+<header class="alt-9">
+
+    
+<div class="top sticky">
+    <div class="row">
+        <div class="small-12 large-3 medium-3 columns">
+            <div class="logo">
+                <a href="https://foundriesio.github.io/foundriesiov2//index.html" title=""><img src="https://foundriesio.github.io/foundriesiov2//images/logo.png" alt="" title=""/></a>
+            </div>
+        </div>
+
+        <div class="small-12 large-9 medium-9 columns">
+
+            
+            <nav class="desktop-menu">
+                <ul class="sf-menu" id="navigation">
+                    <li ><a href="https://foundriesio.github.io/foundriesiov2/">HOME</a> </li>
+
+                    <li><a href="#" style="cursor:default">PRODUCTS</a>
+		 	            <ul>
+			                <li><a href="https://foundriesio.github.io/foundriesiov2/products/"> MICROPLATFORMS</a></li>
+			                <li><a href="https://foundriesio.github.io/foundriesiov2/pricing/"> PRICING</a></li>
+			                <li><a href="https://foundriesio.github.io/foundriesiov2/hardware/"> HARDWARE</a></li>
+		                </ul>
+		            </li>
+                    
+		            <li><a href="https://foundriesio.github.io/foundriesiov2/partners/">PARTNERS</a></li>
+		            <li><a href="https://foundriesio.github.io/foundriesiov2/insights/">INSIGHTS</a></li>
+                    <li><a href="#">ABOUT</a></li> <li><a href="https://app.foundries.io/login/?next=/ "> <i class="fa fa-cloud-upload"></i> ENGAGE</a>
+                        <ul>
+                            <li><a href="https://app.foundries.io/login/?next=/ "> DASHBOARD</a></li>
+                            <li><a href="https://forums.foundries.io"> FORUMS</a></li>
+                            <li><a href="https://support.foundries.io"> SUPPORT</a></li>
+                            <li><a href="https://join.slack.com/t/foundriesio/shared_invite/enQtMjUwNzA1MTc4NzA4LTI2YTc4YjUyMTY2NWE3NTQxOTJjYjY3M2NkNTVmYjM2M2JhZGYzNDM1Mzk4MzkxMDI5ZWNhOWUzMWVlYmI4NDE   "> SLACK</a></li>
+                            <li style="background: #ffaa00"><a href="https://app.foundries.io/login/?next=/ " style="color: #37485C"> GET STARTED</a></li>
+                        </ul>
+		            </li>
+                </ul>
+            </nav>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="message">
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="message-intro">
+                    <span class="message-line"></span>
+                    <p>FOUNDRIES.IO INSIGHTS</p>
+                    <span class="message-line"></span>
+                </div>
+                <h1 style="color: white">Technologies, News and Demonstrations</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="insights-post">
+
+                        <p class="text-muted text-uppercase mb-small text-right">By <a href="#">Andy Doan</a> | June 27, 2018</p>
+
+                        <div id="post-content">
+                          <p>Continuing with the OTA blog series <a href="https://foundriesio.github.io/foundriesiov2/insights/2018/05/25/ota-part-1/">part one</a> and <a href="https://foundriesio.github.io/foundriesiov2/insights/2018/06/14/ota-part-2/">part two</a>, this article shows you how to deploy OTA Community Edition inside Google&rsquo;s Kubernetes Engine (GKE). After completion of these instructions, you&rsquo;ll have an OTA server available on the internet with a single QEMU device registered to it.
+</p>
+
+<h3 id="requirements">Requirements</h3>
+
+<p>You&rsquo;ll need a few things in place to be able to deploy this to GKE:</p>
+
+<ul>
+<li>An account with the <a href="https://console.cloud.google.com">Google Cloud Platform</a> (GCP).</li>
+<li>A Project defined in your GCP account.</li>
+<li>Git and Docker to run the deployment scripts.</li>
+</ul>
+
+<p>It&rsquo;s also highly recommended that you are able to add DNS records to a domain you own. Otherwise, you&rsquo;ll have to edit /etc/hosts to access the services.</p>
+
+<h3 id="overview">Overview</h3>
+
+<p>OTA Community Edition deploys several <a href="https://foundriesio.github.io/foundriesiov2/insights/2018/06/14/ota-part-2/">micro-services</a> to Kubernetes. However, it doesn&rsquo;t come with any built-in security. The approach taken by this article is to expose the unsafe services via a single nginx reverse-proxy. This will make it obvious what services need to be locked down. Part four of the blog series will describe an approach for securing the reverse-proxy. When the deployment is completed, you&rsquo;ll have a system with these caveats:</p>
+
+<ul>
+<li><strong>INSECURE</strong> - Anyone can push to the TreeHub</li>
+<li><strong>INSECURE</strong> - Anyone can access and manage devices via the web application</li>
+</ul>
+
+<p>Part 4 of the blog series will go into the details of securing everything.</p>
+
+<h3 id="one-time-only-steps">One-Time Only Steps</h3>
+
+<p>First get the OTA Community Edition source. This article relies on 3 out-of-tree patches to streamline the process:</p>
+
+<pre><code>  git clone -b ota-blog-part3 https://github.com/OpenSourceFoundries/ota-community-edition
+  cd ota-community-edition
+
+  # If you are curious about the out-of-tree patches:
+  git log -3
+</code></pre>
+
+<p>OTA Community Edition has several dependencies that aren&rsquo;t easy to install. This article uses a container provided by the project to make things easier. If you have the tools installed locally you can always skip this step and call things like <code>kubectl</code> and <code>gcloud</code> directly.</p>
+
+<pre><code>  # Build the container:
+  ./contrib/gke/docker-build.sh
+</code></pre>
+
+<p>With the container in place, you need to configure the <code>gcloud</code> tools to use your GCP project:</p>
+
+<pre><code>  EXTRA_ARGS=&quot;-it&quot; ./contrib/gke/gcloud auth login
+  ./contrib/gke/gcloud config set project &lt;YOUR PROJECT&gt;
+  # You can use any GCP region you wish below
+  ./contrib/gke/gcloud config set compute/zone us-central1-c
+</code></pre>
+
+<h3 id="deploy-ota-community-edition">Deploy OTA Community Edition</h3>
+
+<p>The ota-blog-part3 branch of OTA Community Edition includes a helper script to deploy OTA Community Edition. The script isn&rsquo;t very long and is worth taking a close look at to understand the mechanics of deploying OTA Community Edition. Deploying is as simple as:</p>
+
+<pre><code>  ./create-cluster.sh example.com
+</code></pre>
+
+<h3 id="set-up-dns">Set up DNS</h3>
+
+<p>You now need DNS entries in place to access the OTA server. Add the following entries into your DNS management tool:</p>
+
+<pre><code> # Get the IP of the nginx reverse-proxy:
+ ./contrib/gke/kubectl get svc reverse-proxy
+
+ # Point these entries at the reverse-proxy IP:
+ tuf-reposerver.&lt;DNS_NAME&gt;, treehub.&lt;DNS_NAME&gt;, app.&lt;DNS_NAME&gt;
+
+ # Get the IP of the device gateway:
+ ./contrib/gke/kubectl get svc gateway-service
+ # Point &lt;SERVER_NAME&gt; at this IP
+</code></pre>
+
+<p>If you don&rsquo;t have real DNS in place, you can hack your /etc/hosts with something like:</p>
+
+<pre><code>  # A quick entry generator for /etc/hosts:
+ echo $(./contrib/gke/kubectl get svc reverse-proxy -o json | jq -r '.status.loadBalancer.ingress[0].ip')    treehub.&lt;DNS_NAME&gt; tuf-reposerver.&lt;DNS_NAME&gt;  app.&lt;DNS_NAME&gt;
+</code></pre>
+
+<p>As a sanity check, you can validate everything is working with:</p>
+
+<pre><code>  curl http://tuf-reposerver.&lt;DNS_NAME&gt;/api/v1/user_repo/targets.json
+  curl http://treehub.&lt;DNS_NAME&gt;/api/v3/config
+</code></pre>
+
+<h3 id="secure-the-tuf-keys">Secure the TUF Keys</h3>
+
+<p>OTA Community Edition is running and exposed to the internet. The nginx reverse-proxy has no built-in security and the TUF private keys are available to <strong>anyone</strong>. This can be fixed even though the reverse-proxy has no authentication/authorization logic. In fact, it&rsquo;s a great example of how TUF protects you from the leaking of a private key. The ota-blog-part3 branch includes a script to make it easy:</p>
+
+<pre><code>  ./rotate-keys.sh example.com
+</code></pre>
+
+<h3 id="upload-an-image">Upload an Image</h3>
+
+<p><a href="https://app.foundries.io/docs/0.22/reference/linux-ota.html#upload-image-to-ats-garage">Uploading an image</a> is a great way to validate the server is working and will be needed when you register a device:</p>
+
+<pre><code>  wget https://app.foundries.io/mp/lmp/0.22/artifacts/other-intel-corei7-64/other/intel-corei7-64-ostree_repo.tar.bz2
+  tar -xf intel-corei7-64-ostree_repo.tar.bz2
+  # if you hacked /etc/hosts then include &quot;--network host&quot;
+  docker run --rm -it -v $PWD:/build --workdir=/build opensourcefoundries/aktualizr \
+    ota-publish -m intel-corei7-64  -c ./credentials.zip -r ostree_repo
+</code></pre>
+
+<h3 id="register-a-device">Register a Device</h3>
+
+<p>OTA Community Edition requires <a href="https://github.com/advancedtelematic/aktualizr/blob/master/docs/implicit-provisioning.adoc">implicit provisioning</a>. Creating a device is fairly easy:</p>
+
+<pre><code>  # DEVICE_ID = The name of the device to appear in OTA Community Edition
+  # SERVER_NAME = Your gateway server. eg SERVER_NAME=ota-ce.example.com
+  ./contrib/gke/make SERVER_NAME=&lt;SERVER_NAME&gt; DEVICE_ID=&lt;DEVICE_ID&gt; SKIP_CLIENT=true new-client
+</code></pre>
+
+<p>Configuring your device is fairly simple. Remote access, however, isn&rsquo;t
+always the same. Here are the files you&rsquo;ll need to copy to your device:</p>
+
+<ul>
+<li>generated/<code>&lt;SERVER_NAME&gt;</code>/server_ca.pem to /var/sota/root.crt</li>
+<li>generated/<code>&lt;SERVER_NAME&gt;</code>/devices/<code>&lt;DEVICE_ID&gt;</code>/client.pem /var/sota/client.pem</li>
+<li>generated/<code>&lt;SERVER_NAME&gt;</code>/devices/<code>&lt;DEVICE_ID&gt;</code>/pkey.pem /var/sota/pkey.pem</li>
+</ul>
+
+<p>If you haven&rsquo;t set up DNS entries, you&rsquo;ll need to add a line to
+/etc/hosts on the target device. The public IP comes from the gateway-service:</p>
+
+<pre><code>  ./contrib/gke/kubectl get svc gateway-service -o json \
+    | jq -r '.status.loadBalancer.ingress[0].ip'
+
+  # /etc/hosts on target would get something like:
+  ota-ce.example.com &lt;ip-from-comand-above&gt;
+</code></pre>
+
+<p>Finally create a /var/sota/sota.toml on your target device:</p>
+
+<pre><code># /var/sota/sota.toml
+[gateway]
+http = true
+socket = false
+
+[network]
+socket_commands_path = &quot;/tmp/sota-commands.socket&quot;
+socket_events_path = &quot;/tmp/sota-events.socket&quot;
+socket_events = &quot;DownloadComplete, DownloadFailed&quot;
+
+[p11]
+module = &quot;&quot;
+pass = &quot;&quot;
+uptane_key_id = &quot;&quot;
+tls_ca_id = &quot;&quot;
+tls_pkey_id = &quot;&quot;
+tls_clientcert_id = &quot;&quot;
+
+[tls]
+server = &quot;https://ota-ce.example.com:8443&quot;
+ca_source = &quot;file&quot;
+pkey_source = &quot;file&quot;
+cert_source = &quot;file&quot;
+
+[provision]
+server = &quot;https://ota-ce.example.com:8443&quot;
+p12_password = &quot;&quot;
+expiry_days = &quot;36000&quot;
+provision_path = &quot;&quot;
+
+[uptane]
+polling = true
+polling_sec = 10
+device_id = &quot;&quot;
+primary_ecu_serial = &quot;&quot;
+# NOTE - this might need to change depending on your CPU
+primary_ecu_hardware_id = &quot;intel-corei7-64&quot;
+director_server = &quot;https://ota-ce.example.com:8443/director&quot;
+repo_server = &quot;https://ota-ce.example.com:8443/repo&quot;
+key_source = &quot;file&quot;
+
+[pacman]
+type = &quot;ostree&quot;
+os = &quot;&quot;
+sysroot = &quot;&quot;
+ostree_server = &quot;https://ota-ce.example.com:8443/treehub&quot;
+packages_file = &quot;/usr/package.manifest&quot;
+
+[storage]
+type = &quot;filesystem&quot;
+path = &quot;/var/sota/&quot;
+uptane_metadata_path = &quot;metadata&quot;
+uptane_private_key_path = &quot;ecukey.der&quot;
+uptane_public_key_path = &quot;ecukey.pub&quot;
+tls_cacert_path = &quot;root.crt&quot;
+tls_pkey_path = &quot;pkey.pem&quot;
+tls_clientcert_path = &quot;client.pem&quot;
+
+[import]
+uptane_private_key_path = &quot;&quot;
+uptane_public_key_path = &quot;&quot;
+tls_cacert_path = &quot;/var/sota/root.crt&quot;
+tls_pkey_path = &quot;&quot;
+tls_clientcert_path = &quot;&quot;
+</code></pre>
+                        </div>
+                        
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Search</h3>
+    </div>
+
+    <div class="panel-body">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" role="search">
+            <div class="input-group">
+                <input type="search" name="q" class="form-control" placeholder="Search">
+                <input type="hidden" name="sitesearch" value="https://foundriesio.github.io/foundriesiov2/">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Categories</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/blockchain">blockchain (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/bluetooth">bluetooth (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/conferences">conferences (3)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/corporate">corporate (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/docker">docker (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/embedded">embedded (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/fota">fota (8)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/iot">iot (2)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/linux">linux (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/lmp">lmp (4)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/lwm2m">lwm2m (2)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/mcuboot">mcuboot (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/microplatform">microplatform (30)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/minutes">minutes (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/newsletter">newsletter (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/quickstart">quickstart (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/radio">radio (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/threats">threats (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/updates">updates (25)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/zephyr">zephyr (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/zephyr-news">zephyr-news (10)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/zmp">zmp (1)</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/alsa"><i class="fa fa-tags"></i> alsa</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/assistant"><i class="fa fa-tags"></i> assistant</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/att"><i class="fa fa-tags"></i> att</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/ble"><i class="fa fa-tags"></i> ble</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/blockchain"><i class="fa fa-tags"></i> blockchain</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/bugs"><i class="fa fa-tags"></i> bugs</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/container"><i class="fa fa-tags"></i> container</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/containers"><i class="fa fa-tags"></i> containers</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/crypto"><i class="fa fa-tags"></i> crypto</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/cve"><i class="fa fa-tags"></i> cve</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/decentralized"><i class="fa fa-tags"></i> decentralized</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/docker"><i class="fa fa-tags"></i> docker</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/docker-compose"><i class="fa fa-tags"></i> docker-compose</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/general"><i class="fa fa-tags"></i> general</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/google"><i class="fa fa-tags"></i> google</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/iot"><i class="fa fa-tags"></i> iot</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/k8s"><i class="fa fa-tags"></i> k8s</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/keys"><i class="fa fa-tags"></i> keys</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/kubernetes"><i class="fa fa-tags"></i> kubernetes</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/linux"><i class="fa fa-tags"></i> linux</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/lmp"><i class="fa fa-tags"></i> lmp</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/lte"><i class="fa fa-tags"></i> lte</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/lwm2m"><i class="fa fa-tags"></i> lwm2m</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/management"><i class="fa fa-tags"></i> management</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/mcuboot"><i class="fa fa-tags"></i> mcuboot</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/microplatform"><i class="fa fa-tags"></i> microplatform</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/open-source"><i class="fa fa-tags"></i> open-source</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/ota"><i class="fa fa-tags"></i> ota</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/portainer"><i class="fa fa-tags"></i> portainer</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/radio"><i class="fa fa-tags"></i> radio</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/resin"><i class="fa fa-tags"></i> resin</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/security"><i class="fa fa-tags"></i> security</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/update"><i class="fa fa-tags"></i> update</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/zephyr"><i class="fa fa-tags"></i> zephyr</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/zmp"><i class="fa fa-tags"></i> zmp</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+        
+<footer>
+    <div class="row">
+        <div class="small-12 columns">
+            <div class="contacts">
+                <div class="row">
+                    <div class="small-12 large-3 medium-3 columns">
+                        <i class="fa fa-map-marker"></i>
+                        CAMBRIDGE, UK
+                    </div>
+                    <div class="small-12 large-3 medium-3 columns">
+                        <i class="fa fa-flag"></i>
+                        BOULDER, CO USA
+                    </div>
+                    <div class="small-12 large-3 medium-3 columns">
+                        <a href=""><i class="fa fa-phone"></i></a>
+                        SUPPORT
+                    </div>
+                    <div class="small-12 large-3 medium-3 columns">
+                        <a href=""><i class="fa fa-envelope-o"></i></a>
+                        CONTACT US
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <div class="footerlinks">
+                <div class="small-12 large-3 medium-3 columns border-right">
+                    <h2>About Foundries.io</h2>
+                    <p>
+                        Foundries.io is changing the IoT landscape by delivering continuously
+                        updated software platforms for a secure, connected world.
+                    </p>
+                </div>
+
+                <div class="small-12 large-3 medium-3 columns border-right">
+                    <h2>Company</h2>
+                    <ul>
+                        <li><a href="https://foundriesio.github.io/foundriesiov2/">Home</a></li>
+                        <li><a href="https://foundriesio.github.io/foundriesiov2/">Careers</a></li>
+                        <li><a href="https://support.foundries.io/">Support</a></li>
+                        <li><a href="https://foundriesio.github.io/foundriesiov2/">Labs</a></li>
+                    </ul>
+                </div>
+
+                <div class="small-12 large-3 medium-3 columns border-right">
+                    <h2>Connect</h2>
+                    <ul>
+    	                <li><a href="https://twitter.com/foundriesio"><i class="fa fa-twitter fa-2x"></i></a>
+    	                    <a href="https://www.facebook.com/foundriesio"><i class="fa fa-facebook fa-2x"></i></a>
+                            <a href="https://github.com/opensourcefoundries"><i class="fa fa-github fa-2x"></i></a>
+    	                    <a href="https://foundriesio.slack.com/join/shared_invite/enQtMjUwNzA1MTc4NzA4LTI2YTc4YjUyMTY2NWE3NTQxOTJjYjY3M2NkNTVmYjM2M2JhZGYzNDM1Mzk4MzkxMDI5ZWNhOWUzMWVlYmI4NDE"><i class="fa fa-slack fa-2x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="small-12 large-3 medium-3 columns">
+                    <h2>Get Started Today</h2>
+                    <p>
+                        Get immediate access to microPlatform source and binary builds for
+                        today's most popular development boards by starting your evaluation subscription!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="copyright">Copyright 2018 Foundries.io All rights reserved</p>
+</footer>
+
+
+
+    </div>
+    
+
+    <script src="https://foundriesio.github.io/foundriesiov2/js/vendor/jquery.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/what-input.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/foundation.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/hoverIntent.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/superfish.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/morphext.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/wow.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/jquery.slicknav.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/waypoints.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/jquery.animateNumber.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/owl.carousel.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/jquery.responsiveTabs.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/retina.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/custom.js"></script>
+<script>
+jQuery(function($) {
+
+
+$('#responsiveTabsDemo').responsiveTabs({
+startCollapsed: 'accordion'
+});
+
+
+var script = document.createElement('script');
+script.src = "https://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+document.body.appendChild(script);
+});
+
+function initialize() {
+var map;
+var bounds = new google.maps.LatLngBounds();
+var mapOptions = {
+    mapTypeId: 'roadmap',
+    styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
+};
+
+
+map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+map.setTilt(45);
+
+
+var markers = [
+    ['Data Space, Ohio, United States', 39.98978,-83.00632],
+    ['CIX-IT, Frankfurt, Germany', 50.14537,8.74522],
+    ['AllExpand, Singapore, Asia-Pacific', 1.33709,103.75473]
+];
+
+
+var infoWindowContent = [
+    ['<div class="info_content">' +
+    '<h5>Data Space, Ohio, United States</h5>' +
+    '<p>Global leaders overcome injustice solutions sharing economy Global South. Social analysis forward-thinking vulnerable citizens frontline tackling, tackle gun control women and children Gandhi.</p>' +        '</div>'],
+    ['<div class="info_content">' +
+    '<h5>CIX-IT, Frankfurt, Germany</h5>' +
+    '<p>Global leaders overcome injustice solutions sharing economy Global South. Social analysis forward-thinking vulnerable citizens frontline tackling, tackle gun control women and children Gandhi.</p>' +        '</div>'],
+    ['<div class="info_content">' +
+    '<h5>AllExpand, Singapore, Asia-Pacific</h5>' +
+    '<p>Global leaders overcome injustice solutions sharing economy Global South. Social analysis forward-thinking vulnerable citizens frontline tackling, tackle gun control women and children Gandhi.</p>' +        '</div>']
+];
+
+
+var infoWindow = new google.maps.InfoWindow(), marker, i;
+
+
+for( i = 0; i < markers.length; i++ ) {
+    var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+    bounds.extend(position);
+    marker = new google.maps.Marker({
+        position: position,
+        map: map,
+        title: markers[i][0]
+    });
+
+    
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+            infoWindow.setContent(infoWindowContent[i][0]);
+            infoWindow.open(map, marker);
+        }
+    })(marker, i));
+
+    
+    map.fitBounds(bounds);
+}
+
+
+var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+    this.setZoom(2);
+    google.maps.event.removeListener(boundsListener);
+});
+
+}
+</script>
+
+
+  </body>
+</html>

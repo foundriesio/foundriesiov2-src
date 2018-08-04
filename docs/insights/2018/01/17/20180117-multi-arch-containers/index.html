@@ -1,0 +1,619 @@
+
+<!doctype html>
+<html class="no-js" lang="en-us">
+
+    <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simplify your life: multi-architecture docker containers</title>
+  <link rel="shortcut icon" href="https://foundriesio.github.io/foundriesiov2/images/icons/favicon.png" />
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/foundation.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/animate.min.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/morphext.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/owl.carousel.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/owl.theme.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/owl.transitions.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/slicknav.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/style.css" />
+</head>
+
+
+<body>
+
+
+<header class="alt-9">
+
+    
+<div class="top sticky">
+    <div class="row">
+        <div class="small-12 large-3 medium-3 columns">
+            <div class="logo">
+                <a href="https://foundriesio.github.io/foundriesiov2//index.html" title=""><img src="https://foundriesio.github.io/foundriesiov2//images/logo.png" alt="" title=""/></a>
+            </div>
+        </div>
+
+        <div class="small-12 large-9 medium-9 columns">
+
+            
+            <nav class="desktop-menu">
+                <ul class="sf-menu" id="navigation">
+                    <li ><a href="https://foundriesio.github.io/foundriesiov2/">HOME</a> </li>
+
+                    <li><a href="#" style="cursor:default">PRODUCTS</a>
+		 	            <ul>
+			                <li><a href="https://foundriesio.github.io/foundriesiov2/products/"> MICROPLATFORMS</a></li>
+			                <li><a href="https://foundriesio.github.io/foundriesiov2/pricing/"> PRICING</a></li>
+			                <li><a href="https://foundriesio.github.io/foundriesiov2/hardware/"> HARDWARE</a></li>
+		                </ul>
+		            </li>
+                    
+		            <li><a href="https://foundriesio.github.io/foundriesiov2/partners/">PARTNERS</a></li>
+		            <li><a href="https://foundriesio.github.io/foundriesiov2/insights/">INSIGHTS</a></li>
+                    <li><a href="#">ABOUT</a></li> <li><a href="https://app.foundries.io/login/?next=/ "> <i class="fa fa-cloud-upload"></i> ENGAGE</a>
+                        <ul>
+                            <li><a href="https://app.foundries.io/login/?next=/ "> DASHBOARD</a></li>
+                            <li><a href="https://forums.foundries.io"> FORUMS</a></li>
+                            <li><a href="https://support.foundries.io"> SUPPORT</a></li>
+                            <li><a href="https://join.slack.com/t/foundriesio/shared_invite/enQtMjUwNzA1MTc4NzA4LTI2YTc4YjUyMTY2NWE3NTQxOTJjYjY3M2NkNTVmYjM2M2JhZGYzNDM1Mzk4MzkxMDI5ZWNhOWUzMWVlYmI4NDE   "> SLACK</a></li>
+                            <li style="background: #ffaa00"><a href="https://app.foundries.io/login/?next=/ " style="color: #37485C"> GET STARTED</a></li>
+                        </ul>
+		            </li>
+                </ul>
+            </nav>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="message">
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="message-intro">
+                    <span class="message-line"></span>
+                    <p>FOUNDRIES.IO INSIGHTS</p>
+                    <span class="message-line"></span>
+                </div>
+                <h1 style="color: white">Technologies, News and Demonstrations</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="insights-post">
+
+                        <p class="text-muted text-uppercase mb-small text-right">January 17, 2018</p>
+
+                        <div id="post-content">
+                          <blockquote>
+<p>“The great thing about Docker is that your developers run the exact same container as what runs in production.”</p>
+</blockquote>
+
+<p>This is what the Docker hype is about, creating reproducibile environments for applications. The technology enables us to create lightweight, secure microservices which run on an array of SoCs that can be updated over the air in a matter of seconds. We believe that accelerating code delivery will ultimately reduce time to market. Hype aside, Docker has matured and has become a foundational building block of our microPlatforms.
+</p>
+
+<h2 id="complexity">Complexity</h2>
+
+<p>The microPlatforms are built to be architecture agnostic, meaning we don&rsquo;t favor one over the other. This ensures any user will have the same experience no matter which architecture they may choose. This is a complex problem to solve when it comes to Docker containers, as each image layer is built for a specific architecture. That means to use a Docker container, a user needs to know the architecture they will use, otherwise the container simply won&rsquo;t function at runtime. The basics of the problem we&rsquo;ve solved is outlined below:</p>
+
+<ul>
+<li>Container base images must be created for each architecture.</li>
+<li>A per architecture Dockerfile must be created to reference the proper base image.</li>
+<li>Users must <em>know</em> the right image to pull for the system they are currently using.</li>
+</ul>
+
+<p>On the surface, this doesn&rsquo;t seem so bad. In practice it&rsquo;s painful for users and a nightmare for documentation. Below is an example of how tedious and error prone documenting running a container on the microPlatform is</p>
+
+<p>arm:</p>
+
+<pre><code>docker run -dit --net=host --read-only --tmpfs=/var/run -v /home/osf/nginx-lwm2m.conf:/etc/nginx/nginx.conf --add-host=mgmt.foundries.io:127.0.0.1 --name nginx-coap-proxy opensourcefoundries/nginx:latest-arm
+</code></pre>
+
+<p>arm64:</p>
+
+<pre><code>docker run -dit --net=host --read-only --tmpfs=/var/run -v /home/osf/nginx-lwm2m.conf:/etc/nginx/nginx.conf --add-host=mgmt.foundries.io:127.0.0.1 --name nginx-coap-proxy opensourcefoundries/nginx:latest-arm64
+</code></pre>
+
+<p>amd64 (x86):</p>
+
+<pre><code>docker run -dit --net=host --read-only --tmpfs=/var/run -v /home/osf/nginx-lwm2m.conf:/etc/nginx/nginx.conf --add-host=mgmt.foundries.io:127.0.0.1 --name nginx-coap-proxy opensourcefoundries/nginx:latest-amd64
+</code></pre>
+
+<p>Wouldn&rsquo;t it be nice if one command just worked across all these architectures?</p>
+
+<h2 id="manifests">Manifests</h2>
+
+<p>Docker has realized this is a serious problem for the ecosystem, and have taken steps in the right direction to solve it. They have added a image manifest in the v2 specification[0] which includes an <code>architecture</code> field to map a image reference to a specific architecture. Now images can be created and linked to a manifest, creating a single point of entry for users to consume multi-architecture images. Lets take another look at our example above, but instead using a manifest.</p>
+
+<pre><code>docker run -dit --net=host --read-only --tmpfs=/var/run -v /home/osf/nginx-lwm2m.conf:/etc/nginx/nginx.conf --add-host=mgmt.foundries.io:127.0.0.1 --name nginx-coap-proxy opensourcefoundries/nginx:latest
+</code></pre>
+
+<p>One image reference to rule them all. The tag latest points to our image manifest, which in turn points to the image tags (i.e. latest-arm) for specific architectures. The result is a single entry point for our users, and sanity in our documentation.</p>
+
+<h2 id="building">Building</h2>
+
+<p>Architecture specific image layers need to be produced before an manifest can be created. Let&rsquo;s quickly dive into what is needed to do this, and discuss some limitations that Docker currently has.</p>
+
+<h3 id="base-images">Base Images</h3>
+
+<p>Take a look at your favorite Docker image, chances are the base image (FROM directive) is for a specific architecture. The solution to this problem is to create multi-architecture base images, to allow derivative images to inherit from. Therein lies the rub, most base images are not built for any other architecture other than the incubment amd64. We&rsquo;ve solved this problem by building and publishing our own base images for the architectures we support from upstream sources. Using the same manifest concept from above we can create multi-architecture base image based on upstream sources.</p>
+
+<h4 id="minideb">Minideb</h4>
+
+<p>Minideb[1] is a small image based on Debian designed for use in containers. We have created a CI server to rebuild these base images[2] for each architecture as the upstream changes. This allows us to quickly pick up the latest packages and security fixes and deliver them on multiple architectures seamlessly. Of course when the base images change, the dervative images must also be automatically rebuilt to ensure the security fixes flows downward.</p>
+
+<h4 id="alpine">Alpine</h4>
+
+<p>Alpine[3] Linux is a very minimal distribution, which makes it perfect for containers. The base images can be as small as 5MB, which helps keep the attack surfaces small, perfect for embedded hardware. The same principles above apply to our Alpine base images[4].</p>
+
+<h3 id="limitations">Limitations</h3>
+
+<p>Multi arch support is on the bleeding edge, so there are a few limitations to note.</p>
+
+<ul>
+<li>There is no offical tooling to create manifests.</li>
+<li>Images must be built on the native architecture[5], bin-fmt and other workarounds do <em>not</em> work.</li>
+<li>Manifest support requires Docker v1.12.6+</li>
+</ul>
+
+<p>[0] <a href="https://docs.docker.com/registry/spec/manifest-v2-1/">https://docs.docker.com/registry/spec/manifest-v2-1/</a></p>
+
+<p>[1] <a href="https://github.com/bitnami/minideb">https://github.com/bitnami/minideb</a></p>
+
+<p>[2]<a href="https://hub.docker.com/r/opensourcefoundries/minideb/">https://hub.docker.com/r/opensourcefoundries/minideb/</a></p>
+
+<p>[3] <a href="https://github.com/gliderlabs/docker-alpine">https://github.com/gliderlabs/docker-alpine</a></p>
+
+<p>[4] <a href="https://hub.docker.com/r/opensourcefoundries/alpine/">https://hub.docker.com/r/opensourcefoundries/alpine/</a></p>
+
+<p>[5] <a href="https://github.com/docker/cli/issues/327">https://github.com/docker/cli/issues/327</a></p>
+                        </div>
+                        
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Search</h3>
+    </div>
+
+    <div class="panel-body">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" role="search">
+            <div class="input-group">
+                <input type="search" name="q" class="form-control" placeholder="Search">
+                <input type="hidden" name="sitesearch" value="https://foundriesio.github.io/foundriesiov2/">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Categories</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/blockchain">blockchain (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/bluetooth">bluetooth (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/conferences">conferences (3)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/corporate">corporate (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/docker">docker (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/embedded">embedded (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/fota">fota (8)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/iot">iot (2)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/linux">linux (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/lmp">lmp (4)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/lwm2m">lwm2m (2)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/mcuboot">mcuboot (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/microplatform">microplatform (30)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/minutes">minutes (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/newsletter">newsletter (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/quickstart">quickstart (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/radio">radio (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/threats">threats (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/updates">updates (25)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/zephyr">zephyr (1)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/zephyr-news">zephyr-news (10)</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/categories/zmp">zmp (1)</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/alsa"><i class="fa fa-tags"></i> alsa</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/assistant"><i class="fa fa-tags"></i> assistant</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/att"><i class="fa fa-tags"></i> att</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/ble"><i class="fa fa-tags"></i> ble</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/blockchain"><i class="fa fa-tags"></i> blockchain</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/bugs"><i class="fa fa-tags"></i> bugs</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/container"><i class="fa fa-tags"></i> container</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/containers"><i class="fa fa-tags"></i> containers</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/crypto"><i class="fa fa-tags"></i> crypto</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/cve"><i class="fa fa-tags"></i> cve</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/decentralized"><i class="fa fa-tags"></i> decentralized</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/docker"><i class="fa fa-tags"></i> docker</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/docker-compose"><i class="fa fa-tags"></i> docker-compose</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/general"><i class="fa fa-tags"></i> general</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/google"><i class="fa fa-tags"></i> google</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/iot"><i class="fa fa-tags"></i> iot</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/k8s"><i class="fa fa-tags"></i> k8s</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/keys"><i class="fa fa-tags"></i> keys</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/kubernetes"><i class="fa fa-tags"></i> kubernetes</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/linux"><i class="fa fa-tags"></i> linux</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/lmp"><i class="fa fa-tags"></i> lmp</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/lte"><i class="fa fa-tags"></i> lte</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/lwm2m"><i class="fa fa-tags"></i> lwm2m</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/management"><i class="fa fa-tags"></i> management</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/mcuboot"><i class="fa fa-tags"></i> mcuboot</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/microplatform"><i class="fa fa-tags"></i> microplatform</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/open-source"><i class="fa fa-tags"></i> open-source</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/ota"><i class="fa fa-tags"></i> ota</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/portainer"><i class="fa fa-tags"></i> portainer</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/radio"><i class="fa fa-tags"></i> radio</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/resin"><i class="fa fa-tags"></i> resin</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/security"><i class="fa fa-tags"></i> security</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/update"><i class="fa fa-tags"></i> update</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/zephyr"><i class="fa fa-tags"></i> zephyr</a>
+            </li>
+            
+            <li><a href="https://foundriesio.github.io/foundriesiov2/tags/zmp"><i class="fa fa-tags"></i> zmp</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+        
+<footer>
+    <div class="row">
+        <div class="small-12 columns">
+            <div class="contacts">
+                <div class="row">
+                    <div class="small-12 large-3 medium-3 columns">
+                        <i class="fa fa-map-marker"></i>
+                        CAMBRIDGE, UK
+                    </div>
+                    <div class="small-12 large-3 medium-3 columns">
+                        <i class="fa fa-flag"></i>
+                        BOULDER, CO USA
+                    </div>
+                    <div class="small-12 large-3 medium-3 columns">
+                        <a href=""><i class="fa fa-phone"></i></a>
+                        SUPPORT
+                    </div>
+                    <div class="small-12 large-3 medium-3 columns">
+                        <a href=""><i class="fa fa-envelope-o"></i></a>
+                        CONTACT US
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <div class="footerlinks">
+                <div class="small-12 large-3 medium-3 columns border-right">
+                    <h2>About Foundries.io</h2>
+                    <p>
+                        Foundries.io is changing the IoT landscape by delivering continuously
+                        updated software platforms for a secure, connected world.
+                    </p>
+                </div>
+
+                <div class="small-12 large-3 medium-3 columns border-right">
+                    <h2>Company</h2>
+                    <ul>
+                        <li><a href="https://foundriesio.github.io/foundriesiov2/">Home</a></li>
+                        <li><a href="https://foundriesio.github.io/foundriesiov2/">Careers</a></li>
+                        <li><a href="https://support.foundries.io/">Support</a></li>
+                        <li><a href="https://foundriesio.github.io/foundriesiov2/">Labs</a></li>
+                    </ul>
+                </div>
+
+                <div class="small-12 large-3 medium-3 columns border-right">
+                    <h2>Connect</h2>
+                    <ul>
+    	                <li><a href="https://twitter.com/foundriesio"><i class="fa fa-twitter fa-2x"></i></a>
+    	                    <a href="https://www.facebook.com/foundriesio"><i class="fa fa-facebook fa-2x"></i></a>
+                            <a href="https://github.com/opensourcefoundries"><i class="fa fa-github fa-2x"></i></a>
+    	                    <a href="https://foundriesio.slack.com/join/shared_invite/enQtMjUwNzA1MTc4NzA4LTI2YTc4YjUyMTY2NWE3NTQxOTJjYjY3M2NkNTVmYjM2M2JhZGYzNDM1Mzk4MzkxMDI5ZWNhOWUzMWVlYmI4NDE"><i class="fa fa-slack fa-2x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="small-12 large-3 medium-3 columns">
+                    <h2>Get Started Today</h2>
+                    <p>
+                        Get immediate access to microPlatform source and binary builds for
+                        today's most popular development boards by starting your evaluation subscription!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="copyright">Copyright 2018 Foundries.io All rights reserved</p>
+</footer>
+
+
+
+    </div>
+    
+
+    <script src="https://foundriesio.github.io/foundriesiov2/js/vendor/jquery.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/what-input.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/foundation.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/hoverIntent.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/superfish.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/morphext.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/wow.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/jquery.slicknav.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/waypoints.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/jquery.animateNumber.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/owl.carousel.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/jquery.responsiveTabs.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/vendor/retina.min.js"></script>
+<script src="https://foundriesio.github.io/foundriesiov2/js/custom.js"></script>
+<script>
+jQuery(function($) {
+
+
+$('#responsiveTabsDemo').responsiveTabs({
+startCollapsed: 'accordion'
+});
+
+
+var script = document.createElement('script');
+script.src = "https://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+document.body.appendChild(script);
+});
+
+function initialize() {
+var map;
+var bounds = new google.maps.LatLngBounds();
+var mapOptions = {
+    mapTypeId: 'roadmap',
+    styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
+};
+
+
+map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+map.setTilt(45);
+
+
+var markers = [
+    ['Data Space, Ohio, United States', 39.98978,-83.00632],
+    ['CIX-IT, Frankfurt, Germany', 50.14537,8.74522],
+    ['AllExpand, Singapore, Asia-Pacific', 1.33709,103.75473]
+];
+
+
+var infoWindowContent = [
+    ['<div class="info_content">' +
+    '<h5>Data Space, Ohio, United States</h5>' +
+    '<p>Global leaders overcome injustice solutions sharing economy Global South. Social analysis forward-thinking vulnerable citizens frontline tackling, tackle gun control women and children Gandhi.</p>' +        '</div>'],
+    ['<div class="info_content">' +
+    '<h5>CIX-IT, Frankfurt, Germany</h5>' +
+    '<p>Global leaders overcome injustice solutions sharing economy Global South. Social analysis forward-thinking vulnerable citizens frontline tackling, tackle gun control women and children Gandhi.</p>' +        '</div>'],
+    ['<div class="info_content">' +
+    '<h5>AllExpand, Singapore, Asia-Pacific</h5>' +
+    '<p>Global leaders overcome injustice solutions sharing economy Global South. Social analysis forward-thinking vulnerable citizens frontline tackling, tackle gun control women and children Gandhi.</p>' +        '</div>']
+];
+
+
+var infoWindow = new google.maps.InfoWindow(), marker, i;
+
+
+for( i = 0; i < markers.length; i++ ) {
+    var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+    bounds.extend(position);
+    marker = new google.maps.Marker({
+        position: position,
+        map: map,
+        title: markers[i][0]
+    });
+
+    
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+            infoWindow.setContent(infoWindowContent[i][0]);
+            infoWindow.open(map, marker);
+        }
+    })(marker, i));
+
+    
+    map.fitBounds(bounds);
+}
+
+
+var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+    this.setZoom(2);
+    google.maps.event.removeListener(boundsListener);
+});
+
+}
+</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Minutes on Foundries.io</title>
+    <link>https://foundriesio.github.io/foundriesiov2/categories/minutes/</link>
+    <description>Recent content in Minutes on Foundries.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://foundriesio.github.io/foundriesiov2/categories/minutes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jan 3, 2018 - microPlatform OpenCall meeting minutes</title>
+      <link>https://foundriesio.github.io/foundriesiov2/insights/2018/01/03/20180103-opencall/</link>
+      <pubDate>Wed, 03 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/insights/2018/01/03/20180103-opencall/</guid>
+      <description>&lt;p&gt;OSF is now 3 months old and the microPlatforms are reaching full speed.  We are working on a few final work items before we move from limited beta to a public beta state for the Zephyr and Linux microPlatforms.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,42 @@
+<!--  NAVBAR -->
+<div class="top sticky">
+    <div class="row">
+        <div class="small-12 large-3 medium-3 columns">
+            <div class="logo">
+                <a href="{{ .Site.BaseURL }}/index.html" title=""><img src="{{ .Site.BaseURL }}/images/logo.png" alt="" title=""/></a>
+            </div>
+        </div>
+
+        <div class="small-12 large-9 medium-9 columns">
+
+            <!--  NAVIGATION MENU AREA -->
+            <nav class="desktop-menu">
+                <ul class="sf-menu" id="navigation">
+                    <li ><a href="{{ .Site.BaseURL }}">HOME</a> </li>
+
+                    <li><a href="#" style="cursor:default">PRODUCTS</a>
+		 	            <ul>
+			                <li><a href="{{ .Site.BaseURL }}products/"> MICROPLATFORMS</a></li>
+			                <li><a href="{{ .Site.BaseURL }}pricing/"> PRICING</a></li>
+			                <li><a href="{{ .Site.BaseURL }}hardware/"> HARDWARE</a></li>
+		                </ul>
+		            </li>
+                    <!-- TODO: add a li rule for current item   <li class="current-menu-item"> -->
+		            <li><a href="{{ .Site.BaseURL }}partners/">PARTNERS</a></li>
+		            <li><a href="{{ .Site.BaseURL }}insights/">INSIGHTS</a></li>
+                    <li><a href="#">ABOUT</a></li> <li><a href="https://app.foundries.io/login/?next=/ "> <i class="fa fa-cloud-upload"></i> ENGAGE</a>
+                        <ul>
+                            <li><a href="https://app.foundries.io/login/?next=/ "> DASHBOARD</a></li>
+                            <li><a href="https://forums.foundries.io"> FORUMS</a></li>
+                            <li><a href="https://support.foundries.io"> SUPPORT</a></li>
+                            <li><a href="https://join.slack.com/t/foundriesio/shared_invite/enQtMjUwNzA1MTc4NzA4LTI2YTc4YjUyMTY2NWE3NTQxOTJjYjY3M2NkNTVmYjM2M2JhZGYzNDM1Mzk4MzkxMDI5ZWNhOWUzMWVlYmI4NDE   "> SLACK</a></li>
+                            <li style="background: #ffaa00"><a href="https://app.foundries.io/login/?next=/ " style="color: #37485C"> GET STARTED</a></li>
+                        </ul>
+		            </li>
+                </ul>
+            </nav>
+            <!--  END OF NAVIGATION MENU AREA -->
+        </div>
+    </div>
+</div>
+<!-- END OF NAVBAR AREA -->
