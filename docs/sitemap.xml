@@ -248,6 +248,11 @@
   </url>
   
   <url>
+    <loc>https://foundriesio.github.io/foundriesiov2/labs/ble-dongle/</loc>
+    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/insights/2018/01/08/20180110-ble-dongle/</loc>
     <lastmod>2018-01-08T00:00:00+00:00</lastmod>
   </url>
@@ -480,6 +485,12 @@
   <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/kubernetes/</loc>
     <lastmod>2018-01-17T13:07:31+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://foundriesio.github.io/foundriesiov2/labs/</loc>
+    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

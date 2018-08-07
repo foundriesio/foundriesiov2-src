@@ -1,65 +1,56 @@
-
 <!doctype html>
 <html class="no-js" lang="{{ .Site.LanguageCode }}">
 
-    {{ partial "head.html" . }}
+{{ partial "head.html" . }}
 
 <body>
 
-<!--  HEADER -->
-<header class="alt-9">
+    <!--  HEADER -->
+    <header class="alt-9">
 
-    {{ partial "navbar.html" . }}
+        {{ partial "navbar.html" . }}
 
-    <div class="message">
-        <div class="row">
-            <div class="small-12 columns">
-                <div class="message-intro">
-                    <span class="message-line"></span>
-                    <p>FOUNDRIES.IO INSIGHTS</p>
-                    <span class="message-line"></span>
+        <div class="message">
+            <div class="row">
+                <div class="small-12 columns">
+                    <div class="message-intro">
+                        <span class="message-line"></span>
+                        <p>FOUNDRIES.IO INSIGHTS</p>
+                        <span class="message-line"></span>
+                    </div>
+                    <h1 style="color: white">Technologies, News and Demonstrations</h1>
                 </div>
-                <h1 style="color: white">Technologies, News and Demonstrations</h1>
             </div>
         </div>
-    </div>
-</header>
-<!--  END OF HEADER -->
+    </header>
+    <!--  END OF HEADER -->
 
     <div id="content">
         <div class="container">
             <div class="row">
                 <!-- *** LEFT COLUMN *** -->
 
-                <div class="col-md-9" id="blog-listing-medium">
+                <div class="small-12 large-10 medium-10 columns" id="blog-listing-medium">
 
-                    {{ $paginator := .Paginate (where .Data.Pages "Type" "insights") }}
-                    {{ range $paginator.Pages }}
+                    {{ $paginator := .Paginate (where .Data.Pages "Type" "insights") }} {{ range $paginator.Pages }}
                     <section class="post">
                         <div class="row">
-                            <div class="col-md-4">
-                              <div class="image">
-                                  <a href="{{ .Permalink }}">
+                            <div class="small-10 large-3 medium-2 columns">
+                                <div class="image">
+                                    <a href="{{ .Permalink }}">
                                       {{ if .Params.banner }}
                                       <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-responsive" alt="">
                                       {{ else }}
                                       <img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
                                       {{ end }}
                                   </a>
-                              </div>
+                                </div>
                             </div>
-                            <div class="col-md-8">
+                            <div class="small-12 large-8 medium-10 columns">
                                 <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
                                 <div class="clearfix">
                                     <p class="author-category">
-                                      {{ if isset .Params "author" }}
-                                      {{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a>
-                                      {{ end }}
-                                      {{ if isset .Params "categories" }}
-                                      {{ if gt (len .Params.categories) 0 }}
-                                      in <a href="{{ $.Site.BaseURL }}categories/{{ index .Params.categories 0 | urlize | lower }}">{{ index .Params.categories 0 }}</a>
-                                      {{ end }}
-                                      {{ end }}
+                                        {{ if isset .Params "author" }} {{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a> {{ end }} {{ if isset .Params "categories" }} {{ if gt (len .Params.categories) 0 }} in <a href="{{ $.Site.BaseURL }}categories/{{ index .Params.categories 0 | urlize | lower }}">{{ index .Params.categories 0 }}</a> {{ end }} {{ end }}
 
                                     </p>
                                     <p class="date-comments">
@@ -79,9 +70,7 @@
                         <li class="previous"><a href="{{ .Paginator.Prev.URL }}">&larr; {{ i18n "newer" }}</a></li>
                         {{ else }}
                         <li class="previous disabled"><a href="#">&larr; {{ i18n "newer" }}</a></li>
-                        {{ end }}
-
-                        {{ if .Paginator.HasNext }}
+                        {{ end }} {{ if .Paginator.HasNext }}
                         <li class="next"><a href="{{ .Paginator.Next.URL }}">{{ i18n "older" }} &rarr;</a></li>
                         {{ else }}
                         <li class="next disabled"><a href="#">{{ i18n "older" }} &rarr;</a></li>
@@ -95,11 +84,11 @@
                 <!-- *** RIGHT COLUMN ***
    _________________________________________________________ -->
 
-                <div class="col-md-3">
+                <div class="small-12 large-2 medium-12 columns">
 
                     <!-- *** MENUS AND WIDGETS *** -->
 
-                    {{ partial "sidebar.html" . }}
+                    {{ partial "sidebar_insights.html" . }}
 
                     <!-- *** MENUS AND FILTERS END *** -->
 
@@ -117,10 +106,11 @@
 
     {{ partial "footer.html" . }}
 
-</div>
-<!-- /#all -->
+    </div>
+    <!-- /#all -->
 
-{{ partial "scripts.html" . }}
+    {{ partial "scripts.html" . }}
 
 </body>
+
 </html>

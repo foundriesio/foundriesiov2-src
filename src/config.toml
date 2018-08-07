@@ -16,6 +16,7 @@ defaultContentLanguage = "en"
 
 [Permalinks]
     insights = "/insights/:year/:month/:day/:filename/"
+    labs = "/labs/:filename/"
 
 [params.widgets]
     categories = true
