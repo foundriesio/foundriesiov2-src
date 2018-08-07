@@ -1,10 +1,19 @@
 publishDir = "../docs"
-
 baseURL = "https://foundriesio.github.io/foundriesiov2/"
 title = "Foundries.io"
-languageCode = "en-us"
+
+# Enable disqus by entering your short name
+disqusShortname = "foundriesio"
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = "UA-111281311-1"
+
+# Define the number of posts per page
+paginate = 10
+
 # Site language. Available translations in the theme's `/i18n` directory.
+languageCode = "en-us"
 defaultContentLanguage = "en"
+
 [params]
     defaultKeywords = ["microPlatform", "osf", "updates", "ota", "ble", "mesh",
             "raspberrypi3", "rpi", "rtos", "linux", "docker", "containers",
