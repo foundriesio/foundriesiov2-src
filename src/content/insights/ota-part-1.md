@@ -2,7 +2,7 @@
 title = "How We Chose a Software Update System"
 date = "2018-05-25"
 tags = ["ota", "open source"]
-categories = ["FOTA"]
+categories = ["FOTA", "linux microplatform"]
 banner = "img/banners/ota.png"
 +++
 

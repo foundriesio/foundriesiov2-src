@@ -2,7 +2,7 @@
 title = "Securing OTA Community Edition"
 date = "2018-07-12"
 tags = ["ota", "open source"]
-categories = ["FOTA"]
+categories = ["FOTA", "linux microplatform"]
 banner = "img/banners/ota.png"
 author = "Andy Doan"
 +++
@@ -96,7 +96,7 @@ in your deployment. Deploying this is easy:
 
 The web interface will also now be secured with HTTP basic authentication.
 The username is ignored, so you can enter anything into that value. The
-password is `BadT0ken5`. 
+password is `BadT0ken5`.
 **NOTE**: *This only works with Firefox. It seems like the Chrome browser
 doesn't want to send credentials over an insecure HTTP connection.*
 

@@ -2,7 +2,7 @@
 title = "microPlatform update 0.19"
 date = "2018-05-25"
 tags = ["linux", "zephyr", "update", "cve", "bugs"]
-categories = ["updates", "microPlatform"]
+categories = ["updates", "linux microplatform", "zephyr microplatform", "mp containers"]
 banner = "img/banners/update.png"
 +++
 
@@ -48,7 +48,7 @@ carries many important new features.
 
 #### Features
 
-##### OpenAMP: 
+##### OpenAMP:
 - OpenAMP (and its libmetal dependency) was merged to
 enable message-based cross-core communication. This
 carries BSD-3-Clause and BSD-2-Clause licenses.
@@ -58,7 +58,7 @@ A usage sample is in samples/subsys/openamp:
 http://docs.zephyrproject.org/samples/subsys/ipc/openamp/README.html
 
 
-##### New Zephyr SDK: 
+##### New Zephyr SDK:
 - Zephyr SDK version 0.9.3 has been released. Linux
 users should upgrade using the updated installation
 instructions:
@@ -66,7 +66,7 @@ instructions:
 http://docs.zephyrproject.org/getting_started/installation_linux.html
 
 
-##### Non-volatile Storage (NVS): 
+##### Non-volatile Storage (NVS):
 - A long-running pull request to add a new storage
 mechanism for persistent data was merged. The new Non-
 Volatile Storage (NVS) subsystem is meant as an
@@ -84,7 +84,7 @@ introduced greater abstraction over the storage
 backend.
 
 
-##### k_call_stacks_analyze() deprecated: 
+##### k_call_stacks_analyze() deprecated:
 - The k_call_stacks_analyze() API was deprecated. Users
 are recommended to switch to using k_thread_foreach():
 
@@ -94,7 +94,7 @@ http://docs.zephyrproject.org/api/kernel_api.html#_CPPv216k_thread_foreach18k_th
 dumping routine for each thread.)
 
 
-##### Userspace changes: 
+##### Userspace changes:
 - Numerous userspace-related features and optimizations
 were merged.
 
@@ -154,7 +154,7 @@ to a kernel object. Userspace threads may revoke
 access to their own objects with k_object_release().
 
 
-##### TCP TIME_WAIT config changes: 
+##### TCP TIME_WAIT config changes:
 - Configuration for how long the Zephyr TCP stack remains
 in the TIME_WAIT state during connection closure is
 now managed through the single
@@ -167,7 +167,7 @@ and CONFIG_NET_TCP_2MSL_TIME options. Applications
 using the old options will need updates.
 
 
-##### Architectures: 
+##### Architectures:
 - Support for Arm's v8-M cores continues, with support
 for secure fault handling on Cortex-M23 along with
 other behind-the-scenes work on memory access
@@ -184,12 +184,12 @@ an NXP LPC-based SoC to boot a slave Cortex M0+ core.
 lpcxpresso54114_m0.)
 
 
-##### Bluetooth: 
+##### Bluetooth:
 - The Mesh shell now supports the recently-merged
 persistent storage mechanism.
 
 
-##### Device Tree and Drivers: 
+##### Device Tree and Drivers:
 - Zephyr now supports the automobile Controller Area
 Network (CAN) protocol. The API is specified in
 include/can.h. The new API is userspace-aware.
@@ -224,7 +224,7 @@ can be enabled using CONFIG_WIFI_WINC1500.  A driver
 was added for ILI9340 LCD displays.
 
 
-##### External Libraries: 
+##### External Libraries:
 - The OpenThread library version was bumped to db4759cc,
 to pull in some bug fixes.
 
@@ -233,7 +233,7 @@ enabling WiFI on that chip. This is a BSD-3-Clause
 licensed HAL.
 
 
-##### Kernel: 
+##### Kernel:
 - In a highly significant but (hopefully mostly) behind-
 the-scenes change, the scheduler was rewritten:
 
@@ -249,7 +249,7 @@ Creation and termination of existing threads is
 blocked via irq_lock() while the routine is executing.
 
 
-##### Libraries: 
+##### Libraries:
 - The red-black tree implementation in include/misc/rb.h
 now has RB_FOR_EACH() and RB_FOR_EACH_CONTAINER()
 macros, for iterating over red-black tree nodes and
@@ -268,14 +268,14 @@ more information.
 There is also now support for the POSIX mutex APIs.
 
 
-##### Miscellaneous: 
+##### Miscellaneous:
 - A new API was added for a singly-linked-list like type
 which allows storing two flags in each node, by
 relying on 4-byte pointer aligment. For details, refer
 to include/misc/sflist.h.
 
 
-##### Networking: 
+##### Networking:
 - The LWM2M subsystem now includes support for marking
 resources as optional. Any resources so marked are not
 initialized by the core LWM2M subsystem; applications
@@ -294,7 +294,7 @@ filtering and performing energy detection scans when
 OpenThread is in use.
 
 
-##### Samples: 
+##### Samples:
 - New samples include:
 
 - a RPL border router application, samples/net/rpl_border_router:
@@ -311,14 +311,14 @@ OpenThread is in use.
   http://docs.zephyrproject.org/samples/can/README.html
 
 
-##### Scripts: 
+##### Scripts:
 - The flash, debug, and debugserver handlers now use a
 new meta-tool called "west". This is still a behind-
 the-scenes change; further work expected before the
 v1.12 release will add documentation for this tool.
 
 
-##### Testing: 
+##### Testing:
 - The effort adding descriptions, cleanups, and other
 improvements to Zephyr's test cases to use them from a
 higher-level test management system continues.
@@ -326,19 +326,19 @@ higher-level test management system continues.
 
 #### Bugs
 
-##### Drivers: 
+##### Drivers:
 - Numerous drivers cleanups and bug fixes went in,
 affecting various devices.
 
 
 
-##### ARM SoCs: 
+##### ARM SoCs:
 - Various Arm-specific fixes went in as part of the v8-M
 work.
 
 
 
-##### Bluetooth: 
+##### Bluetooth:
 - A new CONFIG_BT_MESH_IVU_DIVIDER went in, which fixes
 an issue related to re-initializing initialization
 vectors. Various other Bluetooth cleanups and fixes
@@ -347,13 +347,13 @@ unused variables and documentation fixes.
 
 
 
-##### Documentation: 
+##### Documentation:
 - Numerous fixes and additional Doxygen descriptions
 went into the test cases.
 
 
 
-##### Networking: 
+##### Networking:
 - Networking fixes include net-app fixes for TLS
 warnings, source IPv4 address selection, build fixes
 with TCP disabled, and byte order handling; ethernet
@@ -363,7 +363,7 @@ fixes.
 
 
 
-##### Build system: 
+##### Build system:
 - Various build fixes, error handling and Kconfig
 dependency management improvements,
 k_call_stacks_analyze() removals, and more were added
@@ -376,7 +376,7 @@ to the samples.
 
 #### Features
 
-##### Minor Kconfig updates: 
+##### Minor Kconfig updates:
 - The application-specific Kconfig file was updated to
 follow along with upstream changes removing 'option
 env' symbols.
@@ -390,13 +390,13 @@ env' symbols.
 
 #### Features
 
-##### Minor Kconfig updates: 
+##### Minor Kconfig updates:
 - The application-specific Kconfig file was updated to
 follow along with upstream changes removing 'option
 env' symbols.
 
 
-##### Optional values changes: 
+##### Optional values changes:
 - Minor changes were made following upstream API breaks
 which added optional resources to LWM2M objects.
 
@@ -413,5 +413,3 @@ No changes have gone into the LMP since 0.18.
 - No changes have gone into the LMP since 0.18.
 
 ## Components
-
-

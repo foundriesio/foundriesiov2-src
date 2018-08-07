@@ -2,7 +2,7 @@
 title = "Update an embedded device with LwM2M"
 date = "2018-01-17"
 tags = ["lwm2m", "ota", "update", "open source"]
-categories = ["LwM2M", "FOTA"]
+categories = ["zephyr microplatform", "zephyr", "fota"]
 banner = "img/banners/lwm2m.png"
 +++
 

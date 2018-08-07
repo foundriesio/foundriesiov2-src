@@ -2,7 +2,7 @@
 title = "ELC / Open IoT Summit 2018 Slides now available"
 date = "2018-03-15"
 tags = ["linux", "zephyr", "docker", "microPlatform"]
-categories = ["conferences","iot","microPlatform"]
+categories = ["conferences", "zephyr microplatform", "zephyr", "fota", "linux microplatform", "demos"]
 banner = "img/banners/elc2018.png"
 +++
 

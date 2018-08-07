@@ -2,7 +2,7 @@
 title = "How To Manage LMP Containers"
 date = "2018-01-17T13:50:46+02:00"
 tags = ["linux", "docker", "microPlatform"]
-categories = ["quickstart","linux","microPlatform"]
+categories = ["mp containers"]
 banner = "img/banners/docker.png"
 +++
 

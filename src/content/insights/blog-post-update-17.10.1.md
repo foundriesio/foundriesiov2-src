@@ -2,7 +2,7 @@
 title = "microPlatform update 17.10.1"
 date = "2017-10-13"
 tags = ["linux", "zephyr", "update", "cve", "bugs"]
-categories = ["updates", "microPlatform"]
+categories = ["updates", "linux microplatform", "zephyr microplatform", "mp containers"]
 banner = "img/banners/update.png"
 +++
 

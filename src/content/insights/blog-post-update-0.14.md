@@ -2,7 +2,7 @@
 title = "microPlatform update 0.14"
 date = "2018-04-18"
 tags = ["linux", "zephyr", "update", "cve", "bugs"]
-categories = ["updates", "microPlatform"]
+categories = ["updates", "linux microplatform", "zephyr microplatform", "mp containers"]
 banner = "img/banners/update.png"
 +++
 
@@ -46,7 +46,7 @@ Zephyr updates from 0.12 cycle, no MCUboot changes
 
 #### Features
 
-##### SPI API rework and finalization: 
+##### SPI API rework and finalization:
 - The SPI API (in include/spi.h) has been re-worked and
 finalized. All in-tree users were upgraded to the new
 API. The old SPI API, and all of its implementations,
@@ -56,7 +56,7 @@ available from the OSF blog:
 https://opensourcefoundries.com/blog/2018/04/11/zephyr-news-20180411/#important-changes
 
 
-##### VLAN for Ethernet: 
+##### VLAN for Ethernet:
 - VLAN support was added for Ethernet network
 interfaces. Initial support is provided for mcux,
 native POSIX, and Atmel E70. The SLIP driver also has
@@ -75,7 +75,7 @@ ethernet files now live in their own directory,
 net/ip/l2/ethernet.
 
 
-##### Red/black trees: 
+##### Red/black trees:
 - A new red/black balanced binary tree implementation
 was added; the API is available in include/misc/rb.h.
 Like the linked list types, the structure is
@@ -86,19 +86,19 @@ a doubly linked list on most architectures is
 approximately an additional 2-2.5 KB.
 
 
-##### Completion of DTS support for I2C and SPI on STM32: 
+##### Completion of DTS support for I2C and SPI on STM32:
 - All STM32-based boards now use device tree for I2C and
 SPI peripherals.
 
 
-##### Bluetooth generalizations: 
+##### Bluetooth generalizations:
 - Continuing the effort to generalize the core Bluetooth
 subsystem across SoCs, the Bluetooth "ticker" timing
 API now includes a generic hal/ticker.h file, which
 abstracts out SoC specific definitions.
 
 
-##### Driver updates: 
+##### Driver updates:
 - New driver support includes SPI on nRF52, an interrupt
 in transfer callback on USB HID, USB CDC EEM support
 for encapsulating Ethernet packets over a USB
@@ -106,13 +106,13 @@ transport, and GPIO triggering for the ST LSM6DSL
 accelerometer and IMU.
 
 
-##### Boards: 
+##### Boards:
 - New boards include the SiFive HiFive1 and Nordic nRF52
 Thingy:52 (PCA20020).  Ethernet is now enabled by
 default on the sam_e70_xplained board.
 
 
-##### Speeding up CI: 
+##### Speeding up CI:
 - An effort is underway to reduce the amount of time
 spent in CI. To that end, an additional upstream CI build slave
 was added, some duplicative test coverage on qemu_x86
@@ -120,7 +120,7 @@ and qemu_cortex_m32 was eliminated, and other
 optimizations were performed.
 
 
-##### Boot banner changes: 
+##### Boot banner changes:
 - The boot banner now prints the git version (based on
 git describe) and hash, but timestamps were removed
 from it by default to increase the reproducibility of
@@ -130,7 +130,7 @@ The git version does not work properly for out of tree
 Zephyr applications; details are available at https://github.com/zephyrproject-rtos/zephyr/issues/7044.
 
 
-##### User mode memory pools: 
+##### User mode memory pools:
 - A new memory pool implementation which is compatible
 with use from user mode threads was merged; the API is
 available in include/misc/mempool.h. This
@@ -144,7 +144,7 @@ with sys_mem_pool_alloc() and sys_mem_pool_free(),
 respectively.
 
 
-##### Network interface management: 
+##### Network interface management:
 - Network statistics collection is now per-interface.
 
 The network shell command "net iface" can now enable
@@ -159,25 +159,25 @@ speed, but is not limited to it.
 
 #### Bugs
 
-##### GPIO port H on STM32L0: 
+##### GPIO port H on STM32L0:
 - Support for enabling GPIO port H on STM32L0 was fixed.
 
 
 
-##### Sub-region access on ARM MPUs: 
+##### Sub-region access on ARM MPUs:
 - Support accessing sub-region attributes on ARM MPUs
 was fixed.
 
 
 
-##### Bluetooth Mesh fixes: 
+##### Bluetooth Mesh fixes:
 - A pair of Bluetooth mesh fixes were merged, including
 a null dereference and an issue related to enabling
 node identity advertising.
 
 
 
-##### Soft float fix: 
+##### Soft float fix:
 - The behavior of the CONFIG_FP_SOFTABI option was
 fixed. It now generates floating point instructions,
 rather than turning them off, which it was doing
@@ -185,26 +185,26 @@ previously.
 
 
 
-##### Temperature channel for nRF5 TEMP: 
+##### Temperature channel for nRF5 TEMP:
 - The temperature sensor channel for the nRF TEMP IP
 block was fixed; it is now SENSOR_CHAN_DIE_TEMP.
 
 
 
-##### k_thread_create() stack size check: 
+##### k_thread_create() stack size check:
 - A fix was merged for k_thread_create(), which now
 properly checks the provided stack size on systems
 which enforce power of two sizes.
 
 
 
-##### POSIX fixes: 
+##### POSIX fixes:
 - POSIX fixes for pthread_cancel and timer_gettime were
 merged.
 
 
 
-##### Test fixes and cleanups: 
+##### Test fixes and cleanups:
 - Dozens of commits cleaning up and fixing the test
 cases were merged as part of an ongoing effort to
 standardize the test system, as tracked in
@@ -247,7 +247,7 @@ OSF Unified Linux Kernel updated to the 4.14.33 stable release.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - OSF Unified Linux Kernel updated to 4.14.33.
 
 
@@ -259,7 +259,7 @@ OSF Unified Linux Kernel updated to the 4.14.33 stable release.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Added support for custom garage target version and url.
 Aktualizr updated for the kRejectAll and metadata check fixes.
 

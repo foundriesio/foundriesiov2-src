@@ -2,7 +2,7 @@
 title = "microPlatform update 0.11"
 date = "2018-03-20"
 tags = ["linux", "zephyr", "update", "cve", "bugs"]
-categories = ["updates", "microPlatform"]
+categories = ["updates", "linux microplatform", "zephyr microplatform", "mp containers"]
 banner = "img/banners/update.png"
 +++
 
@@ -47,7 +47,7 @@ options, saving approximately 4 KB.
 
 #### Features
 
-##### Zephyr API change: 
+##### Zephyr API change:
 - The main stack pointer on ARM targets is now set with
 __set_MSP instead of _MspSet. The latter has been
 removed from Zephyr; the former is available from
@@ -56,7 +56,7 @@ CMSIS and will work with new and old Zephyr trees.
 
 #### Bugs
 
-##### Arduino 101 build fix: 
+##### Arduino 101 build fix:
 - The arduino_101 build was fixed by fixing the .conf
 overlay directory on Zephyr targets.
 
@@ -67,7 +67,7 @@ overlay directory on Zephyr targets.
 
 #### Features
 
-##### Version 1.11.0: 
+##### Version 1.11.0:
 - This merges the Zephyr v1.11.0 release into the OSF
 tree. This is the last commit which will be drawn from
 the v1.11 development series. The next commit in this
@@ -77,23 +77,23 @@ based on a v1.11 release candidate, only stabilization
 changes and fixes have been merged.
 
 
-##### FRDM-K64F testing: 
+##### FRDM-K64F testing:
 - The ARM based FRDM-K64F board is now build-tested by
 default in sanitycheck. This will help avoid build
 regressions for more complex features, such as those
 used by Zephyr's userspace support.
 
 
-##### Linux Foundation Bluetooth company ID: 
+##### Linux Foundation Bluetooth company ID:
 - Bluetooth Mesh now uses the Linux Foundation company
 ID.
 
 
-##### UART6 for 96b_carbon: 
+##### UART6 for 96b_carbon:
 - UART6 support was added to 96b_carbon.
 
 
-##### POSIX semaphore API: 
+##### POSIX semaphore API:
 - A POSIX API for semaphores was merged, continuing the
 POSIX API compatibility support effort.
 
@@ -106,7 +106,7 @@ POSIX API compatibility support effort.
 
 #### Features
 
-##### Flash savings: 
+##### Flash savings:
 - Unnecessary Bluetooth options were disabled, saving
 approximately 4KB of flash.
 
@@ -119,7 +119,7 @@ approximately 4KB of flash.
 
 #### Features
 
-##### Flash savings: 
+##### Flash savings:
 - Unnecessary Bluetooth options were disabled, saving
 approximately 4KB of flash.
 
@@ -136,5 +136,3 @@ No changes have gone into the LMP since 0.10.
 - No changes have gone into the LMP since 0.10.
 
 ## Components
-
-

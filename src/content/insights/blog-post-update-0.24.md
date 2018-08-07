@@ -2,7 +2,7 @@
 title = "microPlatform update 0.24"
 date = "2018-07-12"
 tags = ["linux", "zephyr", "update", "cve", "bugs"]
-categories = ["updates", "microPlatform"]
+categories = ["updates", "linux microplatform", "zephyr microplatform", "mp containers"]
 banner = "img/banners/update.png"
 +++
 
@@ -42,14 +42,14 @@ heading to v1.2.0.
 
 #### Features
 
-##### New default PEM file selection: 
+##### New default PEM file selection:
 - For Zephyr, the default signature file is now set to
 the root-rsa-2048.pem file in the root of the MCUboot
 project.  This avoids a cryptic error when compiling
 MCUboot out-of-the-box.
 
 
-##### Temporarily enable IRQs in boot_uart_fifo_init(): 
+##### Temporarily enable IRQs in boot_uart_fifo_init():
 - Due to recent scheduler changes, if
 CONFIG_MULTITHREADING is disabled, main() is called
 with interrupts locked.  Nordic has introduced a
@@ -60,19 +60,19 @@ will be reverted when the issue in Zephyr is
 addressed.
 
 
-##### CONFIG_SYS_POWER_MANAGEMENT disabled by default: 
+##### CONFIG_SYS_POWER_MANAGEMENT disabled by default:
 - Power management requires multithreading and other
 kernel features that are disabled in MCUboot, so
 it was disabled to avoid interrupts being confused.
 
 
-##### Use of k_fifo replaced with sys_slist: 
+##### Use of k_fifo replaced with sys_slist:
 - The k_fifo_* primitives are not available when
 multithreading is disabled, and were replaced with
 sys_slist_* equivalents.
 
 
-##### Several changes to serial boot support: 
+##### Several changes to serial boot support:
 - The serial boot common code was refactored to allow
 better platform abstraction, text size reductions and
 fixed unit tests for MyNewt.  A buffer overflow, build
@@ -82,12 +82,12 @@ getting triggered post image load were also addressed.
 
 #### Bugs
 
-##### Zephyr build fix with ECDSA: 
+##### Zephyr build fix with ECDSA:
 - A Zephyr build error with ECDSA enabled was fixed.
 
 
 
-##### Several __ASSERT() checks fixed: 
+##### Several __ASSERT() checks fixed:
 - When CONFIG_MCUBOOT_SERIAL was enabled, several
 __ASSERT() checks were looking for incorrect
 values. This has been fixed.
@@ -99,7 +99,7 @@ values. This has been fixed.
 
 #### Features
 
-##### Redundant "default n" removed from Kconfig: 
+##### Redundant "default n" removed from Kconfig:
 - A series of Kconfig-related patches removed all
 redundant default "n" settings across the entire
 Zephyr tree.  This change *shouldn't* affect behavior;
@@ -108,7 +108,7 @@ affecting Kconfig files a bit more difficult to merge
 for this cycle.
 
 
-##### Console subsystem refactoring: 
+##### Console subsystem refactoring:
 - The console driver/subsystem went through a fairly
 large refactor to remove the dependency on a FIFO-
 based console input abstraction. This allows
@@ -121,7 +121,7 @@ Applications using the old configuration name will
 need updates.
 
 
-##### Arches: 
+##### Arches:
 - Initial Cortex M4 support was added for the i.MX
 6SoloX SoC. It's a hybrid multi-core processor
 composed by one Cortex A9 core and one Cortex M4 core.
@@ -165,7 +165,7 @@ Nordic and STM32 SoCs can now use Segger's RTT
 protocol for console output, in addition to UART.
 
 
-##### Bluetooth: 
+##### Bluetooth:
 - Controller support was added for the Nordic nRF52810.
 
 A new Bluetooth Mesh node sample was added in
@@ -191,7 +191,7 @@ cryptographic functions or the ones provided by the BT
 controller.
 
 
-##### Boards: 
+##### Boards:
 - A new "shields" configuration was added to establish
 connector flags for compatibility checks.  Arduino
 compatible serial, I2C and SPI were the first shield
@@ -207,7 +207,7 @@ The I2C ports of several nRF-based boards were
 enabled.
 
 
-##### Build: 
+##### Build:
 - An LLVM backend and a clang toolchain variant were
 added to support building with llvm (included with
 many popular Linux distributions). Initial testing was
@@ -225,14 +225,14 @@ like so:
 set_property(GLOBAL PROPERTY CSTD c11)
 
 
-##### Device Tree: 
+##### Device Tree:
 - Nordic boards moved I2C enablement, SDA and SCL pin
 configuration, and LED / button definitions into DTS.
 
 STM32F7-pinctrl added definitions for USART/UARTs.
 
 
-##### Documentation: 
+##### Documentation:
 - Information about the websocket server API was added
 to Zephyr's documentation. For details, see:
 
@@ -271,7 +271,7 @@ Information on the newly-supported gPTP protocol was
 added to the networking documentation.
 
 
-##### Drivers: 
+##### Drivers:
 - STM32F2 and STM32F7 received clock_control, flash,
 GPIO, pinmux, UART, entrophy and interrupt_controller
 drivers.
@@ -301,7 +301,7 @@ added which supports a blink period from 41ms to
 10667ms and a brightness value from 0 to 100%.
 
 
-##### External: 
+##### External:
 - The NXP iMX6 FreeRTOS BSP was imported to add Zephyr
 support on iMX6SX processors (exclusively on the
 Cortex M4 core), and to speed up the development
@@ -323,7 +323,7 @@ available here:
 https://github.com/apache/mynewt-mcumgr
 
 
-##### Kernel: 
+##### Kernel:
 - Back in Zephyr 1.12, the old scheduler's thread
 queueing code was replaced with the choice of a "dumb"
 list or a balanced tree.  The old multi-queue
@@ -335,7 +335,7 @@ implementation was reintroduced, and can be enabled
 using CONFIG_SCHED_MULTIQ.
 
 
-##### Miscellaneous: 
+##### Miscellaneous:
 - The logging subsystem saw many new features merged,
 including: support for multiple backends, improving
 real-time performance by deferring logging to a
@@ -345,7 +345,7 @@ level, instance level). The console backend was added
 as the first backend example.
 
 
-##### Networking: 
+##### Networking:
 - gPTP (Precision Time Protocol) support was added to
 according to the IEEE 802.1AS-2011 standard.  To
 enable it, use CONFIG_NET_GPTP. Note: at this time,
@@ -364,7 +364,7 @@ are CONFIG_LLMNR_RESOLVER and CONFIG_LLMNR_RESPONDER.
 The implementation is in subsys/net/lib/dns.
 
 
-##### Samples: 
+##### Samples:
 - Socket API-based samples for echo_client and
 echo_server were added to Zephyr as well as a simple
 logger sample illustrating the new capabilities of the
@@ -377,7 +377,7 @@ A sample application for testing the NXP PCA9633 LED
 driver was added.
 
 
-##### Scripts: 
+##### Scripts:
 - The Kconfiglib project in Zephyr saw a couple of
 updates:
 
@@ -414,7 +414,7 @@ version v1.4.2.
 
 #### Bugs
 
-##### Arches: 
+##### Arches:
 - The ARM/NXP MPU code was cleaned up a bit to avoid
 configuring out-of-bound MPU regions.  Also, the ARM
 MPU code had several Zephyr defines replaced with
@@ -426,7 +426,7 @@ to ensure the svc instruction exists.
 
 
 
-##### Bluetooth: 
+##### Bluetooth:
 - Bluetooth Mesh now depends on CONFIG_BT_BROADCASTER
 and CONFIG_BT_OBSERVER, as they are necessary to
 implement Mesh devices.  Several other Mesh-related
@@ -450,14 +450,14 @@ it's ready by disabling "HCI reset" via a quirk.
 
 
 
-##### Boards: 
+##### Boards:
 - The BlueNRG-MS Bluetooth configuration had to be fixed
 on the disco_l475_iot1 board.  This includes SPI3
 usage, SYSCLK adjustments, and a few build warnings.
 
 
 
-##### Build: 
+##### Build:
 - The gen_isr_tables script received several updates for
 simplification and dead code removal.
 
@@ -468,12 +468,12 @@ logic and/or "default application" behaviour on Windows.
 
 
 
-##### Device Tree: 
+##### Device Tree:
 - STM32F4 saw corrected pin assignment of node usart6@0.
 
 
 
-##### Drivers: 
+##### Drivers:
 - RTC syscall changes required a build error fix.
 
 A build error was addressed for intel_s1000 which uses
@@ -528,7 +528,7 @@ and has been fixed.
 
 
 
-##### External: 
+##### External:
 - PWM related nrfx_config entries for nRF52840 were
 merged.
 
@@ -541,7 +541,7 @@ bad clock waveform.
 
 
 
-##### Networking: 
+##### Networking:
 - The "net app" layer has historically been the
 combination of 2 separate but useful parts: 1) a
 library to set up client and server connections
@@ -572,7 +572,7 @@ structure.
 
 
 
-##### Samples: 
+##### Samples:
 - Several changes were applied to the Bluetooth Mesh
 nRF52 on/off level lighting sample at
 samples/boards/nrf52/mesh/onoff_level_lighting_vnd_app.
@@ -582,7 +582,7 @@ LP3943 LED controller to test the 12 on-board LEDs.
 
 
 
-##### Scripts: 
+##### Scripts:
 - The extract_dts_includes script was refactored for
 better maintainability; some false information
 messages were also removed.
@@ -603,7 +603,7 @@ messages were also removed.
 
 #### Features
 
-##### WCN14A2A support as modem-overlay.conf: 
+##### WCN14A2A support as modem-overlay.conf:
 - Support for the WCN14A2A LTE-M modem was refactored
 into a configuration fragment file named
 modem-overlay.conf.
@@ -611,7 +611,7 @@ modem-overlay.conf.
 
 #### Bugs
 
-##### Stack overflow fixed with DTLS enabled: 
+##### Stack overflow fixed with DTLS enabled:
 - An overflow of the network management stack observed
 with DTLS enabled has been fixed by increasing its
 stack size to 1024B in that configuration.
@@ -631,5 +631,3 @@ URL used for authentication in lmp-device-register was updated.
 - Updated sources of published containers.
 
 ## Components
-
-

@@ -2,7 +2,7 @@
 title = "Using AT&T's IoT Dev Kit"
 date = "2018-04-11"
 tags = ["lwm2m", "LTE", "AT&T", "ota", "update", "open source"]
-categories = ["LwM2M", "FOTA"]
+categories = ["FOTA", "demos"]
 banner = "img/banners/lwm2m.png"
 +++
 

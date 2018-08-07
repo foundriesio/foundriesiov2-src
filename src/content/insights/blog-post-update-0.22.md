@@ -2,7 +2,7 @@
 title = "microPlatform update 0.22"
 date = "2018-06-21"
 tags = ["linux", "zephyr", "update", "cve", "bugs"]
-categories = ["updates", "microPlatform"]
+categories = ["updates", "linux microplatform", "zephyr microplatform", "mp containers"]
 banner = "img/banners/update.png"
 +++
 
@@ -91,7 +91,7 @@ Core layer updates based on the latest Yocto master changes.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Acpica updated to 20180508.
 Curl updated to 7.60.0.
 Dtc updated to 1.4.6.
@@ -120,7 +120,7 @@ Wget updated to 1.19.5.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Added lshw B.02.18 recipe.
 Fwts updated to V18.05.00.
 Htop updated to 2.2.0.
@@ -138,7 +138,7 @@ Nodejs updated to 8.11.2.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Python3-docker updated to 3.4.0.
 Python3-docker-pycreds updated to 0.3.0.
 

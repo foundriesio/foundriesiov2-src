@@ -2,7 +2,7 @@
 title = "microPlatform update 0.17"
 date = "2018-05-10"
 tags = ["linux", "zephyr", "update", "cve", "bugs"]
-categories = ["updates", "microPlatform"]
+categories = ["updates", "linux microplatform", "zephyr microplatform", "mp containers"]
 banner = "img/banners/update.png"
 +++
 
@@ -39,7 +39,7 @@ heading towards 1.2.0 release, samples compatibility updates.
 
 #### Features
 
-##### Configuration system overhaul: 
+##### Configuration system overhaul:
 - The bootloader's configuration system was generalized
 across its ports into a single
 mcuboot_config/mcuboot_config.h abstraction.
@@ -49,7 +49,7 @@ file was added to the porting guide (doc/PORTING.md).
 
 #### Bugs
 
-##### Mynewt unit tests: 
+##### Mynewt unit tests:
 - The unit tests on the Mynewt target were fixed.
 
 
@@ -59,7 +59,7 @@ file was added to the porting guide (doc/PORTING.md).
 
 #### Features
 
-##### Retpolines on x86: 
+##### Retpolines on x86:
 - x86 CPUs affected by Spectre v2 now support retpolines
 when invoking interrupt and exception handlers, during
 thread entry, and when invoking syscall handlers.
@@ -68,7 +68,7 @@ These changes also saw the removal of the (unused)
 _far_jump() and _far_call() routines.
 
 
-##### LED and Button Definition Moves: 
+##### LED and Button Definition Moves:
 - This continues the long-term project to move device
 configuration from Kconfig to Device Tree.
 
@@ -88,13 +88,13 @@ has reverted the NXP-specific conversion patches until
 functionality is restored upstream.
 
 
-##### Deprecated __stack macro removed: 
+##### Deprecated __stack macro removed:
 - The __stack macro, which was deprecated in favor of
 K_STACK_DEFINE before v1.11 was released, has been
 removed.
 
 
-##### mbedTLS update to fix remote execution holes: 
+##### mbedTLS update to fix remote execution holes:
 - The mbedTLS cryptography library was updated from
 version 2.7.0 to version 2.8.0, addressing CVEs
 2018-0488 and 2018-0487. These are remote execution
@@ -102,12 +102,12 @@ vulnerabilities that could occur when TLS or DTLS is
 in use.
 
 
-##### k_thread_cancel() deprecated: 
+##### k_thread_cancel() deprecated:
 - The k_thread_cancel() API is deprecated. Applications
 should use k_thread_abort().
 
 
-##### Generic storage partition rename: 
+##### Generic storage partition rename:
 - The NFFS flash partition available on many boards,
 which was previously aliased to nffs_partition, has
 been renamed to storage_partition, to reflect its
@@ -120,7 +120,7 @@ configuration option to access this partition will
 need updates.
 
 
-##### Architectures: 
+##### Architectures:
 - The ARC architecture now supports
 CONFIG_STACK_SENTINEL, which can help diagnose stack
 overflow issues.
@@ -136,7 +136,7 @@ is provided for DMA, I2S, UART, GPIO, USB, and I2C,
 with board support via intel_s1000_crb.
 
 
-##### Boards: 
+##### Boards:
 - I2C driver support was enabled for all the official
 nRF5 boards provided by Nordic Semiconductor.
 
@@ -144,7 +144,7 @@ The bbc_microbit now supports flash partitions for
 mcuboot and on-chip storage.
 
 
-##### Build system: 
+##### Build system:
 - A variety of improvements were merged into the build
 system.
 
@@ -175,7 +175,7 @@ boards now respecting BOARD_ROOT, and silencing of
 verbose compiler check messages.
 
 
-##### Drivers: 
+##### Drivers:
 - There is a new API for LEDs in include/led.h. (Zephyr
 had an API for strips of LEDs; this new API is for
 controlling individual lights.) The initial API
@@ -202,14 +202,14 @@ The MCUX GPIO driver now uses device tree.
 A GPIO driver for NXP i.MX SoCs was merged.
 
 
-##### Device Tree: 
+##### Device Tree:
 - Bindings were added for the DesignWare CAVS multilevel
 interrupt controller.
 
 GPIO nodes are now present on all Kinetis SoCs.
 
 
-##### Documentation: 
+##### Documentation:
 - The search results pages for the online Zephyr
 documentation now have much cleaner output.
 
@@ -218,7 +218,7 @@ was re-worked and improved as part of the transition
 towards a Python-based menuconfig alternative.
 
 
-##### Kernel: 
+##### Kernel:
 - The kernel's scheduler interface was significantly
 refactored and cleaned up. The scheduler's system
 interface was decreased to twelve functions; notably,
@@ -243,7 +243,7 @@ respectively k_object_alloc() and k_object_free().
 They are currently only callable from supervisor mode.
 
 
-##### Libraries: 
+##### Libraries:
 - The singly-linked list implementation in
 include/misc/slist.h is now implemented in terms of a
 new macro metaprogramming header,
@@ -264,7 +264,7 @@ bitfields. This results in a net savings of read-only
 data at a slight increase in text size.
 
 
-##### Samples: 
+##### Samples:
 - A sample application demonstrating the BLE broadcaster
 role by providing Apple iBeacon functionality was
 added in samples/bluetooth/ibeacon.
@@ -279,7 +279,7 @@ and DTLS. The README was updated with new instructions
 for building the sample.
 
 
-##### Testing: 
+##### Testing:
 - The effort to prepare Zephyr's tests for inclusion in
 a test management system continues.
 
@@ -301,7 +301,7 @@ The test suite core now includes support for skipping
 tests when they are not supported.
 
 
-##### USB: 
+##### USB:
 - There was a fair bit of USB-related activity which
 spanned areas in the tree.
 
@@ -332,7 +332,7 @@ drivers.
 
 #### Bugs
 
-##### Networking fixes: 
+##### Networking fixes:
 - There were several networking-related bug fixes: a
 fragment double-free, a build error for HTTP clients,
 a buffer overflow in the hostname storage area, an ARP
@@ -341,26 +341,26 @@ of ICMPv6 packet payload length and checksum fields.
 
 
 
-##### pthread_cond_signal on cooperative threads: 
+##### pthread_cond_signal on cooperative threads:
 - Calling pthread_cond_signal() from a cooperative
 thread no longer yields.
 
 
 
-##### SMP fixes for irq_lock() shim: 
+##### SMP fixes for irq_lock() shim:
 - The irq_lock() compatibility layer on SMP
 configurations was fixed, avoiding potential deadlocks
 when swapping away from a thread that holds the lock.
 
 
 
-##### Kernel priority validation: 
+##### Kernel priority validation:
 - The kernel scheduler's validation of priority levels
 was fixed.
 
 
 
-##### Driver capability check: 
+##### Driver capability check:
 - A bug which allowed user mode code to force the kernel
 to execute code at address 0x0 has been fixed by
 introducing an extra validation step at every syscall
@@ -368,14 +368,14 @@ entry point.
 
 
 
-##### I2C user buffer copy fix: 
+##### I2C user buffer copy fix:
 - A race condition which could potentially allow user
 space code to modify memory containing I2C messages
 before the kernel-level handler runs was closed.
 
 
 
-##### ARC threading fixes: 
+##### ARC threading fixes:
 - Issues preventing successful thread context switch
 during exception return on ARC were fixed. The fatal
 error handler on that architecture also no longer
@@ -384,13 +384,13 @@ thread.
 
 
 
-##### BusFault fixes on ARMv8-M: 
+##### BusFault fixes on ARMv8-M:
 - The BusFault Status Register bits on ARMv8-M MCUs are
 now properly cleared when that fault occurs.
 
 
 
-##### Bluetooth Mesh fixes: 
+##### Bluetooth Mesh fixes:
 - The Bluetooth Mesh implementation continues to become
 more robust, with three bug fixes affecting
 initialization vectors and node identity advertising,
@@ -398,21 +398,21 @@ and two other cleanups.
 
 
 
-##### Boot banner fixed for out of tree applications: 
+##### Boot banner fixed for out of tree applications:
 - The boot banner now correctly prints the Zephyr "git
 describe" output when the application is outside the
 Zephyr tree.
 
 
 
-##### Device tree compiler warning fixes: 
+##### Device tree compiler warning fixes:
 - A variety of warnings emitted when using dtc version
 1.4.6 are now fixed. These fixes appear to be
 backwards-compatible.
 
 
 
-##### USB fixes: 
+##### USB fixes:
 - A variety of USB-related bug fixes went in, including
 a fix for the DesignWare driver's excessive generation
 of zero-length packets, a missing byte order
@@ -421,7 +421,7 @@ descriptor, and other fixes and cleanups.
 
 
 
-##### LSM6DSL build fix: 
+##### LSM6DSL build fix:
 - The ST LSM6DSL inertial module driver was converted to
 use the new SPI API, following the removal of the old
 API.
@@ -433,7 +433,7 @@ API.
 
 #### Features
 
-##### LED GPIO controller portability check: 
+##### LED GPIO controller portability check:
 - The sample now checks for old-style (LED_GPIO_PORT)
 and new-style (LED_GPIO_CONTROLLER) device names when
 finding the GPIO device controlling the user LED.
@@ -447,7 +447,7 @@ finding the GPIO device controlling the user LED.
 
 #### Features
 
-##### LED GPIO controller portability check: 
+##### LED GPIO controller portability check:
 - The sample now checks for old-style (LED_GPIO_PORT)
 and new-style (LED_GPIO_CONTROLLER) device names when
 finding the GPIO device controlling the user LED.
@@ -465,5 +465,3 @@ No changes have gone into the LMP since 0.16.
 - No changes have gone into the LMP since 0.16.
 
 ## Components
-
-

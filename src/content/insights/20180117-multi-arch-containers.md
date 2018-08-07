@@ -2,7 +2,7 @@
 title = "Simplify your life: multi-architecture docker containers"
 date = "2018-01-17T13:07:31+02:00"
 tags = ["docker","containers", "kubernetes", "k8s", "resin"]
-categories = ["docker"]
+categories = ["mp containers", "demos"]
 banner = "img/banners/docker.png"
 +++
 

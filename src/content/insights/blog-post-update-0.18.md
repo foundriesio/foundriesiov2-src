@@ -2,7 +2,7 @@
 title = "microPlatform update 0.18"
 date = "2018-05-18"
 tags = ["linux", "zephyr", "update", "cve", "bugs"]
-categories = ["updates", "microPlatform"]
+categories = ["updates", "linux microplatform", "zephyr microplatform", "mp containers"]
 banner = "img/banners/update.png"
 +++
 
@@ -49,7 +49,7 @@ updates for new Bluetooth APIs.
 
 #### Features
 
-##### New Watchdog API: 
+##### New Watchdog API:
 - Continuing the Zephyr Long Term Support (LTS) goal of
 having stable driver APIs, the watchdog.h interface
 was overhauled and re-worked. The wdt_enable(),
@@ -64,7 +64,7 @@ family's watchdog peripheral. This driver uses device
 tree.
 
 
-##### Menuconfig is now in Python: 
+##### Menuconfig is now in Python:
 - The previously experimental Python menuconfig
 implementation has replaced the C tools, following the
 addition of symbol search and jump-to-definition
@@ -91,7 +91,7 @@ cmd.exe or Powershell shells, without any additional
 Unix-specific toolchains or environments.
 
 
-##### Storage API changes: 
+##### Storage API changes:
 - A variety of storage-related API changes were merged.
 These mostly are used to enable new features.
 
@@ -125,7 +125,7 @@ changes, the fs/fs_interface.h API no longer assumes
 that either FAT or NFFS file systems are being used.
 
 
-##### Bluetooth bt_storage removed in favor of settings API: 
+##### Bluetooth bt_storage removed in favor of settings API:
 - The bt_storage API was removed, as it provided
 features now enabled by the settings subsystem using
 CONFIG_BT_SETTINGS. Users of this API will need
@@ -154,7 +154,7 @@ applications to set their identity addresses in a
 manner similar to the bt_settings API.
 
 
-##### Arches: 
+##### Arches:
 - ARMv8-M MCUs with the Main Extension now have support
 for hardware-based main stack overflow protection. The
 relevant Kconfig option to enable the feature is
@@ -164,14 +164,14 @@ x86 CPUs can now grant user space access to the heap
 when using the newlib C library.
 
 
-##### Documentation: 
+##### Documentation:
 - In something of a meta development, documentation
 was added for how to write Zephyr documentation:
 
 http://docs.zephyrproject.org/contribute/doc-guidelines.html
 
 
-##### Drivers and Device Tree: 
+##### Drivers and Device Tree:
 - The YAML device tree bindings for SPI now include an
 optional cs-gpios property, which can be used to
 generate GPIO chip select definitions.
@@ -220,7 +220,7 @@ v17. This was used to add a shim driver using Zephyr's
 dma.h API.
 
 
-##### Networking: 
+##### Networking:
 - The LWM2M implementation was significantly refactored
 and cleaned up.  Once nice benefit of this work is a
 3KB RAM savings when running an LWM2M client.
@@ -234,7 +234,7 @@ thanks to an optimization in the size of its _unused
 field.
 
 
-##### Testing: 
+##### Testing:
 - The test case documentation now describes best
 practices for developing a test suite, and how to list
 and skip test cases; see http://docs.zephyrproject.org/subsystems/test/ztest.html
@@ -247,18 +247,18 @@ added to the test suite.
 
 #### Bugs
 
-##### Build fix on sam_e70: 
+##### Build fix on sam_e70:
 - A build issue on sam_e70 was fixed.
 
 
 
-##### ARM MPU buffer validation fix: 
+##### ARM MPU buffer validation fix:
 - An off-by-one error in the ARM MPU buffer validation
 routine was fixed.
 
 
 
-##### Bluetooth Mesh sequence number fixes: 
+##### Bluetooth Mesh sequence number fixes:
 - A dedicated routine for incrementing the sequence
 number in the Bluetooth Mesh implementation was added;
 in addition to fixing race conditions, this is used by
@@ -270,20 +270,20 @@ calculation in the Friend queue was fixed.
 
 
 
-##### Drivers fixes: 
+##### Drivers fixes:
 - Fixes to the TI ADC108S102 driver; VL53L0X, LSM6DSL,
 and HTS221 sensor drivers; and QMSI UART driver were
 merged.
 
 
 
-##### Sensor DTS fixes on NXP boards: 
+##### Sensor DTS fixes on NXP boards:
 - Fixes for using the FXOS8700, FXAS21002, and MCR20A
 drivers on NXP boards were merged.
 
 
 
-##### User mode heap access fix when using newlib: 
+##### User mode heap access fix when using newlib:
 - User mode heap access was fixed for applications which
 use the newlib C library. User mode applications also
 no longer allow the stack sentinel debugging feature
@@ -293,33 +293,33 @@ stack protection mechanisms.
 
 
 
-##### Traffic class fixes: 
+##### Traffic class fixes:
 - The networking traffic class map from packet
 priorities to traffic classes was fixed to comply with
 the IEEE 802.1Q specification.
 
 
 
-##### Websocket Coverity fixes: 
+##### Websocket Coverity fixes:
 - The websocket implementation was refactored to avoid
 unnecessary tricky calculations, resolving Coverity
 warnings.
 
 
 
-##### http_client fixes for TLS: 
+##### http_client fixes for TLS:
 - The http_client sample was fixed in cases when TLS is
 enabled; previously, this application overflowed a
 stack in this use case.
 
 
 
-##### smp_svr build fixed: 
+##### smp_svr build fixed:
 - The mcumgr smp_svr sample's build was fixed.
 
 
 
-##### Network echo fixes: 
+##### Network echo fixes:
 - The echo_client and echo_server sample applications
 saw a few fixes; echo_server works again to test
 OpenThread on frdm_kw41z, and echo_client was fixed on
@@ -327,7 +327,7 @@ cc2520.
 
 
 
-##### DTS fixups: 
+##### DTS fixups:
 - Various fixes and refactoring patches were merged to
 the extract_dts_includes.py script, which generates
 code used by Zephyr from the final device tree
@@ -340,7 +340,7 @@ produced during an application build.
 
 #### Features
 
-##### Bluetooth identity API change: 
+##### Bluetooth identity API change:
 - The sample was updated to use a new bt_set_id_addr()
 routine, following the upstream removal of the
 bt_settings API.
@@ -354,7 +354,7 @@ bt_settings API.
 
 #### Features
 
-##### Bluetooth identity API change: 
+##### Bluetooth identity API change:
 - The sample was updated to use a new bt_set_id_addr()
 routine, following the upstream removal of the
 bt_settings API.
@@ -380,7 +380,7 @@ OSF Unified Linux Kernel updated to the 4.16.8 stable release.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - OSF Unified Linux Kernel updated to 4.16.8.
 
 
@@ -392,7 +392,7 @@ OSF Unified Linux Kernel updated to the 4.16.8 stable release.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - New machine configuration for ls1043ardb-be, ls1046ardb-be,
 ls1088ardb-be, ls2088ardb-be.
 
@@ -405,7 +405,7 @@ ls1088ardb-be, ls2088ardb-be.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Added optee-examples bitbake recipe, which builds the OPTEE
 examples trusted applications.
 
@@ -418,7 +418,7 @@ examples trusted applications.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Yp-tools updated to 4.2.3.
 Added wpan-tools recipe.
 Wireshark updated to 2.4.6.
@@ -433,7 +433,7 @@ Mbedtls updated to 2.8.0.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Updated qmic, qrtr and rmtfs to the latest version available.
 
 
@@ -445,7 +445,7 @@ Mbedtls updated to 2.8.0.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - rpi-config extended to cover more commonly used config
 variables.
 
@@ -458,7 +458,7 @@ variables.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Aktualizr now validates /var/sota file access permission before
 initializing the service.
 Aktualizr can now publish the target network information to the

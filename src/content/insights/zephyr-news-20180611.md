@@ -275,4 +275,3 @@ Testing (13):
 - [33aa9053](https://github.com/zephyrproject-rtos/zephyr/commit/33aa90539a48325e6813f039ff0f68f4baeb0fb2) tests: kernel: fifo_timeout: Do not potentially dereference NULL ptrs
 - [144a4390](https://github.com/zephyrproject-rtos/zephyr/commit/144a4390b5736900b28c1ddad4be258b1addcb08) tests: fix the bug of sentinel.conf
 - [a91f1e5e](https://github.com/zephyrproject-rtos/zephyr/commit/a91f1e5e142a223b7408858465c0012bd89dc1be) tests: modify the test conditions for emsk_em7d_v22
-

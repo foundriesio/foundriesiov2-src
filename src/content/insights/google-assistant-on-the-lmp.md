@@ -1,7 +1,7 @@
 +++
 author = "Alan Bennett"
 banner = "/uploads/2018/05/09/assistant.png"
-categories = ["lmp"]
+categories = ["mp containers", "linux microplatform"]
 date = "2018-05-09T19:48:23+00:00"
 tags = ["Google", "Assistant", "Alsa"]
 title = "Google Assistant on the LmP"

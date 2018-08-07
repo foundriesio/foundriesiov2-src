@@ -263,11 +263,6 @@
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/insights/2018/01/03/20180103-opencall/</loc>
-    <lastmod>2018-01-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/insights/2017/12/13/blog-post-update-0.4/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
   </url>
@@ -345,12 +340,6 @@
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/bluetooth/</loc>
-    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/bugs/</loc>
     <lastmod>2018-07-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -381,12 +370,6 @@
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/corporate/</loc>
-    <lastmod>2018-03-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/crypto/</loc>
     <lastmod>2018-02-23T13:07:31+02:00</lastmod>
     <priority>0</priority>
@@ -405,26 +388,20 @@
   </url>
   
   <url>
+    <loc>https://foundriesio.github.io/foundriesiov2/categories/demos/</loc>
+    <lastmod>2018-04-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/docker/</loc>
     <lastmod>2018-05-08T06:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/docker/</loc>
-    <lastmod>2018-01-17T13:07:31+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/docker-compose/</loc>
     <lastmod>2018-05-08T06:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/embedded/</loc>
-    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -465,12 +442,6 @@
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/iot/</loc>
-    <lastmod>2018-03-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/k8s/</loc>
     <lastmod>2018-01-17T13:07:31+02:00</lastmod>
     <priority>0</priority>
@@ -501,20 +472,14 @@
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/linux/</loc>
-    <lastmod>2018-01-17T13:50:46+02:00</lastmod>
+    <loc>https://foundriesio.github.io/foundriesiov2/categories/linux-microplatform/</loc>
+    <lastmod>2018-07-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/lmp/</loc>
     <lastmod>2018-04-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/lmp/</loc>
-    <lastmod>2018-05-09T19:48:23+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -526,12 +491,6 @@
   
   <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/lwm2m/</loc>
-    <lastmod>2018-04-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/lwm2m/</loc>
     <lastmod>2018-04-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -549,32 +508,14 @@
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/mcuboot/</loc>
-    <lastmod>2018-01-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/microplatform/</loc>
     <lastmod>2018-03-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/microplatform/</loc>
+    <loc>https://foundriesio.github.io/foundriesiov2/categories/mp-containers/</loc>
     <lastmod>2018-07-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/minutes/</loc>
-    <lastmod>2018-01-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/newsletter/</loc>
-    <lastmod>2018-03-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -597,19 +538,7 @@
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/quickstart/</loc>
-    <lastmod>2018-01-17T13:50:46+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/radio/</loc>
-    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/radio/</loc>
     <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -629,12 +558,6 @@
   <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/</loc>
     <lastmod>2018-05-09T19:48:23+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/threats/</loc>
-    <lastmod>2018-01-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -663,6 +586,12 @@
   </url>
   
   <url>
+    <loc>https://foundriesio.github.io/foundriesiov2/categories/zephyr-microplatform/</loc>
+    <lastmod>2018-07-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/categories/zephyr-news/</loc>
     <lastmod>2018-07-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -671,12 +600,6 @@
   <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/zmp/</loc>
     <lastmod>2018-07-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/zmp/</loc>
-    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -2,7 +2,7 @@
 title = "microPlatform update 0.6"
 date = "2018-01-10"
 tags = ["linux", "zephyr", "update", "cve", "bugs"]
-categories = ["updates", "microPlatform"]
+categories = ["updates", "linux microplatform", "zephyr microplatform", "mp containers"]
 banner = "img/banners/update.png"
 +++
 
@@ -65,7 +65,7 @@ D6:E7 in the MAC addresses must be changed to D4:E7.
 
 #### Bugs
 
-##### LWM2M packet fix: 
+##### LWM2M packet fix:
 - The LWM2M stack includes a fix which prevents a packet
 which may need to be retransmitted from being freed
 until after this retransmission has completed, if necessary.
@@ -77,7 +77,7 @@ until after this retransmission has completed, if necessary.
 
 #### Features
 
-##### CONFIG_NET_L2_BT_ZEP1656 disabled: 
+##### CONFIG_NET_L2_BT_ZEP1656 disabled:
 - This obscure option was used to preserve compatibility
 contrary to the Bluetooth specification with
 implementation characteristics in the Linux kernel. Now
@@ -86,7 +86,7 @@ v4.14, which has fixes for these characteristics, the
 option can be disabled.
 
 
-##### dm-hawkbit-mqtt cleanups and optimizations: 
+##### dm-hawkbit-mqtt cleanups and optimizations:
 - Various confusing implementation details in this
 application have been fixed and otherwise cleaned
 up. The resulting application now requires less memory.
@@ -94,7 +94,7 @@ up. The resulting application now requires less memory.
 
 #### Bugs
 
-##### Packet pool workaround for MQTT: 
+##### Packet pool workaround for MQTT:
 - The dm-hawkbit-mqttt sample now uses an extra packet
 pool when the underlying link layer is Bluetooth. This
 keeps the network stack working in the face of IPv6
@@ -122,7 +122,7 @@ NET_L2_BT_ZEP1656 Zephyr workaround (required for kernels older than 4.12).
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - OSF Unified Linux Kernel updated to the 4.14 series (4.14.7).
 
 

@@ -2,7 +2,7 @@
 title = "microPlatform update 0.16"
 date = "2018-05-04"
 tags = ["linux", "zephyr", "update", "cve", "bugs"]
-categories = ["updates", "microPlatform"]
+categories = ["updates", "linux microplatform", "zephyr microplatform", "mp containers"]
 banner = "img/banners/update.png"
 +++
 
@@ -49,7 +49,7 @@ OSF Unified Linux Kernel updated to the 4.16.6 stable release.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - OSF Unified Linux Kernel updated to 4.16.6.
 U-Boot-Toradex changed to disable secure mode by default.
 Support for Raspberry 0 WiFi and Raspberry Pi 3 B+.

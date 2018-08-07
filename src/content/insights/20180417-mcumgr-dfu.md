@@ -2,7 +2,7 @@
 title = "Zephyr microPlatform, Zephyr OTA via DFU/mcumgr"
 date = "2018-04-17"
 tags = ["zmp", "ota", "open source"]
-categories = ["zmp", "FOTA"]
+categories = ["zephyr microplatform", "fota"]
 banner = "img/banners/ota.png"
 +++
 

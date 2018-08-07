@@ -2,7 +2,7 @@
 title = "Linux microPlatform, now with OTA updates (beta)"
 date = "2018-04-11"
 tags = ["lmp", "ota", "open source"]
-categories = ["lmp", "FOTA"]
+categories = ["linux microplatform", "FOTA"]
 banner = "img/banners/ota.png"
 +++
 

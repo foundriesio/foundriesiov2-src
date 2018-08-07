@@ -2,7 +2,7 @@
 title = "microPlatform update 0.9"
 date = "2018-02-21"
 tags = ["linux", "zephyr", "update", "cve", "bugs"]
-categories = ["updates", "microPlatform"]
+categories = ["updates", "linux microplatform", "zephyr microplatform", "mp containers"]
 banner = "img/banners/update.png"
 +++
 
@@ -42,7 +42,7 @@ incompatible changes.
 
 #### Features
 
-##### Flash mass erase: 
+##### Flash mass erase:
 - MCUboot's build system now tries to mass-erase the
 flash device when the board runner supports it. This
 ensures a consistent initial state. It can be disabled
@@ -52,20 +52,20 @@ configuration option.
 
 #### Bugs
 
-##### Zephyr workaround for FLASH_DRIVER_NAME rename: 
+##### Zephyr workaround for FLASH_DRIVER_NAME rename:
 - The Zephyr port has a shim to work around a rename of
 FLASH_DRIVER_NAME to FLASH_DEV_NAME upstream.
 
 
 
-##### Documentation fixes: 
+##### Documentation fixes:
 - Various documentation fixes were merged. The
 documentation was rewritten as markdown, and all moved
 to docs/.
 
 
 
-##### Zephyr usability fixes: 
+##### Zephyr usability fixes:
 - Numerous bug fixes and usability improvements were
 merged for the Zephyr port.
 
@@ -76,14 +76,14 @@ merged for the Zephyr port.
 
 #### Features
 
-##### OpenThread support with 802.15.4 improvements: 
+##### OpenThread support with 802.15.4 improvements:
 - OpenThread support was merged into Zephyr, along with
 support for the 802.15.4 radio layer. This affects the
 L3 and L2 layers of the Zephyr networking stack as
 well.
 
 
-##### DTC_OVERLAY_FILE now accepts a list: 
+##### DTC_OVERLAY_FILE now accepts a list:
 - Multiple device tree overlay files are now supported
 by setting DTC_OVERLAY_FILE to a whitespace-separated
 list of files to use. This is analogous to how
@@ -92,19 +92,19 @@ application directory will be used by default if it is
 present and DTC_OVERLAY_FILE is not defined.
 
 
-##### DTC_OVERLAY_DIR removed: 
+##### DTC_OVERLAY_DIR removed:
 - The old DTC_OVERLAY_DIR variable is no longer
 supported; applications should update to use
 DTC_OVERLAY_FILE only.
 
 
-##### FLASH_DRIVER_NAME renamed to FLASH_DEV_NAME: 
+##### FLASH_DRIVER_NAME renamed to FLASH_DEV_NAME:
 - The old FLASH_DRIVER_NAME was removed. Applications
 should use FLASH_DEV_NAME. MCUboot has been updated to
 reflect this change.
 
 
-##### Legacy HTTP removed upstream: 
+##### Legacy HTTP removed upstream:
 - The legacy HTTP API has been removed, but the commit
 with this support has serious problems, as detailed
 in the following issue.
@@ -115,17 +115,17 @@ The OSF tree has temporarily reverted this commit; we
 are working with upstream on a better solution.
 
 
-##### Humidity sensor channel units redefined: 
+##### Humidity sensor channel units redefined:
 - The humidity sensor channel units were redefined to
 percents, not milli-percents. Applications using this
 API will need to update to the new unit.
 
 
-##### GET_DISK_SIZE ioctl removed: 
+##### GET_DISK_SIZE ioctl removed:
 - The filesystem GET_DISK_SIZE IOCTL was removed.
 
 
-##### Bluetooth refactoring continues: 
+##### Bluetooth refactoring continues:
 - The Bluetooth controller core continues to be cleaned
 up and refactored as part of a sequence of general
 improvements.
@@ -134,45 +134,45 @@ Various Bluetooth APIs were renamed from the radio_ to
 the ll_ namespace.
 
 
-##### ARM CMSIS headers updated: 
+##### ARM CMSIS headers updated:
 - ARM CMSIS headers were updated to version 5.2.0.
 
 
-##### New sensor channels: 
+##### New sensor channels:
 - New sensor channels were added for CO2, VOC, voltage,
 and current, along with support for the CCS811 gas
 sensor device.
 
 
-##### POSIX interaction with stdin: 
+##### POSIX interaction with stdin:
 - The native POSIX target now supports console
 interaction with stdin.
 
 
-##### External mbedTLS support: 
+##### External mbedTLS support:
 - It is now possible to use an external mbedtls
 implementation. Applications interested in taking
 advantage of this should refer to the help for
 CONFIG_MBEDTLS_LIBRARY.
 
 
-##### USB HID support: 
+##### USB HID support:
 - The USB subsystem now includes an HID class and sample
 application demonstrating its functionality.
 
 
-##### IPv6 improvements: 
+##### IPv6 improvements:
 - IPv6 neighbor addition and deletion is now supported.
 Network interfaces using IPv6 can now route packets
 between themselves.
 
 
-##### Flashing for JLink boards: 
+##### Flashing for JLink boards:
 - Boards using JLink can now be flashed using the build system
 flash target.
 
 
-##### New STM32 features: 
+##### New STM32 features:
 - SPI support was added for STM32F1 targets.
 
 STM32F072 SoC support added as well as board
@@ -183,52 +183,52 @@ I2C support was added to the nucleo_f411re and for
 nucleo_f429zi boards.
 
 
-##### ST vl53l0x time of flight sensor: 
+##### ST vl53l0x time of flight sensor:
 - Added support for the ST vl53l0x time of flight
 sensor. This included an import of the official ST
 library supporting the vl53l0x.
 
 
-##### DFU/mcuboot subsystem improvements: 
+##### DFU/mcuboot subsystem improvements:
 - The DFU subsystem received miscellaneous improvements,
 as well as additional APIs useful for targets built
 for chain-loading by MCUboot.
 
 
-##### PCI enumberation for Atom-based targets: 
+##### PCI enumberation for Atom-based targets:
 - Atom-based targets now support enumerating PCI
 devices.
 
 
-##### erase-block-size property for DTS flash nodes: 
+##### erase-block-size property for DTS flash nodes:
 - The DTS flash bindings now support an optional erase-
 block-size property.
 
 
-##### Flash page layout support for NXP devices: 
+##### Flash page layout support for NXP devices:
 - NXP-based devices use newly updated flash DTS bindings
 to support the flash page layout APIs, which improves
 their MCUboot support and eliminates compiler warnings
 when building MCUboot on those targets
 
 
-##### DTS sensor nodes for NXP boards: 
+##### DTS sensor nodes for NXP boards:
 - Various DTS nodes and fixup files were added for
 sensor nodes on NXP boards.
 
 
-##### Pinux for Atmel SAM0: 
+##### Pinux for Atmel SAM0:
 - SAM0 based devices now have a pinmux driver.
 
 
-##### New kconfig options for controlling optimization: 
+##### New kconfig options for controlling optimization:
 - A new CONFIG_NO_OPTIMIZATIONS flag allows users to
 control the optimization level with GCC compatible
 compilers with a single switch, among other
 optimization level changes.
 
 
-##### NXP LPC SoC family support: 
+##### NXP LPC SoC family support:
 - Add Zephyr support for NXP's LPC SoC family. Including
 an initial import of the device header and driver
 files for lpc54114 from mcux 2.2.1. The first board
@@ -236,7 +236,7 @@ supported is the lpcxpresso54114. Shim drivers were
 also introduced for pinmux, GPIO and USART.
 
 
-##### Emulated vector table relocation for M0 targets: 
+##### Emulated vector table relocation for M0 targets:
 - For ARM Cortex M0 targets, support was added for a
 software relay table for interrupt handling. This
 allows runtime changes to IRQ handler routines on
@@ -245,39 +245,39 @@ relocating the vector table. This is a prerequisite
 for enabling MCUboot support on these targets.
 
 
-##### Support for M0 targets with hardware vector table relocation: 
+##### Support for M0 targets with hardware vector table relocation:
 - Additional support for M0 targets which do support
 hardware vector table relocation, such as STM32F0, was
 also added.
 
 
-##### SoC-level device tree fixup files: 
+##### SoC-level device tree fixup files:
 - Add support for SoC family level fixup files. This
 should remove the need for several duplicated fixup
 files at the board level.
 
 
-##### Runtime for simulated nRF52 devices: 
+##### Runtime for simulated nRF52 devices:
 - Zephyr now supports running simulated nRF52 hardware.
 
 
-##### Nordic HAL updates: 
+##### Nordic HAL updates:
 - Replace the Nordic HAL and MDK with the nrfx extract
 based on the nRF5 SDK 0.8.0.
 
 
-##### abs function added to Zephyr minimal libc: 
+##### abs function added to Zephyr minimal libc:
 - Added abs function to minimal libc implementation.
 
 
-##### New kconfig option for enabling MCUboot support: 
+##### New kconfig option for enabling MCUboot support:
 - Added the BOOTLOADER_MCUBOOT config to make the
 resulting image bootable by the MCUboot open source
 bootloader. Currently, this includes the text section
 offset and the vector relay table for Cortex-M0.
 
 
-##### New DTS bindings: 
+##### New DTS bindings:
 - In device tree, YAML bindings were added for SPI
 devices, bluetooth modules, and SPI bluetooth modules.
 Support was also added for flash controller nodes on
@@ -286,7 +286,7 @@ dts.fixup files. All x86 targets now support device
 tree.
 
 
-##### Console harness support for samples: 
+##### Console harness support for samples:
 - Various samples now support a console harness, which
 can be used to evaluate whether their console output
 matches expectated values.
@@ -294,7 +294,7 @@ matches expectated values.
 
 #### Bugs
 
-##### Ninja fixes for flashing and debugging: 
+##### Ninja fixes for flashing and debugging:
 - The flash, debug, and debugserver targets now properly
 interact with the console when Ninja is used instead
 of Make. This is an important fix for users who have
@@ -302,7 +302,7 @@ multiple boards using the same flash or debug backend.
 
 
 
-##### Hackaround for flash write protection on NXP mcux devices: 
+##### Hackaround for flash write protection on NXP mcux devices:
 - A hacky fix for a missing write protection
 implementation was merged for the mcux flash driver,
 which allows it to interoperate with the DFU subsystem
@@ -310,31 +310,31 @@ for MCUboot.
 
 
 
-##### LWM2M fixes: 
+##### LWM2M fixes:
 - The LWM2M subsystem received four fixes.
 
 
 
-##### Networking fixes: 
+##### Networking fixes:
 - Seven other fixes were merged to the networking
 subsystem, mostly related to RPL.
 
 
 
-##### Build break fixed on ARM with userspace enabled: 
+##### Build break fixed on ARM with userspace enabled:
 - The build was fixed on ARM if user space support was
 selected.
 
 
 
-##### Native target fixes for code coverage testing: 
+##### Native target fixes for code coverage testing:
 - The native target saw several bug fixes, excluding
 unlikely or unreachable code from the coverage
 reports.
 
 
 
-##### Core Bluetooth fixes: 
+##### Core Bluetooth fixes:
 - The core Bluetooth controller saw several fixes for
 edge cases. It continues to pass conformance tests.
 
@@ -347,46 +347,46 @@ specific code from the core into the HAL.
 
 
 
-##### Bluetooth Mesh fixes: 
+##### Bluetooth Mesh fixes:
 - Bluetooth Mesh saw five fixes related to SeqAuth
 values, timeout calculations, CID passing, and Kconfig
 documentation.
 
 
 
-##### Documentation spelling fixes: 
+##### Documentation spelling fixes:
 - Various spelling fixes throughout the documentation
 were merged.
 
 
 
-##### nRF PWM fixes: 
+##### nRF PWM fixes:
 - The nRF PWM driver received three fixes.
 
 
 
-##### STM32 UART fixes: 
+##### STM32 UART fixes:
 - The STM32 UART driver received a fix related to baud
 rate setting.
 
 
 
-##### Atmel SAM0 SPI fixes: 
+##### Atmel SAM0 SPI fixes:
 - The SAM0 SPI driver received a group of fixes.
 
 
 
-##### Size report fixes for Windows: 
+##### Size report fixes for Windows:
 - Fixed up the size reporting on Windows.
 
 
 
-##### Console fix for NXP FRDM KL25Z: 
+##### Console fix for NXP FRDM KL25Z:
 - Console support was fixed on NXP FRDM KL25Z.
 
 
 
-##### Crash fix when CONFIG_THREAD_MONITOR enabled: 
+##### Crash fix when CONFIG_THREAD_MONITOR enabled:
 - Fixed bug when CONFIG_THREAD_MONITOR is enabled,
 repeated thread abort calls on a dead thread will
 cause the _thread_monitor_exit to crash.
@@ -398,22 +398,22 @@ cause the _thread_monitor_exit to crash.
 
 #### Features
 
-##### FLASH_DEV_NAME update: 
+##### FLASH_DEV_NAME update:
 - The FLASH_DRIVER_NAME to FLASH_DEV_NAME rename was handled.
 
 
-##### DTC_OVERLAY_FILE update: 
+##### DTC_OVERLAY_FILE update:
 - The removal of DTC_OVERLAY_DIR in favor of using
 DTC_OVERLAY_FILE as a list was handled.
 
 
-##### FRDM-K64F temp sensor via DTS: 
+##### FRDM-K64F temp sensor via DTS:
 - The sensor which provides temperature readings on
 FRDM-K64F was converted from Kconfig to device
 tree. This was handled.
 
 
-##### Upstream DFU library: 
+##### Upstream DFU library:
 - The sample was converted to use the upstream version
 of the DFU/mcuboot library. It now prints its image
 version on startup as a consequence.
@@ -427,34 +427,34 @@ version on startup as a consequence.
 
 #### Features
 
-##### FLASH_DEV_NAME update: 
+##### FLASH_DEV_NAME update:
 - The FLASH_DRIVER_NAME to FLASH_DEV_NAME rename was handled.
 
 
-##### DTC_OVERLAY_FILE update: 
+##### DTC_OVERLAY_FILE update:
 - The removal of DTC_OVERLAY_DIR in favor of using
 DTC_OVERLAY_FILE as a list was handled.
 
 
-##### FRDM-K64F temp sensor via DTS: 
+##### FRDM-K64F temp sensor via DTS:
 - The sensor which provides temperature readings on
 FRDM-K64F was converted from Kconfig to device
 tree. This was handled.
 
 
-##### Upstream DFU library: 
+##### Upstream DFU library:
 - The sample was converted to use the upstream version
 of the DFU/mcuboot library. It now prints its image
 version on startup as a consequence.
 
 
-##### Firmware version fixed: 
+##### Firmware version fixed:
 - The dummy firmware version object implementation was
 replaced with the actual version read via the MCUboot
 header.
 
 
-##### Cleanups: 
+##### Cleanups:
 - Various cleanups were performed. An obsolete README
 was removed, the NET_DEBUG_APP Kconfig was fixed, the
 IPSO light control object setup was moved into its own
@@ -465,7 +465,7 @@ Linaro references were removed, among others.
 
 #### Bugs
 
-##### Fix for DTLS credentials: 
+##### Fix for DTLS credentials:
 - A bug affecting correct parsing of DTLS credentials
 was fixed.
 
@@ -492,7 +492,7 @@ Default GCC version was updated to the latest upstream 7.3 release.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - OSF Unified Linux Kernel updated to 4.14.17.
 QEMU guest support added to intel-corei7-64.
 Default EFI_PROVIDER for intel-corei7-64 changed to grub-efi.
@@ -509,7 +509,7 @@ Initial support for colibri-imx7.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Python packaging was restructured and replaced with autopackaging.
 U-Boot updated to the 2018.01 release.
 Bash updated to 4.4.12.
@@ -536,7 +536,7 @@ E2fsprogs updated to 1.43.8.
 
 #### Bugs
 
-##### glibc: 
+##### glibc:
 - Multiple issues.
 
  - [CVE-2017-15671](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15671)
@@ -548,7 +548,7 @@ E2fsprogs updated to 1.43.8.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Python-certifi updated to 2018.1.18.
 
 
@@ -560,7 +560,7 @@ E2fsprogs updated to 1.43.8.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Fixes required by latest OE-Core update.
 
 
@@ -572,7 +572,7 @@ E2fsprogs updated to 1.43.8.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - New machine configuration files for t1042d4rdb, t1042d4rdb-64b,
 p2020rdb and mpc8548cds.
 imx-codec, imx-parser and imx-vpuwrap updated to v4.3.2.
@@ -586,7 +586,7 @@ imx-codec, imx-parser and imx-vpuwrap updated to v4.3.2.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Default EFI_PROVIDER changed to systemd-boot.
 Thermald updated to 1.7.1.
 
@@ -599,13 +599,13 @@ Thermald updated to 1.7.1.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - BCM43430A1 firmware updated to the latest public revision.
 
 
 #### Bugs
 
-##### broken wifi support: 
+##### broken wifi support:
 - Linux-firmware changed to use the correct override for bcm43430.
 
 
@@ -615,7 +615,7 @@ Thermald updated to 1.7.1.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - EDK2, ATF and OPP updated to the current upstream revision.
 New machine configuration file for orangepi i96.
 

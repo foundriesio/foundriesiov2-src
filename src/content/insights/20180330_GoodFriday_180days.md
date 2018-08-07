@@ -2,7 +2,7 @@
 title = "180 days"
 date = "2018-03-30"
 tags = ["General"]
-categories = ["Newsletter", "Corporate"]
+categories = ["zephyr microplatform", "linux microplatform"]
 banner = "img/banners/180days.png"
 +++
 

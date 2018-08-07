@@ -2,7 +2,7 @@
 title = "microPlatform update 0.23"
 date = "2018-06-29"
 tags = ["linux", "zephyr", "update", "cve", "bugs"]
-categories = ["updates", "microPlatform"]
+categories = ["updates", "linux microplatform", "zephyr microplatform", "mp containers"]
 banner = "img/banners/update.png"
 +++
 
@@ -50,7 +50,7 @@ applications.
 
 #### Features
 
-##### CONF_FILE can now be a CMake list: 
+##### CONF_FILE can now be a CMake list:
 - Most Zephyr users will likely recognize the CMake
 variable CONF_FILE, which can be used to set the path
 to the top-level application Kconfig fragment.
@@ -83,7 +83,7 @@ zephyr.conf into the final .config:
 ```
 
 
-##### PWM on STM32: 
+##### PWM on STM32:
 - Device tree bindings were added for timers and PWM
 devices on STM32 targets.  A large variety of STM32
 targets (F0, F1, F3, F4, and L4 families) now have
@@ -97,7 +97,7 @@ STM32 may need updates to reflect this switch to
 device tree.
 
 
-##### UART on nRF: 
+##### UART on nRF:
 - The UART driver for nRF devices has been refactored to
 use the vendor HAL. This change was followed by a
 large tree-wide rename of the Kconfig options:
@@ -108,14 +108,14 @@ CONFIG_UART_0_NRF_xxx.
 Applications using this driver may need updates.
 
 
-##### Many Kconfig warnings are now errors: 
+##### Many Kconfig warnings are now errors:
 - The tree-wide cleanups and improvements to Zephyr's
 usage of Kconfig continues as Kconfiglib grows more
 features. Notably, many warnings are now errors,
 improving the rate at which CI catches Kconfig issues.
 
 
-##### Arches: 
+##### Arches:
 - The work to enable Arm v8-M SoCs, some of which
 include support for "secure" and "non-secure"
 execution states, continues. There is a new
@@ -136,7 +136,7 @@ CONFIG_NATIVE_POSIX_SLOWDOWN_TO_REAL_TIME now
 determines the default value.)
 
 
-##### Bluetooth: 
+##### Bluetooth:
 - There is a new choice option for controlling the
 transmit power.
 
@@ -154,7 +154,7 @@ The host stack now supports more flexible choices for
 how to pass attributes to bt_gatt_notify().
 
 
-##### Boards: 
+##### Boards:
 - The frdm_kl25z board now supports USB.
 
 Nordic board Kconfig files can now select
@@ -162,7 +162,7 @@ CONFIG_BOARD_HAS_DCDC, which will enable the DC/DC
 converter.
 
 
-##### Build: 
+##### Build:
 - There is a new CONFIG_SPEED_OPTIMIZATIONS flag, which
 requests the build system to optimize for speed. (The
 default is to optimize for binary size.)
@@ -172,19 +172,19 @@ a Kconfig option differs from the actual value has
 been improved.
 
 
-##### Documentation: 
+##### Documentation:
 - Zephyr's Kconfig documentation now includes output for
 choices.
 
 
-##### Device Tree: 
+##### Device Tree:
 - The RISCV32 QEMU target now has DT support for flash,
 SRAM, and UART.
 
 nRF52 SoCs now have device tree support for GPIO.
 
 
-##### Drivers: 
+##### Drivers:
 - A variety of nRF peripheral accesses throughout the
 tree were replaced with calls to inline accessors in
 the vendor HAL. The stated reason given is to enable
@@ -225,7 +225,7 @@ configurable by applications.
 Interface descriptors are now configurable at runtime.
 
 
-##### Networking: 
+##### Networking:
 - Ethernet drivers can now signal detection and loss of
 a carrier via new net_eth_carrier_on() and
 net_eth_carrier_off() routines. This is used by the
@@ -247,19 +247,19 @@ some internal caches when multiple networking
 interfaces are running on board was also merged.
 
 
-##### Samples: 
+##### Samples:
 - The BBC micro:bit now supports servomotors; see
 samples/basic/servo_motor.
 
 
-##### Scripts: 
+##### Scripts:
 - A variety of updates were merged to the Kconfiglib
 dependency vendored into Zephyr, along with its users;
 these are mostly related to hardening warnings into
 errors and improving error and warning output.
 
 
-##### Testing: 
+##### Testing:
 - The long-ranging work on issue 6991 continues with
 several samples being refactored, moved or otherwise
 cleaned up to better fit in a test management system.
@@ -267,14 +267,14 @@ cleaned up to better fit in a test management system.
 
 #### Bugs
 
-##### Arches: 
+##### Arches:
 - The PendSV interrupt handler on ARM now prevents other
 operating system interrupts from running before
 accessing kernel state, preventing races.
 
 
 
-##### Bluetooth: 
+##### Bluetooth:
 - The USB Bluetooth device class implementation saw a
 few fixes. Notably, it now has a transmit thread as
 well as a receive thread, fixing an issue where
@@ -284,7 +284,7 @@ its net_buf structures.
 
 
 
-##### Build: 
+##### Build:
 - The CONFIG_COMPILER_OPT option now allows setting
 multiple compiler options, separated by whitespace.
 
@@ -300,7 +300,7 @@ part of its own Zephyr library.
 
 
 
-##### Drivers: 
+##### Drivers:
 - Bluetooth drivers now have access to bt_hci_cmd_send()
 and bt_hci_cmd_send_sync() routines via <hci.h>;
 allowing them to, well, send HCI commands. HCI drivers
@@ -321,7 +321,7 @@ usage fixes.
 
 
 
-##### Kernel: 
+##### Kernel:
 - A fix was merged partially restoring the behavior of
 CONFIG_MULTITHREADING=n following the scheduler
 rewrite. (Some former behavior related to semaphores
@@ -334,7 +334,7 @@ NULL when a timeout is set has been fixed.
 
 
 
-##### Networking: 
+##### Networking:
 - The TCP stack now properly responds to Zero Window
 Probe segments.
 
@@ -346,7 +346,7 @@ needed in the DHCPv4 core.
 
 
 
-##### Samples: 
+##### Samples:
 - The mbedtls_sslclient networking sample now uses a
 hardware entropy source at system startup to seed the
 random number generator when one is available, rather
@@ -363,7 +363,7 @@ guarantee cryptographically strong output.
 
 #### Bugs
 
-##### Kconfig fixes: 
+##### Kconfig fixes:
 - A variety of Kconfig warnings generated by Zephyr's
 build system have been addressed. Zephyr is growing
 increasingly strict about turning these warnings into
@@ -371,7 +371,7 @@ errors, so this may avoid future problems.
 
 
 
-##### Removal of old include path: 
+##### Removal of old include path:
 - A long-deleted Zephyr include path has been removed.
 Its presence didn't cause any issues, but its removal
 is a cleanup.
@@ -386,7 +386,7 @@ is a cleanup.
 
 #### Bugs
 
-##### Kconfig fixes: 
+##### Kconfig fixes:
 - A variety of Kconfig warnings generated by Zephyr's
 build system have been addressed. Zephyr is growing
 increasingly strict about turning these warnings into
@@ -394,7 +394,7 @@ errors, so this may avoid future problems.
 
 
 
-##### Removal of old include path: 
+##### Removal of old include path:
 - A long-deleted Zephyr include path has been removed.
 Its presence didn't cause any issues, but its removal
 is a cleanup.
@@ -420,7 +420,7 @@ Default GCC version was updated to the latest upstream 8.1 release.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Acpid updated to 2.0.29.
 Bluez5 updated to 5.50.
 Cronie updated to 1.5.2.
@@ -433,14 +433,14 @@ Yocto-uninative updated to 2.1.
 
 #### Bugs
 
-##### cpio: 
+##### cpio:
 - The cpio_safer_name_suffix function in util.c in cpio 2.11
 allows remote attackers to cause a denial of service
 (out-of-bounds write) via a crafted cpio file.
 
  - [CVE-2016-2037](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2037)
 
-##### glibc: 
+##### glibc:
 - Multiple issues.
 
  - [CVE-2017-18269](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-18269)
@@ -451,7 +451,7 @@ allows remote attackers to cause a denial of service
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - PIE disable as glibc still needs work.
 Qemu-riscv updated to the master branch.
 
@@ -464,7 +464,7 @@ Qemu-riscv updated to the master branch.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Lmp-device-register updated to the latest git revision.
 OSF Unified Linux Kernel updated to 4.16.18.
 Uart serial only enabled on raspberrypi3 if ENABLE_UART is set.

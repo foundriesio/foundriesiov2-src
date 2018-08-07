@@ -2,7 +2,7 @@
 title = "microPlatform update 0.15"
 date = "2018-04-26"
 tags = ["linux", "zephyr", "update", "cve", "bugs"]
-categories = ["updates", "microPlatform"]
+categories = ["updates", "linux microplatform", "zephyr microplatform", "mp containers"]
 banner = "img/banners/update.png"
 +++
 
@@ -40,26 +40,26 @@ headed towards 1.2.0, LWM2M usability improvements.
 
 #### Features
 
-##### imgtool create: 
+##### imgtool create:
 - The imgtool command added a "create" alias for "sign".
 This makes the usage more clear when creating an image
 for consumption by mcuboot, but deferring the
 signature step until later.
 
 
-##### Configurable number of image sectors: 
+##### Configurable number of image sectors:
 - The maximum number of image sectors is now
 configurable, which is useful on devices with large
 flash devices with many sectors.
 
 
-##### TinyCBOR copy removed: 
+##### TinyCBOR copy removed:
 - Zephyr targets no longer use an internal copy of
 tinycbor, now that the library has been added to
 upstream Zephyr.
 
 
-##### Documentation: 
+##### Documentation:
 - Several documentation improvements were made,
 including using serial bootloader mode on MyNewt,
 signing instructions for Zephyr, and configuration of
@@ -74,13 +74,13 @@ maximum number of boot sectors.
 
 #### Features
 
-##### Userspace calling convention change: 
+##### Userspace calling convention change:
 - System calls from userspace on ARM targets now expect all
 arguments to be passed via registers, instead of mixing stack and
 registers as done previously.
 
 
-##### DTS alias renames: 
+##### DTS alias renames:
 - Various DTS aliases with underscores ("_") in their names were
 renamed to use dash ("-") instead. Apparently, underscores were
 technically always illegal to use in alias names. This change
@@ -89,7 +89,7 @@ updated; any out of tree applications using the old names will
 need changes as well.
 
 
-##### WiFi: 
+##### WiFi:
 - The initial outline for Zephyr's WiFi suport was
 merged. Initial definitions were added in the following
 areas:
@@ -111,7 +111,7 @@ This is the groundwork for future changes completing the
 generic framework and adding individual device drivers.
 
 
-##### Device tree bindings for GPIO keys and LEDs: 
+##### Device tree bindings for GPIO keys and LEDs:
 - Generic device tree bindings for GPIO-based buttons ("keys") and
 LEDs were added in dts/bindings/gpio/gpio-keys.yaml and
 dts/bindings/gpio/gpio-leds.yaml respectively.
@@ -125,13 +125,13 @@ LED0_GPIO_CONTROLLER. This will affect NXP builds as
 well in the next update.
 
 
-##### ARM privileged mode I-cache flush: 
+##### ARM privileged mode I-cache flush:
 - ARM cores now flush the instruction pipeline after switching
 privilege levels, to prevent execution of pre-fetched
 instructions with the previous privilege.
 
 
-##### Boards: 
+##### Boards:
 - SoC support was added for the Cortex M4 core which is
 present in the imx7d SoC. The Zephyr image must be
 loaded and run by an A7 core also present on the
@@ -145,12 +145,12 @@ Sanitycheck now runs on hifive1.
 Userspace mode was enabled by default for sam_e70_xplained.
 
 
-##### Device tree: 
+##### Device tree:
 - Device tree bindings for STM32 GPIOs were defined, and all
 STM32-based boards now have GPIO device nodes.
 
 
-##### Drivers: 
+##### Drivers:
 - The native POSIX Ethernet driver now supports network statistics
 collection, extending support for the Ethernet interface network
 statistics framework that was recently merged.
@@ -171,25 +171,25 @@ driver for the experimental SPI slave API which uses DMA.
 
 #### Bugs
 
-##### Memory allocation overflow checks: 
+##### Memory allocation overflow checks:
 - The k_malloc() and k_calloc() calls in the mempool implementation
 now properly check for overflow in all configurations.
 
 
 
-##### IPv6 crash fixes: 
+##### IPv6 crash fixes:
 - A pair of patches fixing IPv6 crashes were merged.
 
 
 
-##### Windows getting started guide fixes: 
+##### Windows getting started guide fixes:
 - Following reports of confusion, the Windows installation guide
 has been restructured to make it easier for new users to
 understand what their choices are.
 
 
 
-##### USB vendor and product ID fixes: 
+##### USB vendor and product ID fixes:
 - A few sample applications (BT's hci_usb, as well as USB dfu and
 wpanusb) now use the Kconfig knobs CONFIG_USB_DEVICE_VID and
 CONFIG_USB_DEVICE_PID to configure the USB vendor and product
@@ -200,26 +200,26 @@ doesn't appear to be allocated by the USB-IF.
 
 
 
-##### Drivers fixes: 
+##### Drivers fixes:
 - The wpanusb sample and ENC28J60 Ethernet driver
 received fix-ups, and, in the ENC28J60 case,
 optimizations.
 
 
 
-##### IRQ configuration fix for nRF52840: 
+##### IRQ configuration fix for nRF52840:
 - The number of interrupts on the nRF52840 SoC was fixed.
 
 
 
-##### Board configuration fix for nucleo_f103rb: 
+##### Board configuration fix for nucleo_f103rb:
 - PWM was disabled on nucleo_f103rb, fixing some test build breaks
 and continuing Zephyr's move towards a consistent set of default
 board configurations.
 
 
 
-##### CONFIG_CUSTOM_LINKER_SCRIPT works again: 
+##### CONFIG_CUSTOM_LINKER_SCRIPT works again:
 - CONFIG_CUSTOM_LINKER_SCRIPT, which allows the user to override
 the linker scripts provided by Zephyr itself, was fixed. This had
 been broken since the transition to CMake, so it seems to have
@@ -227,13 +227,13 @@ few, if any, active users.
 
 
 
-##### SAM0 flash driver build fix: 
+##### SAM0 flash driver build fix:
 - The Atmel SAM0 flash driver's build is fixed when
 CONFIG_FLASH_PAGE_LAYOUT is disabled.
 
 
 
-##### SPI driver core locking fix: 
+##### SPI driver core locking fix:
 - A concurrency fix to the SPI driver core was merged.
 
 
@@ -252,14 +252,14 @@ CONFIG_FLASH_PAGE_LAYOUT is disabled.
 
 #### Features
 
-##### Logging improvements for LTE-M modem build: 
+##### Logging improvements for LTE-M modem build:
 - The modem logging has been improved to allow
 sign-of-life output to appear a few seconds from boot
 when using the application configuration for the
 WCN14A2A LTE-M modem.
 
 
-##### Endpoint name fix: 
+##### Endpoint name fix:
 - The endpoing name is now prefixed with "osf:sn:". This
 makes it easier to tell apart on busy LWM2M servers,
 such as the public Eclipse Leshan instance.
@@ -291,7 +291,7 @@ Core layer updates based on the latest sumo changes.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Binutils updated to 2.30.
 Cmake updated to 3.10.3.
 Curl updated to 7.58.0.
@@ -327,36 +327,36 @@ Tzdata updated to 2018d.
 
 #### Bugs
 
-##### busybox: 
+##### busybox:
 - runCnt overflow in bunzip2.
 
  - [CVE-2017-15873](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15873)
 
-##### dhcp: 
+##### dhcp:
 - Failure to properly clean up closed OMAPI connections can
 exhaust available sockets.
 
  - [CVE-2017-3144](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3144)
 
-##### libvorbis: 
+##### libvorbis:
 - Multiple issues.
 
  - [CVE-2018-5146](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5146)
  - [CVE-2017-14632](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14632)
  - [CVE-2017-14633](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14633)
 
-##### patch: 
+##### patch:
 - Multiple issues.
 
  - [CVE-2018-1000156](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1000156)
  - [CVE-2018-6951](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6951)
 
-##### python3: 
+##### python3:
 - Possible integer overflow in PyBytes_DecodeEscape.
 
  - [CVE-2017-1000158](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1000158)
 
-##### tiff: 
+##### tiff:
 - Multiple issues.
 
  - [CVE-2017-9935](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9935)
@@ -368,7 +368,7 @@ exhaust available sockets.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - NetworkManager updated to 1.10.6.
 Python-cffi updated to 1.11.4.
 Python-cython updated to 0.28.
@@ -383,7 +383,7 @@ Python-ply updated to 3.11.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Docker updated to 18.03.0.
 Containerd updated to v1.0.2.
 Runc updated to 1.0.0-rc5.
@@ -397,7 +397,7 @@ Runc updated to 1.0.0-rc5.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - EDK2, ATF and OPP updated to the current upstream revision.
 Updated partition table for HiKey, including a new l-loader
 recovery binary.
@@ -412,7 +412,7 @@ recovery binary.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - U-boot-fslc updated to a07698f.
 New machine configuration for t4240rdb, t2080rdb, t1024rdb,
 p5040ds, p4080ds, p3041ds, p2041rdb and p1020rdb.
@@ -426,7 +426,7 @@ p5040ds, p4080ds, p3041ds, p2041rdb and p1020rdb.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Intel-microcode updated to 20180312.
 Ixgbe updated to v5.3.6.
 Ixgbevf updated to v4.3.4.
@@ -441,7 +441,7 @@ Systemd-boot bbappend updated to work with Systemd 237.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Firmware-qcom-dragonboard updated to r1034.2.1.
 New machine configuration for Dragonboard 600c.
 
@@ -454,7 +454,7 @@ New machine configuration for Dragonboard 600c.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - BCM43430A1 firmware updated to the latest public revision.
 BCM4345C0.hcd added for Raspberry Pi 3B+.
 Improved support for Raspberry Pi Zero W and 3B+.
@@ -470,7 +470,7 @@ specific firmware packages.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Python dependency removed from OSTree.
 
 
@@ -482,7 +482,7 @@ specific firmware packages.
 
 #### Features
 
-##### Layer Update: 
+##### Layer Update:
 - Distro version bumped to 2.5 (sumo based).
 Added recipe for docker-init, used by docker.
 Python3-docker updated to 3.2.1.
