@@ -1,0 +1,172 @@
+{
+  "data": {
+    "artifacts_url": "/products/lmp/391/artifacts/",
+    "build": 391,
+    "date": "2018-07-31T18:43:32+00:00",
+    "notes": {
+      "docs": "http://foundries.io/docs/0.25/",
+      "highlights": [
+        "Linux microPlatform meta-osf layer was renamed to meta-lmp",
+        "Linux-osf recipe (unified kernel) was renamed to linux-lmp",
+        "New layer Meta rtlwifi added to LMP (OOT Realtek WiFi Linux drivers)",
+        "Systemd updated to the 239 release.",
+        "U-Boot updated to the 2018.07 release.",
+        "U-Boot-Fslc updated to the 2018.07-based release.",
+        "NetworkManager updated to the 1.10.10 release."
+      ],
+      "parts": [
+        {
+          "name": "Linux microPlatform",
+          "projects": [
+            {
+              "bug_fixes": [
+                {
+                  "cves": [
+                    "2018-11806"
+                  ],
+                  "heading": "qemu",
+                  "summary": "Heap buffer overflow.\n"
+                },
+                {
+                  "cves": [
+                    "2018-11237"
+                  ],
+                  "heading": "glibc",
+                  "summary": "Buffer overflow in the __mempcpy_avx512_no_vzeroupper\nfunction when particular conditions are met. An attacker\ncould use this vulnerability to cause a denial of service\nor potentially execute code.\n"
+                },
+                {
+                  "cves": [
+                    "2017-8872"
+                  ],
+                  "heading": "libxml2",
+                  "summary": "The htmlParseTryOrFinish function in HTMLparser.c in\nlibxml2 2.9.4 allows attackers to cause a denial of\nservice (buffer over-read) or information disclosure.\n"
+                }
+              ],
+              "features": [
+                {
+                  "heading": "Layer Update",
+                  "summary": "Automake updated to 1.16.1.\nBc updated to 1.07.1.\nCcache updated to 3.4.2.\nCmake updated to 3.11.4.\nCurl updated to 7.61.0.\nDebianutils updated to 4.8.6.\nDhcp updated to 4.4.1.\nE2fsprogs updated to 1.44.2.\nElfutils updated to 0.172.\nEthtool updated 4.17.\nFile updated to 5.33.\nGit updated to 2.18.0.\nGo-1.10 updated to 1.10.3.\nGo-1.9 updated to 1.9.7.\nGpgme updated to 1.11.1.\nIproute2 updated to 4.17.\nLibgcrypt updated to 1.8.3.\nLibgpg-error updated to 1.32.\nLibunistring updated to 0.9.10.\nLibyaml updated to 0.2.1.\nLinux-firmware updated to the d114732 revision.\nNcurses updated to 6.1+20180630.\nNfs-utils updated to 2.3.1.\nNss updated to 3.38.\nPciutils updated to 3.6.1.\nProcps updated to 3.3.15.\nPsmisc updated to 23.1.\nPython3-dbus updated to 1.2.8.\nPython3-pip updated to 10.0.1.\nPython3-pygobject updated to 3.28.3.\nPython3-setuptools updated to 40.0.0\nShared-mime-info updated to 1.10.\nStrace updated to 4.23.\nSystemd updated to 239.\nU-Boot updated to the 2018.07 release.\nXz updated to 5.2.4.\n"
+                }
+              ],
+              "manifest_project": "openembedded-core",
+              "name": "OpenEmbedded-Core Layer",
+              "source_sha": "7ad0c0d6ab12bebeac097fc0f5210c876dcfe9be",
+              "source_url": "https://source.foundries.io/lmp-mirrors/openembedded-core"
+            },
+            {
+              "features": [
+                {
+                  "heading": "Layer Update",
+                  "summary": "Dnsmasq updated to 2.79.\nLibndp updated to 1.7.\nMozjs updated to 52.8.1.\nNetworkManager updated to 1.10.10.\nPolkit updated to 0.115.\nPython3-certifi updated to 2018.4.16.\nPython3-cryptography updated to 2.2.2.\nPython3-cython updated to 0.28.4.\nPython3-dbus updated to 1.2.8.\nPython3-idna updated to 2.7.\nPython3-ndg-httpsclient updated to 0.5.0.\nPython3-pip updated to 10.0.1.\nPython3-pyasn1 updated to 0.4.3.\nPython3-pygobject updated to 3.28.3.\nPython3-pyopenssl updated to 18.0.0.\nPython3-pytest-runner updated to 4.2.\nPython3-pyyaml updated to 3.13.\nPython3-requests updated to 2.19.1.\nPython3-setuptools-scm updated to 2.1.0.\nPython3-urllib3 updated to 1.23.\nVim updated to 8.1.0172.\n"
+                }
+              ],
+              "manifest_project": "meta-openembedded",
+              "name": "Meta OpenEmbedded Layer",
+              "source_sha": "0aff7abedc1c7727c88029a123107f4faf5ba4f1",
+              "source_url": "https://source.foundries.io/lmp-mirrors/meta-openembedded"
+            },
+            {
+              "features": [
+                {
+                  "heading": "Layer Update",
+                  "summary": "Intel-microcode updated to 20180703.\nIucode-tool updated to 2.3.1.\n"
+                }
+              ],
+              "manifest_project": "meta-intel",
+              "name": "Meta Intel",
+              "source_sha": "0d6eb84722e4d02949c85590839c284cdb053f71",
+              "source_url": "https://source.foundries.io/lmp-mirrors/meta-intel"
+            },
+            {
+              "features": [
+                {
+                  "heading": "Layer Update",
+                  "summary": "CM3 dtb included as part of raspberrypi3-64.\nFirmware updated to 20180619.\nUserland updated to 20180702.\n"
+                }
+              ],
+              "manifest_project": "meta-raspberrypi",
+              "name": "Meta RaspberryPi",
+              "source_sha": "7cd27ce83e19fbc780fc0fff2c5bde864c0293f7",
+              "source_url": "https://source.foundries.io/lmp-mirrors/meta-raspberrypi"
+            },
+            {
+              "features": [
+                {
+                  "heading": "Layer Update",
+                  "summary": "SSP and Fortify flags disabled for riscv64.\nGdb updated to the latest RISC-V fork.\n"
+                }
+              ],
+              "manifest_project": "meta-riscv",
+              "name": "Meta RISC-V",
+              "source_sha": "a4a81b0abca15016229b6f893b498d15f94afc19",
+              "source_url": "https://source.foundries.io/lmp-mirrors/meta-riscv"
+            },
+            {
+              "features": [
+                {
+                  "heading": "Layer Update",
+                  "summary": "U-boot-fslc updated to the 2018.07-based release.\nFirmware-imx updated to 7.5.\n"
+                }
+              ],
+              "manifest_project": "meta-freescale",
+              "name": "Meta Freescale",
+              "source_sha": "fd89a85eaafb4f26a11d96db5702eadb83c02813",
+              "source_url": "https://source.foundries.io/lmp-mirrors/meta-freescale"
+            },
+            {
+              "features": [
+                {
+                  "heading": "Layer Update",
+                  "summary": "U-boot-toradex updated to the latest git revision.\nNew machine configuration for colibri-imx6ull.\n"
+                }
+              ],
+              "manifest_project": "meta-freescale-3rdparty",
+              "name": "Meta Freescale 3rdparty",
+              "source_sha": "4cf1272b9466cc04873a534fbbe72c507982bd77",
+              "source_url": "https://source.foundries.io/lmp-mirrors/meta-freescale-3rdparty"
+            },
+            {
+              "deltas": [
+                {
+                  "label": "Delta from 0.24",
+                  "url": "https://source.foundries.io/meta-lmp.git/log/?qt=range&q=osf-0.24..osf-0.25"
+                }
+              ],
+              "features": [
+                {
+                  "heading": "Layer Update",
+                  "summary": "Initramfs-ostree-osf-image was renamed to initramfs-ostree-lmp-image.\nLinux-osf recipe was renamed to linux-lmp.\nOSF_LMP_GIT variables were renamed to FIO_LMP_GIT.\nPython3-docker updated to 3.4.1.\nPython3-docker-compose updated to 1.22.0.\nU-boot-compulab updated to the Compulab 1.5 release.\n"
+                }
+              ],
+              "manifest_project": "meta-lmp",
+              "name": "Meta LMP Layer",
+              "source_sha": "e014d8b350dc7f11103324b5990e4980449b9a2f",
+              "source_url": "https://source.foundries.io/meta-lmp.git"
+            }
+          ],
+          "summary": "Linux microPlatform meta-osf layer was renamed to meta-lmp.\nLinux-osf recipe was renamed to linux-lmp.\n"
+        }
+      ],
+      "subscriber_only": true,
+      "summary": "Linux microPlatform meta-osf layer was renamed to meta-lmp.\nCore layer updates based on the latest OE/Yocto master changes.\n",
+      "update": "0.25"
+    },
+    "subscriber_only": true,
+    "test_summary": [
+      [
+        "Tests run",
+        11
+      ],
+      [
+        "Test cases",
+        37
+      ],
+      [
+        "Pass rate",
+        "100%"
+      ]
+    ],
+    "tests_url": "/products/lmp/391/tests/"
+  },
+  "status": "success"
+}

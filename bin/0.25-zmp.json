@@ -1,0 +1,268 @@
+{
+  "data": {
+    "artifacts_url": "/products/zmp/169/artifacts/",
+    "build": 169,
+    "date": "2018-07-27T20:25:10+00:00",
+    "notes": {
+      "docs": "http://foundries.io/docs/0.25/",
+      "highlights": [
+        "MCUboot 1.2.0",
+        "Zephyr from the v1.13 development series"
+      ],
+      "parts": [
+        {
+          "name": "Zephyr microPlatform",
+          "projects": [
+            {
+              "base_sha": "upstream/master",
+              "bug_fixes": [
+                {
+                  "heading": "Serial overflow",
+                  "summary": "The Zephyr serial adapter port was overwriting\nreceived but unprocessed data buffers; this has been\nfixed.\n"
+                },
+                {
+                  "heading": "imgtool corruption fix",
+                  "summary": "A bug in the imgtool script which could result in\ncorrupted hex files was fixed.\n"
+                },
+                {
+                  "heading": "assemble.py regular expression fix",
+                  "summary": "A regular expression bug in the assemble.py script was\nfixed.\n"
+                },
+                {
+                  "heading": "Zephyr test Makefile fix",
+                  "summary": "The Makefile used to build Zephyr binaries for testing\nhad an invalid command line fixed.\n"
+                }
+              ],
+              "deltas": [
+                {
+                  "label": "Delta from 0.24",
+                  "url": "https://source.foundries.io/mcuboot.git/log/?qt=range&q=osf-0.24..osf-0.25"
+                },
+                {
+                  "label": "Delta from upstream",
+                  "url": "https://source.foundries.io/mcuboot.git/log/?qt=range&q=17e2d1374686eca158c3ced6c28efe1f9bb6a8ec..upstream/master"
+                }
+              ],
+              "features": [
+                {
+                  "heading": "Updated simulator dependencies",
+                  "summary": "The Rust simulator dependencies were updated to avoid\nwarnings in recent development environments.\n"
+                }
+              ],
+              "manifest_project": "mcuboot",
+              "name": "MCUboot",
+              "source_sha": "17e2d1374686eca158c3ced6c28efe1f9bb6a8ec",
+              "source_url": "https://source.foundries.io/mcuboot.git"
+            },
+            {
+              "base_sha": "upstream/master",
+              "bug_fixes": [
+                {
+                  "heading": "Arches",
+                  "summary": "ARM MPU support now follows recommendations for the\nproper use of data and instruction synchronization\nbarriers when enabling and disabling the MPU.\n\nException return on ARC no longer ignores updates to\nthe PC register.\n"
+                },
+                {
+                  "heading": "Device Tree",
+                  "summary": "The nRF UART0 peripheral with register base address\n0x40002000 can be of two types (UART or UARTE),\ndepending on the SoC. An internal cleanup fixing the\ndts.fixup and SoC dtsi files now forces their users to\ndeclare which peripheral is in use.\n\nThe NXP device tree binding YAML files saw some\ncleanups and build warning resolutions.\n"
+                },
+                {
+                  "heading": "Documentation",
+                  "summary": "The documentation covering the gPTP networking\nprotocol saw some fixes and enhancements.\n"
+                },
+                {
+                  "heading": "Drivers",
+                  "summary": "A bug causing overwritten GPIO configurations and\nunstable firmware on Nordic devices was fixed.\n\nThe nRF serial port driver's dependency on the Zephyr\nGPIO driver was replaced with calls into the nrfx GPIO\nHAL to avoid initialization order issues (UART is\nneeded early for the console, but the GPIO driver\nisn't initialized until later in the boot).\n\nThe nRF timer driver saw a bug fix related to the\ncombination of a tickless kernel, k_busy_wait(), and\nk_sleep().\n\nImproved management support for nRF52, including a bug\nfix for wake from sleep, were merged.\n"
+                },
+                {
+                  "heading": "External",
+                  "summary": "Some out of tree patches were merged fixing bugs in\nthe NXP MCUX Ethernet HAL driver.\n"
+                },
+                {
+                  "heading": "Kernel",
+                  "summary": "Conversion results between system ticks and\nmilliseconds when the system clock is set at runtime\nwere fixed.\n\nUse of the \"errno\" lvalue from userspace was fixed.\n\nUse of the console from userspace with Zephyr's built-\nin libc was fixed.\n"
+                },
+                {
+                  "heading": "Libraries",
+                  "summary": "A variety of fixes were merged affecting printf format\nstring parsing and handling in Zephyr's \"minimal\"\nlibc.\n\nSimilarly, measures were introduced to ease\ncompilation of various samples and libraries with the\nNewlib C library.\n"
+                },
+                {
+                  "heading": "Networking",
+                  "summary": "The getaddrinfo() socket system call now properly\nallocates memory for its results, which can be freed\nwith freeaddrinfo(). Previously, the implementation\nwas simply using a global variable for its results,\nwhich precluded concurrent usage.\n\nThe LWM2M implementation ignores TLV options it cannot\nhandle, rather than halting option processing when it\nreceives one.\n\nA potential null dereference in IPv6 address parsing\nwas fixed, as was a memory leak which occurs when a\nneighbor solicitation request fails.\n\nA variety of cleanups and fixes were merged affecting\nIPv4 and ICMPv4 support.\n"
+                },
+                {
+                  "heading": "Samples",
+                  "summary": "The echo_server sample now uses the correct networking\nAPIs to handle large IPv6 packets.\n\nThe Kconfig fragments used to build the echo_client\nand echo_server applications with TLS support on\nqemu_x86 were fixed, fixing the build in\nthat configuration.\n"
+                },
+                {
+                  "heading": "Testing",
+                  "summary": "A variety of incompatibilities between Zephyr's fixed\nsize integer types and those provided by the standard\nlibrary were worked around or fixed.\n"
+                }
+              ],
+              "deltas": [
+                {
+                  "label": "Delta from 0.24",
+                  "url": "https://source.foundries.io/zephyr.git/log/?qt=range&q=osf-0.24..osf-0.25"
+                },
+                {
+                  "label": "Delta from upstream",
+                  "url": "https://source.foundries.io/zephyr.git/log/?qt=range&q=8e3f288ea2e7595cff9d1a170f7cdeeef8e03ed8..upstream/master"
+                }
+              ],
+              "features": [
+                {
+                  "heading": "Initial socket-based TLS support",
+                  "summary": "Initial support was added for network communication\nvia TLS through the sockets API. Support includes:\n\n- a credential management subsystem: the\n  <net/tls_credentials.h> API allows users to define\n  and manage a pool of *credentials*, which include\n  certificates, private keys, and pre-shared symmetric\n  keys. The nonstandard TLS_SEC_TAG_LIST setsockopt()\n  option was added to allow credential selection.\n- I/O syscalls: send(), recv(), and poll() support was\n  added (poll() was also made thread safe).\n- hostname support: the TLS_HOSTNAME socket option can be used\n  to set the system's hostname.\n- handshake management: cipher suite management is done via the\n  TLS_CIPHERSUITE_LIST and TLS_CIPHERSUITE_USED socket\n  options; the TLS_PEER_VERIFY option can be used to\n  override mbedTLS's default settings for peer\n  verification\n- sample support: the http_get and big_http_download now support\n  TLS sockets, including certificate validation via Let's\n  Encrypt certificates provided with the samples.\n\nTLS support was also added to the echo_client and\necho_server samples.\n\nThe merger of this code is a significant change, as it\nunblocks rewrites or adaptations of Zephyr's network\nprotocol support stacks (such as MQTT, HTTP, CoAP and\nLWM2M, etc.) to support TLS via a setsockopt() API.\n"
+                },
+                {
+                  "heading": "Standard C Memory Allocation",
+                  "summary": "Built-in support was added for malloc(), free(),\ncalloc(), realloc(), and reallocarray(). The size of\nthe memory pool which backs these allocations is\ndetermined by CONFIG_MINIMAL_LIBC_MALLOC_ARENA_SIZE,\nwhich defaults to zero to disable these functions\nunless they are needed. Support for this\nimplementation is incompatible with use of the Newlib\nC library (which provides its own primitives based on\na _sbrk() implementation provided by its runtime\nenvironment.)\n"
+                },
+                {
+                  "heading": "New \"Logger\" Subsystem",
+                  "summary": "Zephyr has a new logging subsystem called Logger,\nwhich lives in subsys/logging, and which now has\nupstream documentation:\n\nhttp://docs.zephyrproject.org/subsystems/logging/logger.html\n\nThis is a significant departure, both in terms of\nsupported features and complexity, from the\nlongstanding SYS_LOG APIs in <logging/sys_log.h>.\n\nIt seems to be early days, as no upstream subsystems\nhave been moved over to Logger from SYS_LOG. It's not\nclear if Logger will replace SYS_LOG in the long term.\n\nFoundries.io is publishing a blog series discussing\nboth Logger and SYS_LOG. The SYS_LOG post is\navailable:\n\nhttps://foundries.io/blog/2018/07/24/zephyr-logging-part-1/\n\nand we'll be releasing part 2 on Logger pending the\nresults of a pull request containing some minor bug\nfixes.\n"
+                },
+                {
+                  "heading": "Zephyr SDK minimum version bumped to 0.9.3",
+                  "summary": "Linux users who build with the Zephyr SDK are advised\nthat the minimum version has been increased from 0.9.2\nto 0.9.3, which was released in May. Zephyr will now\nrefuse to build programs with older SDK versions.\n"
+                },
+                {
+                  "heading": "Networking promiscuous mode support",
+                  "summary": "A new API was merged to <net/net_if.h> which allows\nentering and exiting promiscuous mode, as well as\nquerying this mode, on a per-interface basis:\n\n- net_if_set_promisc(struct net_if*)\n- net_if_unset_promisc(struct net_if*)\n- net_if_is_promisc(struct net_if*)\n\nCurrently, support, testing, and samples are provided\nfor Ethernet L2s. Users curious to try it out should\nsee samples/net/promiscuous_mode.\n"
+                },
+                {
+                  "heading": "Application shared memory",
+                  "summary": "When userspace is enabled, Zephyr now supports control\nof shared memory regions between threads. General\nusage information has been added to Zephyr's\ndocumentation:\n\nhttp://docs.zephyrproject.org/kernel/usermode/usermode_sharedmem.html\n"
+                },
+                {
+                  "heading": "Ethernet driver API break",
+                  "summary": "The API in <net/ethernet.h> saw an incompatible\nchange. The get_stats API callback now takes a struct\ndevice *, rather than a struct net_if *. In-tree users\nwere updated; out of tree users will need updates.\n"
+                },
+                {
+                  "heading": "Network packet format change",
+                  "summary": "The IPv6 implementation now handles large packets\ncorrectly. Fixing this required some changes to struct\nnet_pkt, the core representation for network packets.\n"
+                },
+                {
+                  "heading": "sys_clock_us_per_tick deprecated",
+                  "summary": "Usage of this variable was deprecated, as its value\ndoes not portably fit into an integer. Users are\ndirected to use sys_clock_hw_cycles_per_sec and\nsys_clock_ticks_per_sec instead.\n"
+                },
+                {
+                  "heading": "Arches",
+                  "summary": "The Atmel SAM SoC files saw a cleanup as part of the\nSAMD20 support effort described below.\n\nARC architecture support for nsim was added.\n\nInitial support for a new caching infrastructure on\nARM SoCs was added with support for memory caching on\nARM MPUs. See issue 8784 for more details and current\nstatus:\n\nhttps://github.com/zephyrproject-rtos/zephyr/issues/8784\n\nOn x86, Zephyr can now boot on systems with a 64-bit\nBIOS, and got SoC support for Apollo Lake. A new\narchitecture-specific CONFIG_REALMODE option was added\nas well; this enables booting Zephyr from real mode on\nx86, which was previously only available in the\nJailhouse target.\n\nThe \"native POSIX\" pseudo-architecture grew support\nfor registering functions which run at exit via the\nNATIVE_EXIT_TASK macro available in <soc.h>\n\nARM SoCs gained new abilities to recover from\notherwise-fatal MPU faults.\n"
+                },
+                {
+                  "heading": "Bluetooth",
+                  "summary": "Support was added for runtime configuration of the GAP\ndevice name. Changes are persisted to nonvolatile\nmemory if CONFIG_BT_SETTINGS is enabled. The Bluetooth\nshell now has a name command which can be used to\nexercise this feature; without arguments, it prints\nthe current name, and with a single argument, it sets\nthe device name to the given value.\n"
+                },
+                {
+                  "heading": "Boards",
+                  "summary": "New board support was added for the Silabs EFR32 Flex\nGecko Wireless Starter Kit, Atmel SAMD20 XPlained Pro\nboards, nRF52 AdaFruit Feather, nRF52840 USB Dongle\nand x86 UP Squared.\n\nThe stm32f723e_disco board now has support for USB FS\nOTG and I2C, following the extension of driver support\nfor those peripherals to STM32F7 MCUs.\n\nThe nrf52_pca10040 board has the UARTE peripheral\nenabled; the console now uses this instead of RTT.\n\nFRDM-K64F now supports\nCONFIG_FS_FLASH_STORAGE_PARTITION.\n\nThe cc3220sf_launchxl board now automatically\nreconnects to the last known good WiFi AP at startup.\n"
+                },
+                {
+                  "heading": "Build",
+                  "summary": "Crosstool-NG (stylized \"xtools\") support has been\nadded for the ARC architecture and IAMCU x86 variant.\nXtools support was also declared on QEMU for ARM\nCortex M3, NIOS-II, RISCV32, three variants of x86,\nand a couple of real ARM and x86 boards; this was\nmerged as part of enabling CI testing for the new\ntoolchain.\n\nVigilant removal of redundant default n properties\nfrom Kconfig files continues.\n\nThe build system's calls to objcopy now fill gaps with\n0xff bytes. This reduces time spent programming flash\non some targets, since this value is what erased flash\npages are filled with. Flash programmers which are\nsmart enough to skip setting runs of 0xff will thus\nsee improvements.\n"
+                },
+                {
+                  "heading": "Cryptography",
+                  "summary": "The subsystem-wide TLS rewrite saw an interesting new\naddition, in the form of a \"generic\" mbedTLS\nconfiguration file in\next/lib/crypto/mbedtls/configs/config-tls-generic.h.\nThis is now the default mbedTLS configuration file.\n\nUsers of the mbedTLS library will be familiar with its\nheader-file system of configuration: when the library\nis compiled with the macro MBEDTLS_CONFIG_FILE\ndefined, its sources include the file that macro\nexpands to, which in turn enables, disables, or\nconfigures their features.\n\nIn the past, Zephyr has managed separate configuration\nfiles for different use cases. With this new addition,\na single mbedTLS file can be maintained within tree,\nwhose contents are controllable via Kconfig options\ndefined in ext/lib/crypto/mbedtls/Kconfig.tls-generic.\nThis bit of cleverness allows individual applications\nto set their TLS configuration within Kconfig fragment\nfiles.\n"
+                },
+                {
+                  "heading": "Device Tree",
+                  "summary": "Bindings for i.MX7d I2C and PWM drivers were added in\ndts/bindings/i2c/fsl,imx7d-i2c.yaml and\nfsl,imx7d-pwm.yaml.\n\nBindings for STM32 OTG HS USB were added in\ndts/bindings/usb/st,stm32-otghs.yaml, along with SoC\nDTSI nodes for STM32F4 and STM32F7.\n"
+                },
+                {
+                  "heading": "Documentation",
+                  "summary": "The documentation itself can now be built on all\nsupported platforms, following conversion of its build\nsystem to CMake, and some helper scripts to Python.\nIts build system now also supports out of tree builds\nand inclusion within other builds, among a variety of\nother cleanups, fixes, and improvements.\n\nThe Doxygen documentation for the ARM SoC specific\n_Fault() routine, which handles fatal errors, has been\nimproved and clarified.\n"
+                },
+                {
+                  "heading": "Drivers",
+                  "summary": "gPTP support was added for the MCUX-based Ethernet\ndriver for NXP devices.\n\nAn API was merged for Audio Codec devices. No drivers\nyet.\n\nSupport was added to the USB subsystem for Microsoft\nOS Descriptors, version 1:\n\nhttps://docs.microsoft.com/en-us/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors\n\nAdditionally, USB device firmware authors can now\noverride the usb_update_sn_string_descriptor()\nfunction to populate serial number descriptors at\nruntime.\n\nPWM and I2C master drivers were added for the\nCortex-M4 cores present on NXP i.MX7 SoCs (the\nnxp_imx/mcimx7_m4 SOC variant).\n\nThe nRF serial driver saw a lot of love. It now\nsupports Device Tree, power management, and both 31250\nand 56000 baud rates. The last improvement may be\nparticularly useful for any users implementing Zephyr-\nbased dial-up modem support.\n\nThe SiLabs GPIO and UART drivers now have support for\nEFR32 MCUs.\n\nDriver support was added for Analog Devices ADT7420\n16-bit I2C temperature sensors.\n"
+                },
+                {
+                  "heading": "On STM32 MCUs",
+                  "summary": "- USB OTG support was added for STM32F7 by adapting\n  existing support for the STM32F4 series.\n\n- STM32F7 also grew I2C support.\n\n- The USB HS peripheral now has pin mux support for\n  PB14/PB15 on STM32F4.\n"
+                },
+                {
+                  "heading": "External",
+                  "summary": "The Zlib-licensed SiLabs \"Gecko SDK\" HAL was added, in\norder to support EFR32 MCUs.\n\nVersion 1.2.91 of the Atmel SAMD20 HALs were merged,\nin order to support the SAMD20 Xplained Pro board.\n\nKconfiglib was updated, bringing in support for the\npreprocessing language extensions described in the\nLinux file kconfig-macro-language.txt:\n\nhttps://github.com/torvalds/linux/blob/master/Documentation/kbuild/kconfig-macro-language.txt\n\nas well as adding additional warnings.\n"
+                },
+                {
+                  "heading": "Kernel",
+                  "summary": "Applications can now define their own system calls\nusing the CONFIG_APPLICATION_DEFINED_SYSCALL Kconfig\noption.  Previously, only source files in Zephyr's\ninclude/ directory were scanned by the build system\nwhen looking for supported system calls.\n\nSupport for read() and write() was added when using\nNewlib.\n"
+                },
+                {
+                  "heading": "Libraries",
+                  "summary": "Support for the CRC32 checksum algorithm was added to\nZephyr's CRC library. It can be accessed via\n<crc32.h>.\n\nThe JSON library grew a new helper macro with an\napparently misleading name. The macro in question,\nJSON_OBJ_DESCR_ARRAY_ARRAY, appears to be used to\ndeclare descriptors for arrays of structs, rather than\narrays of arrays.\n\nPOSIX compatibility was added for the pthread_once_t\nand pthread_key_t typedefs.\n"
+                },
+                {
+                  "heading": "Networking",
+                  "summary": "The LWM2M implementation now allows its users to\nsupply callbacks which are invoked on object creation\nand deletion (which, in the LWM2M protocol, may be\ninitiated from across the network).\n"
+                },
+                {
+                  "heading": "Samples",
+                  "summary": "A sample application demonstrating use of the new\nAnalog Devices ADT7420 16-bit I2C temperature sensor\ndriver was added to samples/sensor/adt7420.\n\nThe boards/nrf52/mesh/ samples were updated to pass\nthe Bluetooth Profile Tuning Suite, among several\nother improvements:\n\nhttps://www.bluetooth.com/develop-with-bluetooth/qualification-listing/qualification-test-tools/profile-tuning-suite\n\nThe gptp networking sample has FRDM-K64F support,\nfollowing the addition of PTP protocol support to that\nboard's Ethernet driver.\n"
+                },
+                {
+                  "heading": "Scripts",
+                  "summary": "A new import_mcux_sdk.py script was added, which\nautomates merging of new versions of the NXP MCUX HAL.\n"
+                },
+                {
+                  "heading": "Testing",
+                  "summary": "The sanitycheck script now supports nsim as an\nemulation backend, following addition of this program\nas a mechanism for running ARC binaries in emulation.\n\nThe saga continues on the large project of adding\nDoxygen-based metadata to Zephyr's test infrastructure\nto support more sophisticated CI, requirements\ntraceability, etc.\n\nA variety of tests were added or improved for\nmulticore configurations and power management.\n"
+                }
+              ],
+              "manifest_project": "zephyr",
+              "name": "Zephyr",
+              "source_sha": "8e3f288ea2e7595cff9d1a170f7cdeeef8e03ed8",
+              "source_url": "https://source.foundries.io/zephyr.git"
+            },
+            {
+              "deltas": [
+                {
+                  "label": "Delta from 0.24",
+                  "url": "https://source.foundries.io/dm-hawkbit-mqtt.git/log/?qt=range&q=osf-0.24..osf-0.25"
+                }
+              ],
+              "manifest_project": "dm-hawkbit-mqtt",
+              "name": "hawkBit and MQTT sample application",
+              "source_sha": "ce75a858819aa6ebb8b4332a7e2d926b8c4f3116",
+              "source_url": "https://source.foundries.io/dm-hawkbit-mqtt.git"
+            },
+            {
+              "deltas": [
+                {
+                  "label": "Delta from 0.24",
+                  "url": "https://source.foundries.io/dm-lwm2m.git/log/?qt=range&q=osf-0.24..osf-0.25"
+                }
+              ],
+              "manifest_project": "dm-lwm2m",
+              "name": "LWM2M sample application",
+              "source_sha": "47c777fd714088ae3ebba35cf7dedecb5e947a7a",
+              "source_url": "https://source.foundries.io/dm-lwm2m.git"
+            }
+          ],
+          "summary": "This update contains MCUboot version 1.2.0. The main improvements\nin this MCUboot release are around the serial bootloader, which\nallows MCUboot to receive updated programs via a UART-friendly\nprotocol. This protocol can be sent over any byte pipe, not just\nUART.\n\nThis update is thus the last in the Foundries.io development\ntree from the 1.2.0 development series. The next update will\ncontain a rewritten history for the next version.  As usual, a\nzero-diff commit from the update containing this mergeup will\nbe provided for continuity.\n\nThe Zephyr tree in this release contains the core of the new\nsetsockopt()-based TLS implementation. This implementation\nputs the TLS stack in the kernel, and allows users to enable\nTLS handshaking and subsequent communication on an open socket\nobject via (nonstandard) setsockopt() calls.\n\nZephyr now supports the standard C malloc() and free() family\nof dynamic memory management APIs with its built-in \"minimal\"\nC library. These are disabled by default.\n\nIt also contains a new logging subsystem, with many new\nfeatures over the older SYS_LOG API.\n"
+        }
+      ],
+      "subscriber_only": true,
+      "summary": "MCUboot 1.2.0 contains mostly fixes around the serial\nbootloader. The Zephyr tree from the v1.13 development cycle\ncontains several significant improvements and new features.\n",
+      "update": "0.25"
+    },
+    "subscriber_only": true,
+    "test_summary": [
+      [
+        "Tests run",
+        20
+      ],
+      [
+        "Test cases",
+        260
+      ],
+      [
+        "Pass rate",
+        "100%"
+      ]
+    ],
+    "tests_url": "/products/zmp/169/tests/"
+  },
+  "status": "success"
+}
