@@ -21,7 +21,6 @@ body.login-page {background:url(images/login_page_bg.jpg);}
 
 .row {max-width:1170px;}
 iframe {margin: 0 0 40px; border:0; width:100%;}
-
 /*  ---akb---  */
 pre code{
     text-shadow: 0 1px white;
@@ -52,8 +51,6 @@ code {
         border: 0;
     }}
 /*  ---akb---  */
-
-
 h1, h2, h3, h4, h5, h6 { font-family: 'Lato', Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-weight: 700; color: #5A5A5A; text-rendering: optimizeLegibility; line-height: 1.1; margin-bottom: 12px; margin-top: 12px;  }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: #6f6f6f; line-height: 0; }
 h1 { font-size: 44px; }
@@ -62,7 +59,7 @@ h3 { font-size: 27px; }
 h4 { font-size: 23px; }
 h5 { font-size: 17px; }
 h6 { font-size: 14px; }
-a { color: #2661a7; text-decoration: none; line-height: inherit; }
+a { color: #37485C; text-decoration: none; line-height: inherit; }
 a:hover { color: #37485C; text-decoration: none;}
 p { font-family: inherit; font-weight: normal; line-height: 1.45; margin-bottom: 17px; font-size: 17px;}
 hr { border: solid #eff0f4; border-width: 1px 0 0; clear: both; margin: 21px 0; height: 0; }
@@ -97,7 +94,7 @@ select { background-color: white; font-family: inherit; border: 0; -webkit-box-s
 /* ==================
    3 = Header
    ================== */
-header {background:url(images/header_bg.jpg) bottom center no-repeat; min-height:880px; position: relative;}
+header {background:url(images/header_bg.png) bottom center no-repeat; min-height:880px; position: relative;}
 header .message {position: absolute; top:125px; left:1%; right:1%; margin:0 auto; text-align: center;}
 .message-intro {display:table-row;line-height:1.5em;font-size:2em;white-space:nowrap;margin-bottom:2em;}
 .message-intro p{font-size:inherit;overflow:hidden; display:table-cell;vertical-align:middle;padding-bottom:30px;color:#fff;font-size:22px;font-weight:400; letter-spacing: 2px;}
@@ -118,13 +115,12 @@ header h2 {padding:45px 0 25px; font-size:42px; color:#fff; text-align: center; 
 header.alt-1 {background:url(images/header_alt-1_bg.jpg) bottom center no-repeat; min-height:490px; position: relative;}
 header.alt-2 {background:url(images/header_hardware_bg.jpg) bottom center no-repeat; min-height:490px; position: relative;}
 header.alt-3 {background:url(images/header_pricing_bg.jpg) bottom center no-repeat; min-height:490px; position: relative;}
-header.alt-4 {background:url(images/header_partner_bg.jpg) bottom center no-repeat; min-height:490px; position: relative;}
-header.alt-5 {background:url(images/header_alt-5_bg.jpg) bottom center no-repeat; min-height:490px; position: relative;}
+header.alt-4 {background:url(images/header_partner_bg.jpg) bottom center no-repeat; min-height:580px; position: relative;}
+header.alt-5 {background:url(images/header_labs_bg.jpg) bottom center no-repeat; min-height:490px; position: relative;}
+header.alt-6 {background:url(images/header_insights_bg.jpg) bottom center no-repeat; min-height:490px; position: relative;}
 header.login {background:transparent; min-height:1px;}
 
-header.alt-9 {background:url(images/header_insights_bg.jpg) bottom center no-repeat; min-height:490px; position: relative;}
-
-header.alt-1 .message h1, header.alt-2 .message h1, header.alt-9 .message h1, header.alt-4 .message h1 {color: #D7D7D7;}
+header.alt-1 .message h1, header.alt-2 .message h1, header.alt-3 .message h1, header.alt-4 .message h1, header.alt-5 .message h1, header.alt-6 .message h1 {color: #D7D7D7;}
 
 /* Video Header */
 header.video {background:#f2f2f2;  min-height:1px; }

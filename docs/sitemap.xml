@@ -293,6 +293,14 @@
   </url>
   
   <url>
+    <loc>https://foundriesio.github.io/foundriesiov2/careers/</loc>
+  </url>
+  
+  <url>
+    <loc>https://foundriesio.github.io/foundriesiov2/company/</loc>
+  </url>
+  
+  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/hardware/</loc>
   </url>
   
@@ -306,6 +314,10 @@
   
   <url>
     <loc>https://foundriesio.github.io/foundriesiov2/products/</loc>
+  </url>
+  
+  <url>
+    <loc>https://foundriesio.github.io/foundriesiov2/template/</loc>
   </url>
   
   <url>

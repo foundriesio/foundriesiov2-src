@@ -7,7 +7,7 @@
 <body>
 
 <!--  HEADER -->
-<header class="alt-9">
+<header class="alt-6">
 
     {{ partial "navbar.html" . }}
 
@@ -25,6 +25,23 @@
     </div>
 </header>
 <!--  END OF HEADER -->
+
+<!--  FEATURES -->
+<section class="features">
+
+
+
+<div class="row">
+<div class="small-12 columns">
+
+	<h2>OUR LABS</h2>
+<p style="text-align: left">At Foundries.io, we are constantly creating software and new technologies that help us deliver on our microPlatform mission. These efforts, though they may not be formally supported as products, often help us demonstrate the capabilities of our microPlatforms or help us improve the overall ecosystems we participate in.
+<br>
+
+
+</div>
+</div>
+</section>
 
     <div id="content">
         <div class="container">
@@ -62,9 +79,6 @@
                                       {{ end }}
 
                                     </p>
-                                    <p class="date-comments">
-                                        <a href="{{ .Permalink }}"><i class="fa fa-calendar-o"></i> {{ .Date.Format .Site.Params.date_format }}</a>
-                                    </p>
                                 </div>
                                 <p class="intro">{{ .Summary }}</p>
                                 <p class="read-more"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
@@ -73,20 +87,6 @@
                         </div>
                     </section>
                     {{ end }}
-
-                    <ul class="pager">
-                        {{ if .Paginator.HasPrev }}
-                        <li class="previous"><a href="{{ .Paginator.Prev.URL }}">&larr; {{ i18n "newer" }}</a></li>
-                        {{ else }}
-                        <li class="previous disabled"><a href="#">&larr; {{ i18n "newer" }}</a></li>
-                        {{ end }}
-
-                        {{ if .Paginator.HasNext }}
-                        <li class="next"><a href="{{ .Paginator.Next.URL }}">{{ i18n "older" }} &rarr;</a></li>
-                        {{ else }}
-                        <li class="next disabled"><a href="#">{{ i18n "older" }} &rarr;</a></li>
-                        {{ end }}
-                    </ul>
                 </div>
                 <!-- /.col-md-9 -->
 
