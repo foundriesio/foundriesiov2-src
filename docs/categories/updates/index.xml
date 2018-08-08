@@ -6,10 +6,32 @@
     <description>Recent content in Updates on Foundries.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://foundriesio.github.io/foundriesiov2/categories/updates/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>microPlatform update 0.25</title>
+      <link>https://foundriesio.github.io/foundriesiov2/insights/2018/07/27/blog-post-update-0.25/</link>
+      <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/insights/2018/07/27/blog-post-update-0.25/</guid>
+      <description>&lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;
+
+&lt;h2 id=&#34;zephyr-microplatform-changes-for-0-25&#34;&gt;Zephyr microPlatform changes for 0.25&lt;/h2&gt;
+
+&lt;p&gt;MCUboot 1.2.0 contains mostly fixes around the serial
+bootloader. The Zephyr tree from the v1.13 development cycle
+contains several significant improvements and new features.&lt;/p&gt;
+
+&lt;h2 id=&#34;linux-microplatform-changes-for-0-25&#34;&gt;Linux microPlatform changes for 0.25&lt;/h2&gt;
+
+&lt;p&gt;Linux microPlatform meta-osf layer was renamed to meta-lmp.
+Core layer updates based on the latest OE/Yocto master changes.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>microPlatform update 0.24</title>
