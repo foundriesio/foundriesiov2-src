@@ -26,6 +26,8 @@ defaultContentLanguage = "en"
     defaultDescription = "Our mission is to fulfill the promise of IoT by delivering a continuously-updated software platform for a secure connected world"
     date_format = "January 2, 2006"
     viewMorePostLink = "/insights/"
+    email = "contact@foundries.io"
+    career_email = "careers@foundries.io"
 
 [Permalinks]
     insights = "/insights/:year/:month/:day/:filename/"

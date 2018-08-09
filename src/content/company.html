@@ -220,6 +220,19 @@
     </div>
     <!-- END OF SUPPORT TIMELINE  -->
 
+    <!-- CONTACT -->
+    <section class="signups">
+        <div class="row">
+            <div class="small-12 large-6 columns">
+                {{ partial "contact.html" . }}
+            </div>
+            <div class="small-12 large-6 columns">
+                {{ partial "mailchimp.html" . }}
+            </div>
+        </div>
+    </section>
+    <!-- END OF CONTACT -->
+
     <section class="calltoaction">
         <div class="row">
             <div class="small-12 columns">
@@ -234,6 +247,7 @@
     </section>
 
     <!--  FOOTER -->
+
     {{ partial "footer.html" . }} {{ partial "scripts.html" . }}
 
     <!--  END OF FOOTER -->

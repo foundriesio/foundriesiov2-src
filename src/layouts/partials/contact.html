@@ -1,0 +1,42 @@
+<!--  CONTACT CONTENT  -->
+<div class="support-subheader">
+    <div class="row">
+        <div class="small-10 columns small-offset-1">
+            <h2>Contact us</h2>
+            <p>Have a question?  Send us a quick note and we'll get back to you soon.</p>
+        </div>
+
+        <div class="contact-section">
+            <div class="row">
+                <!--<div class="small-12 columns">
+                    Find out more
+                </div>-->
+                <div class="small-10 columns small-offset-1">
+                    <div id="sendstatus"></div>
+                    <div id="contactform">
+                        <form method="post" action="https://formspree.io/{{ .Site.Params.email }}">
+                            <div>
+                                <label for="name">Name:*</label>
+                                <input type="text" name="name" id="name" tabindex="1" />
+                            </div>
+                            <div>
+                                <label for="email">Email:*</label>
+                                <input type="text" name="email" id="email" tabindex="2" />
+                            </div>
+                            <div>
+                                <label for="comments">Message:*</label>
+                                <textarea name="comments" id="comments" cols="12" rows="6" tabindex="3"></textarea>
+                            </div>
+                            <div>
+                                <input type="submit" class="button radius medium" name="submit" id="submit" value="Submit" tabindex="4" />
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  END OF CONTACT CONTENT  -->
