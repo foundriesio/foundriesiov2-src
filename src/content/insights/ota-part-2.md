@@ -2,7 +2,7 @@
 title = "What Is OTA Community Edition"
 date = "2018-06-14"
 tags = ["ota", "open source"]
-categories = ["FOTA", "linux microplatform"]
+categories = ["FOTA", "Linux mP"]
 banner = "img/banners/ota.png"
 +++
 

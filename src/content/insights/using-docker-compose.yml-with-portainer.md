@@ -1,9 +1,9 @@
 +++
 author = "Alan Bennett"
 banner = "/uploads/2018/05/09/p-d-dc.png"
-categories = ["linux microplatform", "mp containers"]
+categories = ["Linux mP", "mP containers"]
 date = "2018-05-08T06:00:00+00:00"
-tags = ["portainer", "container", "docker", "docker-compose"]
+tags = ["portainer", "containers", "docker", "docker-compose"]
 title = "Using docker-compose.yml with Portainer"
 
 +++

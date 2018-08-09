@@ -2,7 +2,7 @@
 title = "Using your own firmware signing keys with MCUBoot"
 date = "2018-01-17"
 tags = ["mcuboot", "security", "keys"]
-categories = ["fota", "zephyr microplatform"]
+categories = ["fota", "Zephyr mP"]
 banner = "img/banners/banner-mcuboot.jpg"
 +++
 

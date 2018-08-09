@@ -2,7 +2,7 @@
 title = "Securing OTA Community Edition"
 date = "2018-07-12"
 tags = ["ota", "open source"]
-categories = ["FOTA", "linux microplatform"]
+categories = ["FOTA", "Linux mP"]
 banner = "img/banners/ota.png"
 author = "Andy Doan"
 +++

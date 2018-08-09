@@ -2,7 +2,7 @@
 title = "Foundries.io at ELC / Open IoT Summit 2018"
 date = "2018-01-26"
 tags = ["linux", "docker", "microPlatform"]
-categories = ["conferences", "zephyr microplatform", "zephyr", "fota", "linux microplatform"]
+categories = ["conferences", "Zephyr mP", "zephyr", "fota", "Linux mP"]
 banner = "img/banners/elc2018.png"
 +++
 

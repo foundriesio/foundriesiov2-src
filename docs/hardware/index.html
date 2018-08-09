@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en-us">
 
-    <head>
+<head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -17,19 +17,18 @@
   <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/owl.theme.css" />
   <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/owl.transitions.css" />
   <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/slicknav.css" />
-
- 
-
   <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/style.css" />
+  <link rel="stylesheet" href="https://foundriesio.github.io/foundriesiov2/css/style.default.css" />
+
 </head>
 
 
 <body>
 
-
-<header class="alt-2">
-
     
+    <header class="alt-2">
+
+        
 <div class="top sticky">
     <div class="row">
         <div class="small-12 large-3 medium-3 columns">
@@ -47,7 +46,7 @@
 
                     <li><a href="https://foundriesio.github.io/foundriesiov2/products/" style="cursor:default">PRODUCTS</a>
 		 	            <ul>
-			                <li><a href="https://foundriesio.github.io/foundriesiov2/products/"> MICROPLATFORMS</a></li>
+			                <li style="background: #ffaa00"><a href="https://foundriesio.github.io/foundriesiov2/products/"> MICROPLATFORMS</a></li>
 			                <li><a href="https://foundriesio.github.io/foundriesiov2/pricing/"> PRICING</a></li>
 			                <li><a href="https://foundriesio.github.io/foundriesiov2/hardware/"> HARDWARE</a></li>
 		                </ul>
@@ -57,6 +56,7 @@
 		            <li><a href="https://foundriesio.github.io/foundriesiov2/insights/">INSIGHTS</a></li>
                     <li><a href="https://foundriesio.github.io/foundriesiov2/company/">ABOUT</a>
                         <ul>
+                            <li  style="background: #ffaa00"><a href="https://foundriesio.github.io/foundriesiov2/company/"> COMPANY</a></li>
                             <li><a href="https://foundriesio.github.io/foundriesiov2/labs/"> LABS</a></li>
                             <li><a href="https://foundriesio.github.io/foundriesiov2/careers/"> CAREERS</a></li>
                         </ul>
@@ -79,85 +79,96 @@
 
 
 
-    <div class="message">
+        <div class="message">
+            <div class="row">
+                <div class="small-12 columns">
+                    <div class="message-intro">
+                        <span class="message-line"></span>
+                        <p>HARDWARE</p>
+                        <span class="message-line"></span>
+                    </div>
+                    <h1>SUPPORTED DEVICES AND PLATFORMS</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <div class="pricingboxes-comparison">
+        <div class="row">
+            <div class="small-10 columns small-offset-1">
+                <p>The microPlatforms are portable and architecture independent.  There are three levels of hardware support:
+                    <ul>
+                        <li><b>Reference devices:</b> globally available, low-cost development hardware with extensive automated end-to-end testing in our CI labs and additional documentation.</li>
+                        <li><b>Community devices:</b> additional builds and documentation for popular hardware platforms, with best-effort support</li>
+                        <li><b>Upstream-supported devices:</b> We provide documentation for using the microPlatforms on any hardware with upstream support</li>
+                    </ul>
+                </p>
+                <p> Foundries.io is working with SoC and MCU manufacturers to create a "microPlatform Certified" program.</p>
+            </div>
+        </div>
+
+        <div class="pricingboxes">
+            <div class="row">
+                <div data-wow-delay="0.2s" class="small-12 large-6 medium-6 columns wow fadeInLeft">
+                    <div class="title">Linux mP reference devices</div>
+                    <p><ul class="pricing-table">
+                        <li class="bullet-item">Raspberry Pi 3</li>
+                        <li class="bullet-item">Compulab IoT-GATE-iMX7</li>
+                        <li class="bullet-item">Toradex Colibri iMX7 (w/ Aster Carrier Board) *</li>
+                    </ul>
+                    <i>* automated testing performed with partners</i></p>
+                </div>
+
+                <div data-wow-delay="0.4s" class="small-12 large-6 medium-6 columns wow fadeInRight">
+                    <div class="title">Zephyr mP reference devices</div>
+                    <ul class="pricing-table">
+                        <li class="bullet-item">Red Bear BLE Nano 2 (Nordic nRF52832)</li>
+                        <li class="bullet-item">NXP Freedom K64F</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pricingboxes">
+                <div class="row">
+                    <div data-wow-delay="0.2s" class="small-12 large-6 medium-6 columns wow fadeInLeft">
+                        <div class="title">Linux mP community devices</div>
+                        <p><ul class="pricing-table">
+                            <li class="bullet-item">Beaglebone Black Wireless</li>
+                            <li class="bullet-item">DragonBoard 410C</li>
+                            <li class="bullet-item">DragonBoard 820C</li>
+                            <li class="bullet-item">LeMaker HiKey board</li>
+                            <li class="bullet-item">Intel NUC (Core i3 / Intel Celeron J3455)</li>
+                            <li class="bullet-item">MinnowBoard Turbot QUAD Core Board</li>
+                            <li class="bullet-item">Raspberry Pi Zero (WiFi)</li>
+                            <li class="bullet-item">SiFive HiFive Unleashed (RISC-V) **</li>
+                            <li class="bullet-item">Solidrun HummingBoard Gate</li>
+                        </ul>
+                        <i>** The Unleashed board is supported with a functional, but minimal build. Full RISC-V support is dependant on enablement within key upstream projects.  Learn more at: <a href="https://riscv.org/software-status/">RISC-V software status</a></i></p>
+                    </div>
+
+                    <div data-wow-delay="0.4s" class="small-12 large-6 medium-6 columns wow fadeInRight">
+                        <div class="title">Zephyr mP community devices</div>
+                        <ul class="pricing-table">
+                            <li class="bullet-item">Nordic nRF52840dk</li>
+                            <li class="bullet-item">96Boards Nitrogen</li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <section class="calltoaction">
         <div class="row">
             <div class="small-12 columns">
-                <div class="message-intro">
-                    <span class="message-line"></span>
-                    <p>HARDWARE / SYSTEMS</p>
-                    <span class="message-line"></span>
+                <div data-wow-delay="0.5s" class="calltoactioninfo wow fadeInUp">
+                    <h2>LET'S GET STARTED</h2>
+                    <a href="https://foundriesio.github.io/foundriesiov2//pricing/" class="medium radius button" style="margin-right: 50px">REVIEW PRICING</a>
+                    <a href="https://app.foundries.io/login/?next=/" class="medium radius button">SIGN UP NOW!</a>
                 </div>
-                <h1>DEVICES AND PLATFORMS</h1>
             </div>
         </div>
-    </div>
-</header>
+    </section>
 
-
-<div class="pricingboxes-comparison">
-    <div class="row">
-        <div class="small-12 columns">
-            <h2>HARDWARE</h2>
-            <p>The microPlatforms are hardware and architecture independent. Foundries.io use a small number of reference hardware platforms to create CI test labs to enable automated end to end testing across volumes of devices. Our goals for reference devices include:
-	        <ul>
-                <li>Functionality</li>
-                <li>Strong upstream support</li>
-                <li>Global availability of devices and low cost development boards</li>
-	        </ul>
-	           <p>Documentation is provided on how to use the microPlatforms on any hardware supported in the relevant upstream projects (i.e. the Zephyr Project and the Linux kernel).
-                   We provide builds for several popular hardware platforms as examples, and are also working with SoC and MCU manufacturers to create a "microPlatform Certified" program.</p>
-        </div>
-    </div>
-
-    <div class="pricingboxes">
-        <div class="row">
-            <div data-wow-delay="0.2s"  class="small-12 large-6 medium-6 columns wow fadeInLeft">
-                <div class="title">Linux microPlatform Hardware</div>
-                <ul class="pricing-table">
-                    <li class="bullet-item">Raspberry Pi 3</li>
-                    <li class="bullet-item">Compulab IoT-GATE-iMX7</li>
-                    <li class="bullet-item">Beaglebone Black Wireless</li>
-                    <li class="bullet-item">DragonBoard 410C</li>
-                    <li class="bullet-item">DragonBoard 820C</li>
-                    <li class="bullet-item">LeMaker HiKey board</li>
-                    <li class="bullet-item">Intel NUC (Core i3 / Intel Celeron J3455)</li>
-                    <li class="bullet-item">MinnowBoard Turbot QUAD Core Board</li>
-                    <li class="bullet-item">Raspberry Pi Zero (WiFi)</li>
-                    <li class="bullet-item">SiFive HiFive Unleashed (RISC-V) *</li>
-                    <li class="bullet-item">Solidrun HummingBoard Gate</li>
-                    <li class="bullet-item">Toradex Colibri iMX7 (Aster Carrier Board)</li>
-                    <li class="bullet-item">Upstream supported hardware</li>
-                </ul>
-            </div>
-
-            <div data-wow-delay="0.4s"  class="small-12 large-6 medium-6 columns wow fadeInUp">
-                <div class="title">Zephyr microPlatform Hardware</div>
-                <ul class="pricing-table">
-                    <li class="bullet-item">Red Bear BLE Nano 2 (Nordic nRF52832)</li>
-                    <li class="bullet-item">96Boards Nitrogen</li>
-                    <li class="bullet-item">Nordic nRF52840dk</li>
-                    <li class="bullet-item">Upstream Zephyr hardware</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<section class="calltoaction">
-    <div class="row">
-        <div class="small-12 columns">
-            <div data-wow-delay="0.5s" class="calltoactioninfo wow fadeInUp">
-                <h2>LET'S GET STARTED</h2>
-                <a href="https://foundriesio.github.io/foundriesiov2//pricing/" class="small radius button" style="margin-right: 50px">REVIEW PRICING</a>
-                <a href="https://app.foundries.io/login/?next=/" class="small radius button">SIGN UP NOW!</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
+    
 <footer>
     <div class="row">
         <div class="small-12 columns">
@@ -229,9 +240,7 @@
     <p class="copyright">Copyright 2018 Foundries.io All rights reserved</p>
 </footer>
 
-
-
-
+ 
 <script>
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -269,6 +278,7 @@ jQuery(function($) {
 </script>
 
 
-</script>
+    </script>
 </body>
+
 </html>

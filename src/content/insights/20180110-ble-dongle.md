@@ -2,7 +2,7 @@
 title = "Open Source Bluetooth Low Energy (BLE) USB dongle"
 date = "2018-01-08"
 tags = ["ble", "radio", "open source", "bugs"]
-categories = ["zephyr microplatform"]
+categories = ["Zephyr mP"]
 banner = "img/banners/ble-dongle.png"
 +++
 

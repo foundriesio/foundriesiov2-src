@@ -1,8 +1,8 @@
 +++
 title = "180 days"
 date = "2018-03-30"
-tags = ["General"]
-categories = ["zephyr microplatform", "linux microplatform"]
+tags = ["foundries.io"]
+categories = ["Zephyr mP", "Linux mP"]
 banner = "img/banners/180days.png"
 +++
 

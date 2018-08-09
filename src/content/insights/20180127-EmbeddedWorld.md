@@ -2,7 +2,7 @@
 title = "Foundries.io at Embedded World 2018"
 date = "2018-01-27"
 tags = ["linux", "docker", "microPlatform"]
-categories = ["conferences","zephyr microplatform", "linux microplatform"]
+categories = ["conferences","Zephyr mP", "linux mP"]
 banner = "img/banners/ew2018.png"
 +++
 

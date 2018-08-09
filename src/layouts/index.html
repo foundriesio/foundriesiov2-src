@@ -1,8 +1,7 @@
-
 <!doctype html>
 <html class="no-js" lang="{{ .Site.LanguageCode }}">
 
-    {{ partial "head.html" . }}
+{{ partial "head.html" . }}
 
 <body>
 
@@ -14,272 +13,212 @@
         <!-- SLIDER -->
         <div id="slider-container">
             <div id="home-slider" class="owl-carousel owl-theme">
-               <div class="item">
-                   <div class="slidercaption">
-                       <h3>POWERING CONNECTED PRODUCTS </h3>
-                       <p style="color: black">Continuously updated software platforms for the IoT world</p>
-                       <div class="viewplans"><a href="{{ .Site.BaseURL }}products/" class="small radius button">VIEW PRODUCTS</a></div>
-                   </div>
-                   <img src="{{ .Site.BaseURL }}images/slider/3.jpg" alt="">
-               </div>
-               <div class="item">
-                   <div class="slidercaption">
-                       <h3>ENSURING SECURE CONNECTIONS</h3>
-                       <p style="color: black">Designed for security, using state-of-the-art protocols and frameworks</p>
-                       <div class="viewplans"><a href="{{ .Site.BaseURL }}products/" class="small radius button">VIEW PRODUCTS</a></div>
-                   </div>
-                   <img src="{{ .Site.BaseURL }}images/slider/1.jpg" alt="">
-               </div>
-               <div class="item">
-                   <div class="slidercaption">
-                       <h3>PRODUCT LIFETIME UPDATES</h3>
-                       <p style="color: black">Built in maintenance and new features for your customers delivered over-the-air</p>
-                       <div class="viewplans"><a href="{{ .Site.BaseURL }}products/" class="small radius button">VIEW PRODUCTS</a></div>
-                   </div>
-                   <img src="{{ .Site.BaseURL }}images/slider/2.jpg" alt="">
-               </div>
-           </div>
+                <div class="item">
+                    <div class="slidercaption">
+                        <h3>POWERING CONNECTED PRODUCTS </h3>
+                        <p style="color: black">Continuously updated software platforms for the IoT world</p>
+                        <div class="viewplans"><a href="{{ .Site.BaseURL }}products/" class="small radius button">VIEW PRODUCTS</a></div>
+                    </div>
+                    <img src="{{ .Site.BaseURL }}images/slider/3.jpg" alt="">
+                </div>
+                <div class="item">
+                    <div class="slidercaption">
+                        <h3>ENSURING SECURE CONNECTIONS</h3>
+                        <p style="color: black">Designed for security, using state-of-the-art protocols and frameworks</p>
+                        <div class="viewplans"><a href="{{ .Site.BaseURL }}products/" class="small radius button">VIEW PRODUCTS</a></div>
+                    </div>
+                    <img src="{{ .Site.BaseURL }}images/slider/1.jpg" alt="">
+                </div>
+                <div class="item">
+                    <div class="slidercaption">
+                        <h3>PRODUCT LIFETIME UPDATES</h3>
+                        <p style="color: black">Built in maintenance and new features for your customers delivered over-the-air</p>
+                        <div class="viewplans"><a href="{{ .Site.BaseURL }}products/" class="small radius button">VIEW PRODUCTS</a></div>
+                    </div>
+                    <img src="{{ .Site.BaseURL }}images/slider/2.jpg" alt="">
+                </div>
+            </div>
         </div>
         <!-- END OF SLIDER -->
-        <div class="clouds"><img src="{{ .Site.BaseURL }}images/clouds.png" alt="cloud me"/></div>
+        <div class="clouds"><img src="{{ .Site.BaseURL }}images/clouds.png" alt="cloud me" /></div>
     </header>
-<!--  END OF HEADER -->
+    <!--  END OF HEADER -->
 
+    <!--  FEATURES -->
+    <section class="features">
+        <div class="row">
+            <div class="small-10 columns small-offset-1">
+                <h2 style="text-align: center">DIFFERENTIATE YOUR PRODUCT, <BR>STARTING WITH THE PLATFORM</h2>
+                <h4 style="text-align: center">All platforms are not the same. </h4>
+                <p>What you need is a simple, powerful software platform that addresses your current and emerging product development needs. After all, your time is better served focusing on adding your own value, rather than sifting through undifferentiated features. </p>
+                <p class="text-center">At Foundries.io our goal is to bring the fragmented embedded product world up to latest industry practices. We deliver secure, over-the-air updatable, software with our microPlatforms with no lock-in. </p>
+            </div>
+            <div data-wow-delay="0.3s" class="text-center wow fadeIn"><img src="{{ .Site.BaseURL }}images/monitoring.png" alt="" /></div>
 
-<!--  FEATURES -->
-<section class="features">
-<div class="row">
-<div class="small-6 columns small-offset-3">
-<h2>DIFFERENTIATE YOUR PRODUCT, <BR>STARTING WITH THE PLATFORM</h2>
-	<h4 style="text-align: center">All platforms are not the same. </h4> <p>What you need is a simple, powerful software platform that addresses your current and emerging product development needs. After all, your time is better served focusing on adding your own value, rather than sifting through undifferentiated features.  </p>
+        </div>
+        <div class="row">
+            <div class="small-8 columns small-offset-2">
+                <h4 style="text-align: center">We provide tools for engineering teams to monitor changes and appropriately integrate updates with their own IP and applications </h4>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="small-12 columns">
+                <ul class="small-block-grid-1 large-block-grid-3 medium-block-grid-3">
+                    <li data-wow-delay="0.2s" class="wow fadeInLeft">
+                        <i class="fa fa-lock"></i>
+                        <h3>Secure</h3>
+                        <p>Trust and security are built in to the microPlatforms</p>
+                    </li>
+                    <li data-wow-delay="0.4s" class="wow fadeInLeft">
+                        <i class="fa fa-wifi"></i>
+                        <h3>Connected</h3>
+                        <p>Support for wired, wireless, Wi-Fi, Bluetooth BLE, Mesh and proprietary radios</p>
+                    </li>
 
-<p class="text-center">At Foundries.io our goal is to bring the fragmented embedded product world up to latest industry practices. We deliver secure, over-the-air, updatable, core software with our microPlatforms via a lifetime subscription service with no lock-in. </p>
-	</div>
-<div data-wow-delay="0.3s" class="text-center wow fadeIn"><img src="{{ .Site.BaseURL }}images/monitoring.png" alt=""/></div>
-</div>
-</div>
+                    <li data-wow-delay="0.6s" class="wow fadeInLeft">
+                        <i class="fa fa-code"></i>
+                        <h3>Updatable</h3>
+                        <p>Built-in automotive-grade software update framework</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<div class="row">
-<div class="small-12 columns">
-	<p><strong>We provide tools for engineering teams to monitor changes and appropriately integrate updates with their own IP and applications </p>
+    <!--  SHARE HOSTING FEATURES  -->
+    <section class="sharedfeatures-odd wow fadeInLeft">
+        <div class="row">
+            <div class="small-12 large-4 medium-4 columns">
+                <div><img src="{{ .Site.BaseURL }}images/city-linux.jpg" alt="" /></div>
+            </div>
+            <div class="small-12 large-8 medium-8 columns">
+                <h2>Linux microPlatform</h2>
+                <p>The Linux microPlatform combines secure updatable firmware, the Linux kernel, a minimal distribution built using Open Embedded/Yocto, and a container-based application runtime. This enables secure remote management of all your product's software using standard tools. A subscription to the Linux microPlatform update stream gives you access to stabilized continuous updates of all these technologies, keeping you in full control of when to integrate new features and fixes.
 
-<ul class="small-block-grid-1 large-block-grid-3 medium-block-grid-3">
+                </p> <a href="{{ .Site.BaseURL }}products/" class="small radius button">MORE ABOUT LINUX MICROPLATFORM</a>
+            </div>
+        </div>
+    </section>
 
-<li  data-wow-delay="0.2s" class="wow fadeInLeft">
-<i class="fa fa-lock"></i>
-<h3>Secure</h3>
-<p>Trust and security are built in</p>
-</li>
+    <section class="sharedfeatures-even wow fadeInRight">
+        <div class="row">
+            <div class="small-12 large-8 medium-8 columns" style="text-align: right">
+                <h2>Zephyr microPlatform</h2>
+                <p>The Zephyr microPlatform is secure RTOS software, combining the MCUboot secure bootloader, the latest Zephyr Project software, and reference applications to provide a continuously tested, updatable, cross architecture solution for microcontroller based products. </p> <a href="products.html" class="small radius button">MORE ABOUT ZEPHYR MICROPLATFORM</a>
+            </div>
+            <div class="small-12 large-4 medium-4 columns">
+                <div><img src="{{ .Site.BaseURL }}images/retail-micro.jpg" alt="" /></div>
+            </div>
 
-<li data-wow-delay="0.4s" class="wow fadeInLeft">
-<i class="fa fa-wifi"></i>
-<h3>Connected</h3>
-<p>Support for wired, wireless, Wi-Fi, Bluetooth BLE, Mesh and proprietary radios</p>
-</li>
+        </div>
+        </div>
 
-<li data-wow-delay="0.6s" class="wow fadeInLeft">
-<i class="fa fa-code"></i>
-<h3>Updatable</h3>
-<p>Built-in automotive-grade software update framework</p>
-</li>
+    </section>
 
-<!--<li data-wow-delay="0.2s" class="wow fadeInRight">
-<i class="fa fa-openid"></i>
-<h3>Open/No Lock-in</h3>
-<p>We build and participate in open software projects - you can end your subscription at any time and keep using all the software</p>
-</li>
+    <section class="sharedfeatures-odd">
+            <div class="row">
+                <div class="small-12 small-offset-3 medium-12 medium-offset-3 large-12 large-offset-4">
+                    <a class="large button" href="{{ .Site.BaseURL }}products/" style="color: white">LET'S DIVE INTO OUR PRODUCTS</a>
+                </div>
+            </div>
+    </section>
 
-<li data-wow-delay="0.4s" class="wow fadeInRight">
-<i class="fa fa-thumbs-o-up"></i>
-<h3>Easy to Use</h3>
-<p>We show you how to create an end-to-end system using popular single-board computers</p>
-</li>
+    <!--  CALL TO ACTION  -->
+    <section class="calltoaction2">
+        <div class="row">
+            <div class="small-12 columns">
 
-<li data-wow-delay="0.6s" class="wow fadeInRight">
-<i class="fa fa-calendar-check-o"></i>
-<h3>Lifetime Maintenance</h3>
-<p>A single subscription to provide lifetime microPlatform updates for your product - there are no per unit costs</p>
-</li>
+                <div class="small-6 column">
 
+                    <div>
+                        <h2>PARTNERSHIPS THAT POWER <strong>THE FUTURE</strong></h2></div>
+                    <div>
 
-<li  data-wow-delay="0.2s" class="wow fadeInLeft">
-<i class="fa fa-cloud"></i>
-<h3>Any Cloud</h3>
-<p>Access to global public cloud providers, or use your own private cloud for managing your products</p>
-</li>
+                        <p style="color: white">By the time you finish this page, another use-case for connected devices will be concocted. And when it is, Foundries.io and its partners will be there with the microPlatforms to help bring your product to market and provide lifetime updates.
 
-<li data-wow-delay="0.4s" class="wow fadeInLeft">
-<i class="fa fa-automobile"></i>
-<h3>Edge and Endpoint</h3>
-<p>Suitable for endpoint sensors and controllers, and for Edge products from simple gateways to fully autonomous cars</p>
-</li>
+                            <p style="color: white">Our microPlatform partner ecosystem includes leading suppliers that provide product developers the building blocks for connected devices - from industrial sensors to autonomous vehicles.</p>
 
-<li data-wow-delay="0.6s" class="wow fadeInLeft">
-<i class="fa fa-user"></i>
-<h3>Continuous Integration</h3>
-<p>Regression testing and rigorous validation provides continuous microPlatform improvements to stability, security &amp; functionality for all users</p>
-</li>-->
-</ul>
-</div>
-</div>
-</section>
+                    </div>
+                </div>
 
-	  <!--  SHARE HOSTING FEATURES  -->
-<section class="sharedfeatures-odd wow fadeInLeft">
-<div class="row">
-<div class="small-12 large-4 medium-4 columns">
-<div><img src="{{ .Site.BaseURL }}images/city-linux.jpg" alt=""/></div>
-</div>
-<div class="small-12 large-8 medium-8 columns">
-<h2>Linux microPlatform</h2>
-<p>The Linux microPlatform combines secure updatable firmware, the Linux kernel, a minimal distribution built using Open Embedded/Yocto, and a container-based application runtime. This enables secure remote management of all your product's software using standard tools. A subscription to the Linux microPlatform update stream gives you access to stabilized continuous updates of all these technologies, keeping you in full control of when to integrate new features and fixes.
+                <div class="small-6 columns">
+                    <img src="{{ .Site.BaseURL }}images/autonomous-car.jpg">
+                </div>
+            </div>
+        </div>
 
-</p> <a href="{{ .Site.BaseURL }}products/" class="small radius button">MORE ABOUT LINUX MICROPLATFORM</a>
-</div>
-</div>
-</section>
+        <div class="row" style="margin-top: 40px">
+            <div class="small-12 columns">
+                <!-- DOMAIN FEATURES   -->
+                <ul class="small-block-grid-1 large-block-grid-2 medium-block-grid-2 domainfeatures">
 
-<section class="sharedfeatures-even wow fadeInRight">
-<div class="row">
-<div class="small-12 large-8 medium-8 columns" style="text-align: right">
-<h2>Zephyr microPlatform</h2>
-<p>The Zephyr microPlatform is secure RTOS software, combining the MCUboot secure bootloader, the latest Zephyr Project software, and reference applications to provide a continuously tested, updatable, cross architecture solution for microcontroller based products. </p> <a href="products.html" class="small radius button">MORE ABOUT ZEPHYR MICROPLATFORM</a>
-</div>
-<div class="small-12 large-4 medium-4 columns">
-<div><img src="{{ .Site.BaseURL }}images/retail-micro.jpg" alt=""/></div>
-</div>
+                    <li data-wow-delay="0.1s" class="wow zoomIn">
+                        <div class="row">
+                            <div class="small-12 large-3 medium-3 columns">
+                                <div class="circle"><i class="fa fa-microchip"></i></div>
+                            </div>
+                            <div class="small-12 large-9 medium-9 columns">
+                                <h3>SoC • MCU • SoM VENDORS &amp; DISTRIBUTORS</h3>
+                                <p>Integrate your products, accelerate customer designs</p>
+                            </div>
+                        </div>
+                    </li>
 
+                    <li data-wow-delay="0.2s" class="wow zoomIn">
+                        <div class="row">
+                            <div class="small-12 large-3 medium-3 columns">
+                                <div class="circle"><i class="fa fa-wifi"></i></div>
+                            </div>
+                            <div class="small-12 large-9 medium-9 columns">
+                                <h3>WIRELESS &amp; <br>PERIPHERAL SOLUTIONS</h3>
+                                <p>Build support for your products into the microPlatforms</p>
+                            </div>
+                        </div>
+                    </li>
 
-</div>
-	</div>
+                    <li data-wow-delay="0.3s" class="wow zoomIn">
+                        <div class="row">
+                            <div class="small-12 large-3 medium-3 columns">
+                                <div class="circle"><i class="fa fa-cloud"></i></div>
+                            </div>
+                            <div class="small-12 large-9 medium-9 columns">
+                                <h3>DEVICE MANAGEMENT &amp; <br>CLOUD PROVIDERS</h3>
+                                <p>Integrate and enable more devices with your cloud services</p>
+                            </div>
+                        </div>
+                    </li>
 
+                    <li data-wow-delay="0.4s" class="wow zoomIn">
+                        <div class="row">
+                            <div class="small-12 large-3 medium-3 columns">
+                                <div class="circle"><i class="fa fa-server"></i></div>
+                            </div>
+                            <div class="small-12 large-9 medium-9 columns">
+                                <h3>SERVICES <br>COMPANIES</h3>
+                                <p>Deliver value-add features and next-level services to microPlatform customers</p>
+                            </div>
+                        </div>
+                    </li>
 
-</section>
+                </ul>
+            </div>
+        </div>
+        <div class="connect-with-us">
+            <div class="row">
+                <div class="small-12 small-offset-3 medium-12 medium-offset-3 large-12 large-offset-4">
+                    <a class="large button" href="{{ .Site.BaseURL }}partners/">LET'S TALK ABOUT HOW TO PARTNER</a>
 
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  END OF CALL TO ACTION -->
 
-<section class="sharedfeatures-odd">
+    <!--  END OF MONITORING  -->
 
-		  	<div>
-	  <div class="row">
-<div class="small-12 columns small-offset-4">
-	<a class="large button" href="{{ .Site.BaseURL }}products/" style="color: white">LET'S DIVE INTO OUR PRODUCTS</a>
+    {{ partial "footer.html" . }} {{ partial "scripts.html" . }}
 
+</body>
 
-		  </div>
- </div>
-</div>
-	  </section>
-
-
-<!--  CALL TO ACTION  -->
-<section class="calltoaction2">
-<div class="row">
-<div class="small-12 columns">
-
-
-	<div class="small-6 column">
-
-<div><h2>PARTNERSHIPS THAT POWER <strong>THE FUTURE</strong></h2></div>
-<div>
-
-	<p style="color: white">By the time you finish this page, another use-case for connected devices will be concocted.  And when it is, Foundries.io and its partners will be there with the microPlatforms, to help bring your product to market and provide lifetime updates.
-
-
-	<p style="color: white">Our microPlatform partner ecosystem includes leading suppliers that provide product developers the building blocks for connected devices - from industrial sensors to autonomous vehicles.</p>
-
-
-</div>
-	</div>
-
-	<div class="small-6 column">
-	  <img src="{{ .Site.BaseURL }}images/autonomous-car.jpg">
-	</div>
-</div>
-</div>
-
-
-<div class="row" style="margin-top: 40px">
-<div class="small-12 columns">
-<!-- DOMAIN FEATURES   -->
-<ul class="small-block-grid-1 large-block-grid-2 medium-block-grid-2 domainfeatures">
-
-<li  data-wow-delay="0.1s" class="wow zoomIn">
-<div class="row">
-<div class="small-12 large-3 medium-3 columns">
-<div class="circle"><i class="fa fa-microchip"></i></div>
-</div>
-<div class="small-12 large-9 medium-9 columns">
-<h3>SoC • MCU • SoM VENDORS &amp; DISTRIBUTORS</h3>
-<p>Integrate your products, accelerate customer designs</p>
-</div>
-</div>
-</li>
-
-<li  data-wow-delay="0.2s" class="wow zoomIn">
-<div class="row">
-<div class="small-12 large-3 medium-3 columns">
-<div class="circle"><i class="fa fa-wifi"></i></div>
-</div>
-<div class="small-12 large-9 medium-9 columns">
-<h3>WIRELESS &amp; <br>PERIPHERAL SOLUTIONS</h3>
-<p>Build support for your products into the microPlatforms</p>
-</div>
-</div>
-</li>
-
-<li  data-wow-delay="0.3s" class="wow zoomIn">
-<div class="row">
-<div class="small-12 large-3 medium-3 columns">
-<div class="circle"><i class="fa fa-cloud"></i></div>
-</div>
-<div class="small-12 large-9 medium-9 columns">
-<h3>DEVICE MANAGEMENT &amp; <br>CLOUD PROVIDERS</h3>
-<p>Integrate and enable more devices with your cloud services</p>
-</div>
-</div>
-</li>
-
-<li  data-wow-delay="0.4s" class="wow zoomIn">
-<div class="row">
-<div class="small-12 large-3 medium-3 columns">
-<div class="circle"><i class="fa fa-server"></i></div>
-</div>
-<div class="small-12 large-9 medium-9 columns">
-<h3>SERVICES <br>COMPANIES</h3>
-<p>Deliver value-add features and next-level services to microPlatform customers</p>
-</div>
-</div>
-</li>
-
-
-
-
-</ul>
-</div>
-</div>
-	<div class="connect-with-us">
-<div class="row">
-<div class="small-12 columns small-offset-4">
-	<a class="large button" href="{{ .Site.BaseURL }}partners/">LET'S TALK ABOUT HOW TO PARTNER</a>
-
-
-
- </div>
-</div>
-</div>
-</section>
-<!--  END OF CALL TO ACTION -->
-
-
-
-
-<!--  END OF MONITORING  -->
-
-{{ partial "footer.html" . }}
-
-
-{{ partial "scripts.html" . }}
-
-  </body>
 </html>

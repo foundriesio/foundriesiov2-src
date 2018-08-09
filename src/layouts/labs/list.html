@@ -1,110 +1,74 @@
-
 <!doctype html>
 <html class="no-js" lang="{{ .Site.LanguageCode }}">
 
-    {{ partial "head.html" . }}
+{{ partial "head.html" . }}
 
 <body>
 
-<!--  HEADER -->
-<header class="alt-6">
+    <!--  HEADER -->
+    <header class="alt-6">
 
-    {{ partial "navbar.html" . }}
+        {{ partial "navbar.html" . }}
 
-    <div class="message">
-        <div class="row">
-            <div class="small-12 columns">
-                <div class="message-intro">
-                    <span class="message-line"></span>
-                    <p>FOUNDRIES.IO Labs</p>
-                    <span class="message-line"></span>
+        <div class="message">
+            <div class="row">
+                <div class="small-12 columns">
+                    <div class="message-intro">
+                        <span class="message-line"></span>
+                        <p>FOUNDRIES.IO LABS</p>
+                        <span class="message-line"></span>
+                    </div>
+                    <h1 style="color: white">Experiments and community projects</h1>
                 </div>
-                <h1 style="color: white">Experiments and community projects</h1>
             </div>
         </div>
-    </div>
-</header>
-<!--  END OF HEADER -->
+    </header>
+    <!--  END OF HEADER -->
 
-<!--  FEATURES -->
-<section class="features">
-
-
-
-<div class="row">
-<div class="small-12 columns">
-
-	<h2>OUR LABS</h2>
-<p style="text-align: left">At Foundries.io, we are constantly creating software and new technologies that help us deliver on our microPlatform mission. These efforts, though they may not be formally supported as products, often help us demonstrate the capabilities of our microPlatforms or help us improve the overall ecosystems we participate in.
-<br>
-
-
-</div>
-</div>
-</section>
+    <!--  FEATURES -->
+    <section class="features">
+        <div class="row">
+            <div class="small-10 columns small-offset-1">
+                <p style="text-align: left">At Foundries.io, we are constantly creating software and new technologies that help us deliver on our microPlatform mission. These efforts, though they may not be formally supported as products, often help us demonstrate the capabilities of our microPlatforms or help us improve the overall ecosystems we participate in.</p>
+            </div>
+        </div>
+    </section>
 
     <div id="content">
         <div class="container">
             <div class="row">
-                <!-- *** LEFT COLUMN *** -->
-
                 <div class="small-12 large-12 medium-12 columns" id="blog-listing-medium">
-
-                    {{ $paginator := .Paginate (where .Data.Pages "Type" "labs") }}
-                    {{ range $paginator.Pages }}
+                    <p><br><br></p>
+                    {{ $paginator := .Paginate (where .Data.Pages "Type" "labs") }} {{ range $paginator.Pages }}
                     <section class="post">
                         <div class="row">
-                            <div class="small-10 large-3 medium-3 columns">
-                              <div class="image">
-                                  <a href="{{ .Permalink }}">
-                                      {{ if .Params.banner }}
-                                      <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-responsive" alt="">
-                                      {{ else }}
-                                      <img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
-                                      {{ end }}
-                                  </a>
-                              </div>
-                            </div>
-                            <div class="small-12 large-9 medium-9 columns">
-                                <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                            <div class="small-8 columns small-offset-2">
+                                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
                                 <div class="clearfix">
                                     <p class="author-category">
-                                      {{ if isset .Params "author" }}
-                                      {{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a>
-                                      {{ end }}
-                                      {{ if isset .Params "categories" }}
-                                      {{ if gt (len .Params.categories) 0 }}
-                                      in <a href="{{ $.Site.BaseURL }}categories/{{ index .Params.categories 0 | urlize | lower }}">{{ index .Params.categories 0 }}</a>
-                                      {{ end }}
-                                      {{ end }}
-
+                                        {{ if isset .Params "author" }} {{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a> {{ end }} {{ if isset .Params "categories" }} {{ if gt (len .Params.categories) 0 }} in <a href="{{ $.Site.BaseURL }}categories/{{ index .Params.categories 0 | urlize | lower }}">{{ index .Params.categories 0 }}</a> {{ end }} {{ end }}
+                                    </p>
+                                    <p class="intro">{{ .Summary }}</p>
+                                    <p class="read-more"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "learnMore" }}</a>
                                     </p>
                                 </div>
-                                <p class="intro">{{ .Summary }}</p>
-                                <p class="read-more"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
-                                </p>
+                                <hr>
                             </div>
                         </div>
                     </section>
                     {{ end }}
                 </div>
-                <!-- /.col-md-9 -->
-
-                <!-- *** LEFT COLUMN END *** -->
-
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /.container -->
     </div>
-    <!-- /#content -->
 
     {{ partial "footer.html" . }}
 
-</div>
-<!-- /#all -->
+    </div>
+    <!-- /#all -->
 
-{{ partial "scripts.html" . }}
+    {{ partial "scripts.html" . }}
 
 </body>
+
 </html>

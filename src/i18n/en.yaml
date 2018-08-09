@@ -9,7 +9,7 @@
 
 - id: loginGoTo
   translation: "Sign Up"
-  
+
 - id: contactGoTo
   translation: "Go to contact page"
 
@@ -72,3 +72,6 @@
 
 - id: publishedOn
   translation: "on"
+
+- id: learnMore
+  translation: "Learn More"

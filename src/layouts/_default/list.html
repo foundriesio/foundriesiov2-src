@@ -29,13 +29,12 @@
         <div class="container">
             <div class="row">
                 <!-- *** LEFT COLUMN *** -->
-
-                <div class="small-12 large-10 medium-10 columns" id="blog-listing-medium">
-
+                <div class="small-12 medium-8 large-9 columns" id="blog-listing-medium">
+                    <p><br><br></p>
                     {{ $paginator := .Paginate (where .Data.Pages "Type" "insights") }} {{ range $paginator.Pages }}
                     <section class="post">
                         <div class="row">
-                            <div class="small-10 large-3 medium-2 columns">
+                            <div class="small-12 medium-2 large-2 columns">
                                 <div class="image">
                                     <a href="{{ .Permalink }}">
                                       {{ if .Params.banner }}
@@ -46,7 +45,7 @@
                                   </a>
                                 </div>
                             </div>
-                            <div class="small-12 large-8 medium-10 columns">
+                            <div class="small-12 medium-8 large-9 columns">
                                 <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
                                 <div class="clearfix">
                                     <p class="author-category">
@@ -61,11 +60,12 @@
                                 <p class="read-more"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
                                 </p>
                             </div>
+                            <hr>
                         </div>
                     </section>
                     {{ end }}
                 </div>
-                <div class="small-12 large-2 medium-12 columns">
+                <div class="small-12 medium-2 large-3 columns">
 
                     <!-- *** MENUS AND WIDGETS *** -->
 

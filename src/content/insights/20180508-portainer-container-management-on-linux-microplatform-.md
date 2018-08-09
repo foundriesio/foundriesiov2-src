@@ -1,9 +1,9 @@
 +++
 author = "Alan Bennett"
 banner = "/uploads/2018/05/08/portainer.png"
-categories = ["mp containers"]
+categories = ["mP containers"]
 date = "2018-05-07T06:00:00+00:00"
-tags = ["portainer", "container", "docker", "management"]
+tags = ["portainer", "containers", "docker", "management"]
 title = "Portainer Container Management on Linux microPlatform "
 
 +++

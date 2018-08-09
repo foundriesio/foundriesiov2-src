@@ -869,17 +869,6 @@ NET_L2_BT_ZEP1656 Zephyr workaround (required for kernels older than 4.12).&lt;/
     </item>
     
     <item>
-      <title>Foundries.io LABS - BLE dongle</title>
-      <link>https://foundriesio.github.io/foundriesiov2/labs/ble-dongle/</link>
-      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://foundriesio.github.io/foundriesiov2/labs/ble-dongle/</guid>
-      <description>&lt;p&gt;Foundries.io has released binaries and source code for a Zephyr-based Bluetooth Low Energy USB dongle to the public.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Open Source Bluetooth Low Energy (BLE) USB dongle</title>
       <link>https://foundriesio.github.io/foundriesiov2/insights/2018/01/08/20180110-ble-dongle/</link>
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
@@ -1057,7 +1046,7 @@ providing firmware update and device communication via LWM2M.&lt;/p&gt;
       <guid>https://foundriesio.github.io/foundriesiov2/careers/</guid>
       <description>{{ partial &#34;head.html&#34; . }}  {{ partial &#34;navbar.html&#34; . }}  Foundries.io Careers
   Ready for an amazing opportunity?     Openings At Foundries.io, we are building an amazing team to change the world of embedded software development. If you want to be part of our team and love the thrill of a startup, we&#39;d love to meet you.
- Linux and Zephyr embedded software Devops; Kubernetes, Containers, High availability Automation, System automation, test planning and execution Front-end User Experience and User Interface design and implementation</description>
+ Linux and Zephyr embedded software Devops; Kubernetes, Containers, High availability Automation, System automation, test planning and execution Front-end User Experience and User Interface design and implementation     Ready for your next adventure?</description>
     </item>
     
     <item>
@@ -1067,7 +1056,7 @@ providing firmware update and device communication via LWM2M.&lt;/p&gt;
       
       <guid>https://foundriesio.github.io/foundriesiov2/company/</guid>
       <description>{{ partial &#34;head.html&#34; . }}  {{ partial &#34;navbar.html&#34; . }}  ABOUT FOUNDRIES.IO
-  CHANGING THE IOT LANDSCAPE     OUR MISSION We provide best-in-class software platforms with lifetime support for building and maintaining connected products, ranging from the smallest sensors to smart and edge devices, from gateways to autononous vehicles. Our core products are Zephyr RTOS and Linux based microPlatforms, which provide product quality templates to build secure, OTA updatable connected devices for industrial and consumer markets.</description>
+  CHANGING THE IOT LANDSCAPE     OUR MISSION We provide best-in-class software platforms with lifetime support for building and maintaining connected products, ranging from the smallest sensors to smart and edge devices, from gateways to autonomous vehicles. Our core products are Zephyr RTOS and Linux based microPlatforms, which provide product quality templates to build secure, OTA updatable connected devices for industrial and consumer markets.</description>
     </item>
     
     <item>
@@ -1076,8 +1065,8 @@ providing firmware update and device communication via LWM2M.&lt;/p&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://foundriesio.github.io/foundriesiov2/hardware/</guid>
-      <description>{{ partial &#34;head.html&#34; . }}  {{ partial &#34;navbar.html&#34; . }}  HARDWARE / SYSTEMS
-  DEVICES AND PLATFORMS     HARDWARE The microPlatforms are hardware and architecture independent. Foundries.io use a small number of reference hardware platforms to create CI test labs to enable automated end to end testing across volumes of devices. Our goals for reference devices include:  Functionality Strong upstream support Global availability of devices and low cost development boards  Documentation is provided on how to use the microPlatforms on any hardware supported in the relevant upstream projects (i.</description>
+      <description>{{ partial &#34;head.html&#34; . }}  {{ partial &#34;navbar.html&#34; . }}  HARDWARE
+  SUPPORTED DEVICES AND PLATFORMS     The microPlatforms are portable and architecture independent. There are three levels of hardware support:  Reference devices: globally available, low-cost development hardware with extensive automated end-to-end testing in our CI labs and additional documentation. Community devices: additional builds and documentation for popular hardware platforms, with best-effort support Upstream-supported devices: We provide documentation for using the microPlatforms on any hardware with upstream support   Foundries.</description>
     </item>
     
     <item>
@@ -1097,7 +1086,7 @@ providing firmware update and device communication via LWM2M.&lt;/p&gt;
       
       <guid>https://foundriesio.github.io/foundriesiov2/pricing/</guid>
       <description>{{ partial &#34;head.html&#34; . }}  {{ partial &#34;navbar.html&#34; . }}  OUR PRICING
-  microPLATFORM PRICING     PRICING For evaluation, demonstration, personal, and education use, we provide a low-cost non-commercial license.  For commercial use you may subscribe to get our continuously updated builds of the Zephyr and/or Linux microPlatforms. You will pay $1,000/month (Zephyr) or $2,500/month (Linux) for continued access to the latest updates, security patches and new features to help you develop and maintain your product for its lifetime.</description>
+  microPlatform PRICING     PRICING For evaluation, demonstration, personal, and education use, we provide a low-cost non-commercial license. For only $10/month you will have continuous access to the latest updates, security patches and new features. For commercial use you may subscribe to get our continuously updated builds of the Zephyr and/or Linux microPlatforms.</description>
     </item>
     
     <item>
@@ -1107,7 +1096,7 @@ providing firmware update and device communication via LWM2M.&lt;/p&gt;
       
       <guid>https://foundriesio.github.io/foundriesiov2/products/</guid>
       <description>{{ partial &#34;head.html&#34; . }}  {{ partial &#34;navbar.html&#34; . }}  OUR PRODUCTS
-  NEXT-GENERATION microPLATFORMS     CONNECTING SILICON TO THE CLOUD The microPlatforms are configurable, small footprint, open source software for building connected devices, based on microcontrollers, advanced single or multi-core SoCs, or both. Whether you&#39;re making a remote sensor, smart light, appliance, robot, drone, or self-driving car, the microPlatforms provide a proven, tested platform to build upon.</description>
+  NEXT-GENERATION PLATFORMS     CONNECTING SILICON TO THE CLOUD The microPlatforms are configurable, small footprint, open source software for building connected devices, based on microcontrollers, advanced single or multi-core SoCs, or both. Whether you&#39;re making a remote sensor, smart light, appliance, robot, drone, or self-driving car, the microPlatforms provide a proven, tested platform to build upon.</description>
     </item>
     
     <item>
@@ -1118,6 +1107,39 @@ providing firmware update and device communication via LWM2M.&lt;/p&gt;
       <guid>https://foundriesio.github.io/foundriesiov2/template/</guid>
       <description>{{ partial &#34;head.html&#34; . }}  {{ partial &#34;navbar.html&#34; . }}  HARDWARE / SYSTEMS
   DEVICES AND PLATFORMS     {{ partial &#34;footer.html&#34; . }} {{ partial &#34;scripts.html&#34; . }}   </description>
+    </item>
+    
+    <item>
+      <title>Bluetooth Low Energy USB Dongle</title>
+      <link>https://foundriesio.github.io/foundriesiov2/labs/ble-dongle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/labs/ble-dongle/</guid>
+      <description>&lt;p&gt;Foundries.io has released binaries and source code for a Zephyr-based Bluetooth Low Energy USB dongle to the public.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Jobserv CI</title>
+      <link>https://foundriesio.github.io/foundriesiov2/labs/jobserv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/labs/jobserv/</guid>
+      <description>&lt;p&gt;lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Portainer-based app store</title>
+      <link>https://foundriesio.github.io/foundriesiov2/labs/portainer-appstore/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://foundriesio.github.io/foundriesiov2/labs/portainer-appstore/</guid>
+      <description>&lt;p&gt;lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

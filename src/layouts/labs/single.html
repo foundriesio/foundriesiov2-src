@@ -16,10 +16,10 @@
             <div class="small-12 columns">
                 <div class="message-intro">
                     <span class="message-line"></span>
-                    <p>FOUNDRIES.IO INSIGHTS</p>
+                    <p>FOUNDRIES.IO LABS</p>
                     <span class="message-line"></span>
                 </div>
-                <h1 style="color: white">Foundries.io Labs</h1>
+                <h1 style="color: white">{{ .Title }}</h1>
             </div>
         </div>
     </div>
@@ -29,10 +29,7 @@
     <div id="content">
         <div class="container">
             <div class="row">
-                <div class="small-12 large-12 medium-12 columns" id="labs-post">
-
-                    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-
+                <div class="small-10 columns small-offset-1" id="labs-post">
                     <div id="post-content">
                         {{ .Content }}
                     </div>

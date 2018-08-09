@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>Alsa</title>
-      <link>https://foundriesio.github.io/foundriesiov2/tags/alsa/</link>
-      <pubDate>Wed, 09 May 2018 19:48:23 +0000</pubDate>
-      
-      <guid>https://foundriesio.github.io/foundriesiov2/tags/alsa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Assistant</title>
       <link>https://foundriesio.github.io/foundriesiov2/tags/assistant/</link>
       <pubDate>Wed, 09 May 2018 19:48:23 +0000</pubDate>
@@ -66,18 +57,9 @@
     </item>
     
     <item>
-      <title>Container</title>
-      <link>https://foundriesio.github.io/foundriesiov2/tags/container/</link>
-      <pubDate>Tue, 08 May 2018 06:00:00 +0000</pubDate>
-      
-      <guid>https://foundriesio.github.io/foundriesiov2/tags/container/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Containers</title>
       <link>https://foundriesio.github.io/foundriesiov2/tags/containers/</link>
-      <pubDate>Wed, 17 Jan 2018 13:07:31 +0200</pubDate>
+      <pubDate>Tue, 08 May 2018 06:00:00 +0000</pubDate>
       
       <guid>https://foundriesio.github.io/foundriesiov2/tags/containers/</guid>
       <description></description>
@@ -129,11 +111,11 @@
     </item>
     
     <item>
-      <title>General</title>
-      <link>https://foundriesio.github.io/foundriesiov2/tags/general/</link>
+      <title>Foundries.io</title>
+      <link>https://foundriesio.github.io/foundriesiov2/tags/foundries.io/</link>
       <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://foundriesio.github.io/foundriesiov2/tags/general/</guid>
+      <guid>https://foundriesio.github.io/foundriesiov2/tags/foundries.io/</guid>
       <description></description>
     </item>
     

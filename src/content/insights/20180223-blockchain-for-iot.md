@@ -2,7 +2,7 @@
 title = "Blockchain for the Internet of Things"
 date = "2018-02-23T13:07:31+02:00"
 tags = ["blockchain","crypto", "iot", "decentralized"]
-categories = ["blockchain"]
+categories = ["blockchain", "Linux mP", "Zephyr mP"]
 banner = "img/banners/blockchain.png"
 +++
 

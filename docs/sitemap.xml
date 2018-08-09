@@ -253,11 +253,6 @@
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/labs/ble-dongle/</loc>
-    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/insights/2018/01/08/20180110-ble-dongle/</loc>
     <lastmod>2018-01-08T00:00:00+00:00</lastmod>
   </url>
@@ -321,12 +316,6 @@
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/tags/alsa/</loc>
-    <lastmod>2018-05-09T19:48:23+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/assistant/</loc>
     <lastmod>2018-05-09T19:48:23+00:00</lastmod>
     <priority>0</priority>
@@ -357,6 +346,10 @@
   </url>
   
   <url>
+    <loc>https://foundriesio.github.io/foundriesiov2/labs/ble-dongle/</loc>
+  </url>
+  
+  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/bugs/</loc>
     <lastmod>2018-07-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -375,14 +368,8 @@
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/tags/container/</loc>
-    <lastmod>2018-05-08T06:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/containers/</loc>
-    <lastmod>2018-01-17T13:07:31+02:00</lastmod>
+    <lastmod>2018-05-08T06:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -435,7 +422,7 @@
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/tags/general/</loc>
+    <loc>https://foundriesio.github.io/foundriesiov2/tags/foundries.io/</loc>
     <lastmod>2018-03-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -459,6 +446,10 @@
   </url>
   
   <url>
+    <loc>https://foundriesio.github.io/foundriesiov2/labs/jobserv/</loc>
+  </url>
+  
+  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/k8s/</loc>
     <lastmod>2018-01-17T13:07:31+02:00</lastmod>
     <priority>0</priority>
@@ -478,7 +469,6 @@
   
   <url>
     <loc>https://foundriesio.github.io/foundriesiov2/labs/</loc>
-    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -489,7 +479,7 @@
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/linux-microplatform/</loc>
+    <loc>https://foundriesio.github.io/foundriesiov2/categories/linux-mp/</loc>
     <lastmod>2018-07-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -555,6 +545,10 @@
   </url>
   
   <url>
+    <loc>https://foundriesio.github.io/foundriesiov2/labs/portainer-appstore/</loc>
+  </url>
+  
+  <url>
     <loc>https://foundriesio.github.io/foundriesiov2/tags/radio/</loc>
     <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -603,7 +597,7 @@
   </url>
   
   <url>
-    <loc>https://foundriesio.github.io/foundriesiov2/categories/zephyr-microplatform/</loc>
+    <loc>https://foundriesio.github.io/foundriesiov2/categories/zephyr-mp/</loc>
     <lastmod>2018-07-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

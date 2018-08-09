@@ -1,7 +1,5 @@
 +++
-title = "Foundries.io LABS - BLE dongle"
-date = "2018-01-08"
-banner = "img/banners/ble-dongle.png"
+title = "Bluetooth Low Energy USB Dongle"
 +++
 
 Foundries.io has released binaries and source code for a Zephyr-based Bluetooth Low Energy USB dongle to the public.
