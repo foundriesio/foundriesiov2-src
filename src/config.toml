@@ -4,11 +4,15 @@ title = "Foundries.io"
 
 # Enable disqus by entering your short name
 disqusShortname = "foundriesio"
+
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = "UA-111281311-1"
 
 # Define the number of posts per page
 paginate = 10
+
+# Use a better syntax highlighter
+pygmentsStyle = "github"
 
 # Site language. Available translations in the theme's `/i18n` directory.
 languageCode = "en-us"
