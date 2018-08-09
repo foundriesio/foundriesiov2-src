@@ -74,17 +74,16 @@
                     <!-- *** MENUS AND FILTERS END *** -->
 
                 </div>
-                <div class="small-12 large-12 medium-12 columns">
-
+                <div class="small-10 medium-8 large-7 columns">
                     <ul class="pager">
                         {{ if .Paginator.HasPrev }}
-                        <li class="previous"><a href="{{ .Paginator.Prev.URL }}">&larr; {{ i18n "newer" }}</a></li>
+                        <li class="previous"><a class="medium radius button" style="color: black" href="{{ .Paginator.Prev.URL }}">&larr; {{ i18n "newer" }}</a></li>
                         {{ else }}
-                        <li class="previous disabled"><a href="#">&larr; {{ i18n "newer" }}</a></li>
+                        <li class="previous disabled"><a class="medium radius button" style="color: grey" href="#">&larr; {{ i18n "newer" }}</a></li>
                         {{ end }} {{ if .Paginator.HasNext }}
-                        <li class="next"><a href="{{ .Paginator.Next.URL }}">{{ i18n "older" }} &rarr;</a></li>
+                        <li class="next"><a class="medium radius button" style="color: black" href="{{ .Paginator.Next.URL }}">{{ i18n "older" }} &rarr;</a></li>
                         {{ else }}
-                        <li class="next disabled"><a href="#">{{ i18n "older" }} &rarr;</a></li>
+                        <li class="next disabled"><a class="medium radius button" style="color: grey" href="#">{{ i18n "older" }} &rarr;</a></li>
                         {{ end }}
                     </ul>
                 </div>
